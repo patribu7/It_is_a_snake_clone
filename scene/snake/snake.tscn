@@ -1,0 +1,39 @@
+[gd_scene load_steps=5 format=3 uid="uid://doedtjatqxvg6"]
+
+[ext_resource type="Script" path="res://scene/snake/snake.gd" id="1_k40pv"]
+[ext_resource type="Script" path="res://scene/snake/tail_queue.gd" id="2_gwv0q"]
+[ext_resource type="PackedScene" uid="uid://cttxj65xn4xwq" path="res://scene/snake/tail.tscn" id="3_f78mh"]
+[ext_resource type="PackedScene" uid="uid://3hyoamlqamqj" path="res://scene/snake/player.tscn" id="4_6fi3n"]
+
+[node name="Snake" type="Node2D"]
+position = Vector2(250, 300)
+script = ExtResource("1_k40pv")
+metadata/_edit_group_ = true
+
+[node name="Tail_queue" type="Node2D" parent="."]
+script = ExtResource("2_gwv0q")
+
+[node name="Tail1" parent="Tail_queue" instance=ExtResource("3_f78mh")]
+position = Vector2(0, 50)
+
+[node name="Sprite" parent="Tail_queue/Tail1" index="0"]
+rotation = -1.5708
+animation = &"default"
+
+[node name="Tail2" parent="Tail_queue" instance=ExtResource("3_f78mh")]
+position = Vector2(0, 100)
+
+[node name="Player" parent="." instance=ExtResource("4_6fi3n")]
+z_index = -1
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 0.365
+autostart = true
+
+[connection signal="property_list_changed" from="Tail_queue/Tail1" to="Tail_queue/Tail1" method="_on_property_list_changed"]
+[connection signal="property_list_changed" from="Tail_queue/Tail2" to="Tail_queue/Tail2" method="_on_property_list_changed"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+
+[editable path="Tail_queue/Tail1"]
+[editable path="Tail_queue/Tail2"]
+[editable path="Player"]

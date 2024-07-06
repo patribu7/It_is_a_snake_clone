@@ -1,0 +1,9 @@
+6 - ... or not?
+---
+Or could you be the serpent of Eden?
+But why should you consume the apples?
+You ought to offer them instead!
+---
+Eat 7 apples
+---
+	

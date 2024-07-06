@@ -1,0 +1,97 @@
+[gd_scene load_steps=10 format=3 uid="uid://clpj0ds245kfl"]
+
+[ext_resource type="Script" path="res://scene/grid_game/gridGame.gd" id="1_7r8wo"]
+[ext_resource type="Script" path="res://scene/main/main.gd" id="1_8emqb"]
+[ext_resource type="PackedScene" uid="uid://3hyoamlqamqj" path="res://scene/snake/player.tscn" id="1_qbp13"]
+[ext_resource type="Script" path="res://scene/snake/snake.gd" id="2_uruwg"]
+[ext_resource type="PackedScene" uid="uid://c5pst4171lj8g" path="res://scene/wall/wall.tscn" id="2_x1q03"]
+[ext_resource type="PackedScene" uid="uid://cttxj65xn4xwq" path="res://scene/snake/tail.tscn" id="2_x7n67"]
+[ext_resource type="Script" path="res://scene/snake/tail_queue.gd" id="3_74vku"]
+[ext_resource type="Script" path="res://scene/UI/UI.gd" id="8_h7fui"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0itt6"]
+font_size = 26
+
+[node name="Main" type="Node"]
+script = ExtResource("1_8emqb")
+
+[node name="GridGame" type="Node2D" parent="."]
+script = ExtResource("1_7r8wo")
+
+[node name="Snake" type="Node2D" parent="GridGame"]
+position = Vector2(250, 250)
+script = ExtResource("2_uruwg")
+metadata/_edit_group_ = true
+
+[node name="Tail_queue" type="Node2D" parent="GridGame/Snake"]
+script = ExtResource("3_74vku")
+
+[node name="Tail1" parent="GridGame/Snake/Tail_queue" instance=ExtResource("2_x7n67")]
+position = Vector2(0, 50)
+snake_can = "be_defeat"
+
+[node name="Tail2" parent="GridGame/Snake/Tail_queue" instance=ExtResource("2_x7n67")]
+position = Vector2(0, 100)
+snake_can = "be_defeat"
+
+[node name="Tail3" parent="GridGame/Snake/Tail_queue" instance=ExtResource("2_x7n67")]
+position = Vector2(0, 150)
+snake_can = "be_defeat"
+
+[node name="Player" parent="GridGame/Snake" instance=ExtResource("1_qbp13")]
+
+[node name="Wall" parent="GridGame" instance=ExtResource("2_x1q03")]
+snake_can = "be_defeat"
+
+[node name="Timer" type="Timer" parent="GridGame"]
+wait_time = 0.33
+autostart = true
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("8_h7fui")
+
+[node name="Game_over" type="Label" parent="UI"]
+visible = false
+layout_mode = 2
+offset_left = 125.0
+offset_top = 201.0
+offset_right = 389.0
+offset_bottom = 383.0
+theme_override_font_sizes/font_size = 50
+text = "Game over"
+
+[node name="Container" type="Control" parent="UI"]
+anchors_preset = 0
+offset_top = 450.0
+offset_right = 50.0
+offset_bottom = 500.0
+
+[node name="Apple" type="Label" parent="UI/Container"]
+layout_mode = 2
+offset_left = 1.0
+offset_top = 19.0
+offset_right = 35.0
+offset_bottom = 55.0
+theme_override_font_sizes/font_size = 26
+text = "🍎"
+
+[node name="Score" type="Label" parent="UI/Container"]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 10.0
+offset_right = 52.0
+offset_bottom = 46.0
+text = "0"
+label_settings = SubResource("LabelSettings_0itt6")
+
+[connection signal="property_list_changed" from="GridGame/Snake/Tail_queue/Tail1" to="GridGame/Snake/Tail_queue/Tail1" method="_on_property_list_changed"]
+[connection signal="property_list_changed" from="GridGame/Snake/Tail_queue/Tail2" to="GridGame/Snake/Tail_queue/Tail2" method="_on_property_list_changed"]
+[connection signal="property_list_changed" from="GridGame/Snake/Tail_queue/Tail3" to="GridGame/Snake/Tail_queue/Tail3" method="_on_property_list_changed"]
+[connection signal="area_entered" from="GridGame/Snake/Player" to="GridGame" method="_on_player_entered"]
+[connection signal="property_list_changed" from="GridGame/Snake/Player" to="GridGame/Snake/Player" method="_on_property_list_changed"]
+[connection signal="property_list_changed" from="GridGame/Wall" to="GridGame/Wall" method="_on_property_list_changed"]
+[connection signal="timeout" from="GridGame/Timer" to="GridGame" method="_on_timer_timeout"]

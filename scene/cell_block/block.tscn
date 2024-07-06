@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://1e5nwgt71uaq"]
+
+[ext_resource type="Script" path="res://scene/cell_block/block.gd" id="1_p5j3y"]
+[ext_resource type="Script" path="res://scene/cell_block/sprite.gd" id="2_1y8fe"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ueil6"]
+size = Vector2(42, 42)
+
+[node name="Block" type="Area2D"]
+script = ExtResource("1_p5j3y")
+
+[node name="Sprite" type="AnimatedSprite2D" parent="."]
+position = Vector2(25, 25)
+script = ExtResource("2_1y8fe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2(25, 25)
+shape = SubResource("RectangleShape2D_ueil6")

@@ -1,0 +1,39 @@
+[gd_scene load_steps=7 format=3 uid="uid://cd0ckluym4lmc"]
+
+[ext_resource type="PackedScene" uid="uid://1e5nwgt71uaq" path="res://scene/cell_block/block.tscn" id="1_y8vql"]
+[ext_resource type="Script" path="res://scene/spider/spider_still.gd" id="2_dx83m"]
+[ext_resource type="Texture2D" uid="uid://cehj18teo653w" path="res://assets/png/sprite/spider.png" id="3_6bmi3"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wev80"]
+atlas = ExtResource("3_6bmi3")
+region = Rect2(0, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_arryb"]
+atlas = ExtResource("3_6bmi3")
+region = Rect2(50, 0, 50, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_emvxm"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wev80")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_arryb")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}]
+
+[node name="Spider" instance=ExtResource("1_y8vql")]
+script = ExtResource("2_dx83m")
+snake_can = "eat"
+type_obj = "spider"
+
+[node name="Sprite" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_emvxm")
+autoplay = "default"
+frame_progress = 0.299197
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]

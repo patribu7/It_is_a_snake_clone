@@ -1,0 +1,17 @@
+[gd_scene format=3 uid="uid://bk2daq6bes1h3"]
+
+[node name="Container" type="VBoxContainer"]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Header" type="Label" parent="."]
+layout_mode = 2
+size_flags_vertical = 1
+theme_override_font_sizes/font_size = 40
+
+[node name="Body" type="RichTextLabel" parent="."]
+layout_mode = 2
+fit_content = true

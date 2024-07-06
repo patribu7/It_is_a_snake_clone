@@ -1,0 +1,40 @@
+[gd_scene load_steps=7 format=3 uid="uid://d2m11att7xtb0"]
+
+[ext_resource type="PackedScene" uid="uid://1e5nwgt71uaq" path="res://scene/cell_block/block.tscn" id="1_w7xsr"]
+[ext_resource type="Script" path="res://scene/gate/gate.gd" id="2_n0cnu"]
+[ext_resource type="Texture2D" uid="uid://bro6yr5jtqgdu" path="res://assets/png/sprite/gate.png" id="3_h1khh"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_um3j5"]
+atlas = ExtResource("3_h1khh")
+region = Rect2(0, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_11mcf"]
+atlas = ExtResource("3_h1khh")
+region = Rect2(50, 0, 50, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iuclg"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_um3j5")
+}],
+"loop": true,
+"name": &"close",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_11mcf")
+}],
+"loop": true,
+"name": &"open",
+"speed": 5.0
+}]
+
+[node name="Gate" instance=ExtResource("1_w7xsr")]
+script = ExtResource("2_n0cnu")
+
+[node name="Sprite" parent="." index="0"]
+sprite_frames = SubResource("SpriteFrames_iuclg")
+animation = &"close"
+autoplay = "close"

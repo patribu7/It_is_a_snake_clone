@@ -1,0 +1,50 @@
+[gd_scene load_steps=7 format=3 uid="uid://dsts51aaqnnqr"]
+
+[ext_resource type="Script" path="res://scene/maps/script/map6.gd" id="1_q4rdx"]
+[ext_resource type="Texture2D" uid="uid://c2mm57penajxf" path="res://assets/png/sprite/wall_tile_set.png" id="2_q5y65"]
+[ext_resource type="Script" path="res://scene/wall/Walls_tiles.gd" id="3_cav45"]
+[ext_resource type="PackedScene" uid="uid://doedtjatqxvg6" path="res://scene/snake/snake.tscn" id="4_i6ixr"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_f4e4u"]
+texture = ExtResource("2_q5y65")
+texture_region_size = Vector2i(50, 50)
+0:0/0 = 0
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+2:0/0 = 0
+2:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:0/0/physics_layer_0/angular_velocity = 0.0
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+2:1/0 = 0
+2:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+2:1/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSet" id="TileSet_s0ev6"]
+tile_size = Vector2i(50, 50)
+physics_layer_0/collision_layer = 1
+sources/2 = SubResource("TileSetAtlasSource_f4e4u")
+
+[node name="Map" type="Node"]
+script = ExtResource("1_q4rdx")
+
+[node name="Walls" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_s0ev6")
+rendering_quadrant_size = 50
+collision_visibility_mode = 1
+format = 2
+layer_0/tile_data = PackedInt32Array(917505, 65538, 0, 917506, 65538, 0, 917507, 65538, 0, 917508, 65538, 0, 917509, 65538, 0, 917510, 65538, 0, 917511, 131074, 1342177280, 917512, 65538, 0, 917513, 65538, 0, 917514, 65538, 0, 917515, 65538, 0, 917516, 65538, 0, 917517, 65538, 0, 1, 65538, 0, 2, 65538, 0, 3, 65538, 0, 4, 65538, 0, 5, 65538, 0, 6, 65538, 0, 7, 131074, 1610612736, 8, 65538, 0, 9, 65538, 0, 10, 65538, 0, 11, 65538, 0, 12, 65538, 0, 13, 65538, 0, 65536, 65538, 1610612736, 131072, 65538, 1610612736, 196608, 65538, 1610612736, 262144, 65538, 1610612736, 327680, 65538, 1610612736, 393216, 65538, 1610612736, 458752, 65538, 1610612736, 524288, 65538, 1610612736, 589824, 65538, 1610612736, 655360, 65538, 1610612736, 720896, 65538, 1610612736, 786432, 65538, 1610612736, 851968, 65538, 1610612736, 851982, 65538, 1610612736, 786446, 65538, 1610612736, 720910, 65538, 1610612736, 655374, 65538, 1610612736, 589838, 65538, 1610612736, 524302, 65538, 1610612736, 458766, 65538, 1610612736, 393230, 65538, 1610612736, 327694, 65538, 1610612736, 262158, 65538, 1610612736, 196622, 65538, 1610612736, 131086, 65538, 1610612736, 65550, 65538, 1610612736, 0, 2, 0, 917504, 2, 1610612736, 917518, 2, 805306368, 14, 2, 1342177280, 65543, 65538, 1342177280, 131079, 65538, 1342177280, 196615, 65538, 1342177280, 262151, 65538, 1342177280, 327687, 65538, 1342177280, 393223, 65538, 1342177280, 458759, 65538, 1342177280, 524295, 65538, 1342177280, 589831, 65538, 1342177280, 655367, 65538, 1342177280, 720903, 65538, 1342177280, 786439, 65538, 1342177280, 851975, 65538, 1342177280)
+script = ExtResource("3_cav45")
+
+[node name="Snake" parent="." instance=ExtResource("4_i6ixr")]
+position = Vector2(400, 350)
+
+[node name="Snake2" parent="." instance=ExtResource("4_i6ixr")]
+position = Vector2(50, 350)
+
+[node name="GoalPos" type="Marker2D" parent="."]
+position = Vector2(250, 50)

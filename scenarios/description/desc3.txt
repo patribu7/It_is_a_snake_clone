@@ -1,0 +1,11 @@
+3 - How little is your world!
+---
+The world you live is so small!
+If you go straight in one direction you go back to where you started.
+Have you ever noticed?
+
+Eat 5
+---
+eat 5 apples
+---
+	

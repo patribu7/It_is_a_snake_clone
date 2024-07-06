@@ -1,0 +1,54 @@
+[gd_scene load_steps=9 format=3 uid="uid://l7u4e1gehlty"]
+
+[ext_resource type="Texture2D" uid="uid://5l5rq6fjqyum" path="res://assets/png/background/background.png" id="1_2inhb"]
+[ext_resource type="Script" path="res://scene/loading_icon/snake_loading.gd" id="1_exraj"]
+[ext_resource type="PackedScene" uid="uid://bisjtx72yptcx" path="res://scene/apple/apple.tscn" id="1_ikksm"]
+[ext_resource type="Script" path="res://scene/apple/apple_still.gd" id="2_asdoy"]
+[ext_resource type="Script" path="res://scene/snake/tail_queue.gd" id="2_fatuw"]
+[ext_resource type="PackedScene" uid="uid://cttxj65xn4xwq" path="res://scene/snake/tail.tscn" id="4_ad1r0"]
+[ext_resource type="PackedScene" uid="uid://3hyoamlqamqj" path="res://scene/snake/player.tscn" id="5_12vb2"]
+[ext_resource type="Script" path="res://scene/loading_icon/player_loading.gd" id="5_l46xc"]
+
+[node name="Icon" type="Node2D"]
+
+[node name="Background" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(75, 75)
+texture = ExtResource("1_2inhb")
+
+[node name="Apple" parent="." instance=ExtResource("1_ikksm")]
+position = Vector2(50, 50)
+script = ExtResource("2_asdoy")
+
+[node name="Snake" type="Node2D" parent="."]
+script = ExtResource("1_exraj")
+metadata/_edit_group_ = true
+
+[node name="Tail_queue" type="Node2D" parent="Snake"]
+script = ExtResource("2_fatuw")
+
+[node name="Tail1" parent="Snake/Tail_queue" instance=ExtResource("4_ad1r0")]
+position = Vector2(0, 50)
+
+[node name="Sprite" parent="Snake/Tail_queue/Tail1" index="0"]
+rotation = -1.5708
+animation = &"default"
+
+[node name="Tail2" parent="Snake/Tail_queue" instance=ExtResource("4_ad1r0")]
+position = Vector2(0, 100)
+
+[node name="Player" parent="Snake" instance=ExtResource("5_12vb2")]
+z_index = -1
+script = ExtResource("5_l46xc")
+
+[node name="Timer" type="Timer" parent="Snake"]
+wait_time = 0.365
+autostart = true
+
+[connection signal="property_list_changed" from="Snake/Tail_queue/Tail1" to="Snake/Tail_queue/Tail1" method="_on_property_list_changed"]
+[connection signal="property_list_changed" from="Snake/Tail_queue/Tail2" to="Snake/Tail_queue/Tail2" method="_on_property_list_changed"]
+[connection signal="timeout" from="Snake/Timer" to="Snake" method="_on_timer_timeout"]
+
+[editable path="Snake/Tail_queue/Tail1"]
+[editable path="Snake/Tail_queue/Tail2"]
+[editable path="Snake/Player"]

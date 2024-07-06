@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://c5pst4171lj8g"]
+
+[ext_resource type="PackedScene" uid="uid://1e5nwgt71uaq" path="res://scene/cell_block/block.tscn" id="1_xpdg3"]
+[ext_resource type="Script" path="res://scene/wall/wall.gd" id="2_2jecn"]
+
+[node name="Wall" instance=ExtResource("1_xpdg3")]
+script = ExtResource("2_2jecn")
+snake_can = "be_defeat"
+
+[node name="Sprite" parent="." index="0"]
+frame = 8
