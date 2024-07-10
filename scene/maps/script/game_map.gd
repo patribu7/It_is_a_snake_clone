@@ -9,6 +9,8 @@ var _apple = preload("res://scene/apple/apple.tscn")
 @export var apples_to_unloack_goal = 1
 
 func ready_game_map():
+	#apple score reset
+	GameData.apple_score = 0
 	spawn(_apple, Global.get_rand_coords())
 	
 	if has_node("Snake"):
@@ -18,7 +20,7 @@ func ready_game_map():
 
 
 func _on_player_entered(area):
-	print(area)
+	print("collide with: ", area)
 	if area.snake_can == "eat":
 		handle_eats(area)
 		
@@ -43,8 +45,6 @@ func _on_player_entered(area):
 	
 func handle_eats(obj):
 		GameData.apple_score += obj.score_handler
-		print(GameData.apple_score)
-		
 		obj.handler_after_eating() #cambia posizione oppure sparisce
 		
 		#func handler_gates issue
@@ -66,11 +66,9 @@ func handle_eats(obj):
 			
 func handler_snake(type):
 	if type == "apple":
-		print("strech tail")
 		$Snake.stretch()
 	
 	elif type == "spider":
-		print("leave tail")
 		$Snake.leave_tail()
 
 

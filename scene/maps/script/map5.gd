@@ -10,5 +10,4 @@ func _ready():
 		$Snake/Timer.set_wait_time(start_timeout)
 
 	#issue --> da implementare gestione delle code al cambio livello
-	#apple score reset
-	GameData.apple_score = 0
+

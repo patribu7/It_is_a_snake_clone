@@ -8,6 +8,7 @@ var unlocked_levels = 1
 var apple_score = 0:
 	set(value):
 		apple_score = value
+		print("apple score: ", apple_score)
 		if is_instance_valid(counter_score):
 			update_HUD_score(value)
 

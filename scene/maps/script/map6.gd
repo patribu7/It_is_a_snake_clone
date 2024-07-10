@@ -5,8 +5,6 @@ var _gate = preload("res://scene/gate/gate.tscn")
 func _ready():
 	ready_game_map()
 	#issue --> da implementare gestione delle code al cambio livello
-	#apple score reset
-	GameData.apple_score = 0
 
 	
 	if has_node("Snake2"):
