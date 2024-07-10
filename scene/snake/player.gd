@@ -9,8 +9,8 @@ var inputs = {
 
 @export_enum("move_right", "move_left", "move_up", "move_down") var direction = "move_up"
 
+var current_velocity = Vector2.UP
 var velocity = inputs[direction]
-
 
 func _ready():
 	type_obj = "snake"
@@ -19,12 +19,13 @@ func _ready():
 func _input(event):
 	for dir in inputs.keys():
 		#sanke can't turn back!
-		if event.is_action_pressed(dir) and (inputs[dir] + velocity) != Vector2.ZERO:
+		if event.is_action_pressed(dir) and (inputs[dir] + current_velocity) != Vector2.ZERO:
 			velocity = inputs[dir]
 
 
 func move():
 	position += velocity * size
+	current_velocity = velocity
 	$Sprite.rotation = velocity.angle()
 	
 	pacman_effect()
