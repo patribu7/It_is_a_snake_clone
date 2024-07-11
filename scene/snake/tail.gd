@@ -7,6 +7,7 @@ func _init():
 	snake_can = "be_defeat"
 	velocity = Vector2.UP
 
+
 func set_sprite(velocity_behind):
 	$Sprite.rotation = 0
 
@@ -14,7 +15,7 @@ func set_sprite(velocity_behind):
 		$Sprite.play("angle")
 		
 		if velocity_behind.y * velocity.x > velocity_behind.x * velocity.y: 
-#			anti-clockwise
+#			counterclockwise
 			$Sprite.rotation = velocity.angle() - PI/2
 		
 		else:
@@ -24,8 +25,12 @@ func set_sprite(velocity_behind):
 	else: #se non cambia direzione
 		$Sprite.play("default")
 		$Sprite.rotation = velocity.angle()
-	
 
-func set_sprite_last_tail():
+
+func set_sprite_last_tail(wag_tail):
 	$Sprite.play("end_tile")
+	$Sprite.frame = wag_tail
+
 	$Sprite.rotation = velocity.angle() + PI/2
+	
+	

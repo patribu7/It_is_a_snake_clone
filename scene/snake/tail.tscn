@@ -61,7 +61,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"end_tile",
-"speed": 2.0
+"speed": 0.0
 }]
 
 [node name="Tail" instance=ExtResource("1_jjxm7")]

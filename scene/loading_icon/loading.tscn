@@ -1,4 +1,4 @@
-[gd_scene load_steps=9 format=3 uid="uid://l7u4e1gehlty"]
+[gd_scene load_steps=10 format=3 uid="uid://l7u4e1gehlty"]
 
 [ext_resource type="Texture2D" uid="uid://5l5rq6fjqyum" path="res://assets/png/background/background.png" id="1_2inhb"]
 [ext_resource type="Script" path="res://scene/loading_icon/snake_loading.gd" id="1_exraj"]
@@ -8,6 +8,8 @@
 [ext_resource type="PackedScene" uid="uid://cttxj65xn4xwq" path="res://scene/snake/tail.tscn" id="4_ad1r0"]
 [ext_resource type="PackedScene" uid="uid://3hyoamlqamqj" path="res://scene/snake/player.tscn" id="5_12vb2"]
 [ext_resource type="Script" path="res://scene/loading_icon/player_loading.gd" id="5_l46xc"]
+
+[sub_resource type="GDScript" id="GDScript_a221u"]
 
 [node name="Icon" type="Node2D"]
 
@@ -33,13 +35,20 @@ position = Vector2(0, 50)
 [node name="Sprite" parent="Snake/Tail_queue/Tail1" index="0"]
 rotation = -1.5708
 animation = &"default"
+script = SubResource("GDScript_a221u")
 
 [node name="Tail2" parent="Snake/Tail_queue" instance=ExtResource("4_ad1r0")]
 position = Vector2(0, 100)
 
+[node name="Sprite" parent="Snake/Tail_queue/Tail2" index="0"]
+script = SubResource("GDScript_a221u")
+
 [node name="Player" parent="Snake" instance=ExtResource("5_12vb2")]
 z_index = -1
 script = ExtResource("5_l46xc")
+
+[node name="Sprite" parent="Snake/Player" index="0"]
+script = SubResource("GDScript_a221u")
 
 [node name="Timer" type="Timer" parent="Snake"]
 wait_time = 0.365
