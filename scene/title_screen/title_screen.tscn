@@ -3,10 +3,10 @@
 [ext_resource type="Script" path="res://scene/title_screen/Press_any_key.gd" id="1_cl87b"]
 [ext_resource type="PackedScene" uid="uid://l7u4e1gehlty" path="res://scene/loading_icon/loading.tscn" id="1_hi4p0"]
 [ext_resource type="Script" path="res://scene/title_screen/title_screen.gd" id="1_wh6nj"]
-[ext_resource type="Texture2D" uid="uid://d2kmbjn4bqfqx" path="res://assets/png/keys/arrow.png" id="2_14mog"]
-[ext_resource type="Texture2D" uid="uid://xhpbod0pags1" path="res://assets/png/keys/wasd.png" id="3_aoxaw"]
-[ext_resource type="Texture2D" uid="uid://bcst562vo4yqn" path="res://assets/png/keys/space.png" id="4_tccn6"]
-[ext_resource type="Texture2D" uid="uid://dwlwgkt3kyb8e" path="res://assets/png/keys/shift.png" id="5_865u6"]
+[ext_resource type="Texture2D" uid="uid://bmlt7jyjdylat" path="res://assets/png/keys/arrow.png" id="2_14mog"]
+[ext_resource type="Texture2D" uid="uid://5eecgdof5i2h" path="res://assets/png/keys/wasd.png" id="3_aoxaw"]
+[ext_resource type="Texture2D" uid="uid://cvhlm2jhh6xl5" path="res://assets/png/keys/space.png" id="4_tccn6"]
+[ext_resource type="Texture2D" uid="uid://daoaddko0vkpq" path="res://assets/png/keys/shift.png" id="5_865u6"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_trwa0"]
 atlas = ExtResource("2_14mog")

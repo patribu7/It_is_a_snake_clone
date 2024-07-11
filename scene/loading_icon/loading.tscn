@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://l7u4e1gehlty"]
 
-[ext_resource type="Texture2D" uid="uid://5l5rq6fjqyum" path="res://assets/png/background/background.png" id="1_2inhb"]
+[ext_resource type="Texture2D" uid="uid://5pqf0dbj3j4q" path="res://assets/png/background/background.png" id="1_2inhb"]
 [ext_resource type="Script" path="res://scene/loading_icon/snake_loading.gd" id="1_exraj"]
 [ext_resource type="PackedScene" uid="uid://bisjtx72yptcx" path="res://scene/apple/apple.tscn" id="1_ikksm"]
 [ext_resource type="Script" path="res://scene/apple/apple_still.gd" id="2_asdoy"]
