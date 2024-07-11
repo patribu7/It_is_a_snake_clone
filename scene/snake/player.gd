@@ -31,6 +31,19 @@ func move():
 	pacman_effect()
 
 
+func set_sprite_crash(in_pos):
+	position = in_pos
+	$Sprite.play("crash")
+	
+
+
+func set_sprite_eat():
+	$Sprite.play("eat")
+	await $Sprite.animation_finished
+	$Sprite.play("default")
+	
+	
+		
 func pacman_effect():
 	var vector_min = Global.convert_grid_coords_in_px(Vector2.ONE)
 	var vector_max = Global.convert_grid_coords_in_px(Global.grid_size)

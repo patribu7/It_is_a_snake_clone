@@ -1,8 +1,12 @@
-[gd_scene load_steps=7 format=3 uid="uid://3hyoamlqamqj"]
+[gd_scene load_steps=11 format=3 uid="uid://3hyoamlqamqj"]
 
 [ext_resource type="PackedScene" uid="uid://1e5nwgt71uaq" path="res://scene/cell_block/block.tscn" id="1_n27hb"]
 [ext_resource type="Script" path="res://scene/snake/player.gd" id="2_ggnne"]
 [ext_resource type="Texture2D" uid="uid://bp4p4w2y0g1kh" path="res://assets/png/sprite/snake.png" id="3_s2lwf"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8esef"]
+atlas = ExtResource("3_s2lwf")
+region = Rect2(150, 0, 50, 50)
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fjoeq"]
 atlas = ExtResource("3_s2lwf")
@@ -12,12 +16,27 @@ region = Rect2(100, 0, 50, 50)
 atlas = ExtResource("3_s2lwf")
 region = Rect2(150, 50, 50, 50)
 
+[sub_resource type="AtlasTexture" id="AtlasTexture_ykdjq"]
+atlas = ExtResource("3_s2lwf")
+region = Rect2(0, 100, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fyts4"]
+atlas = ExtResource("3_s2lwf")
+region = Rect2(100, 100, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kt64p"]
+atlas = ExtResource("3_s2lwf")
+region = Rect2(150, 100, 50, 50)
+
 [sub_resource type="SpriteFrames" id="SpriteFrames_mwfcq"]
 animations = [{
-"frames": [],
-"loop": true,
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8esef")
+}],
+"loop": false,
 "name": &"crash",
-"speed": 5.0
+"speed": 2.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -30,10 +49,19 @@ animations = [{
 "name": &"default",
 "speed": 2.0
 }, {
-"frames": [],
-"loop": true,
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ykdjq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fyts4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kt64p")
+}],
+"loop": false,
 "name": &"eat",
-"speed": 5.0
+"speed": 3.0
 }]
 
 [node name="Player" instance=ExtResource("1_n27hb")]
@@ -44,4 +72,5 @@ direction = "move_up"
 position = Vector2(25, 25.0655)
 rotation = -1.5708
 sprite_frames = SubResource("SpriteFrames_mwfcq")
+animation = &"eat"
 autoplay = "default"

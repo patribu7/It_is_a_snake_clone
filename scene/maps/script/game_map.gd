@@ -11,6 +11,7 @@ var _apple = preload("res://scene/apple/apple.tscn")
 func ready_game_map():
 	#apple score reset
 	GameData.apple_score = 0
+	
 	spawn(_apple, Global.get_rand_coords())
 	
 	if has_node("Snake"):
@@ -22,13 +23,18 @@ func ready_game_map():
 func _on_player_entered(area):
 	print("collide with: ", area)
 	if area.snake_can == "eat":
+		$Snake.show_eat()
 		handle_eats(area)
 		
+		
 	elif area.snake_can == "be_defeat":
+		
 		var game = get_parent()
 		
 		if game.name == "Game":
+			$Snake.show_crash()
 			game.emit_signal("defeat")
+			
 		
 		else:
 			print("defeat!")
