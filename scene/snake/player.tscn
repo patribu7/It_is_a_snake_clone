@@ -84,7 +84,6 @@ direction = "move_up"
 position = Vector2(25, 25.0655)
 rotation = -1.5708
 sprite_frames = SubResource("SpriteFrames_mwfcq")
-animation = &"side_crash"
 autoplay = "default"
 
 [node name="CollisionShape2D" parent="." index="1"]

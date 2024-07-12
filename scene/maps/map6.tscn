@@ -1,8 +1,8 @@
 [gd_scene load_steps=10 format=3 uid="uid://dsts51aaqnnqr"]
 
 [ext_resource type="Script" path="res://scene/maps/script/map6.gd" id="1_q4rdx"]
-[ext_resource type="Texture2D" uid="uid://jv7vrxu033h" path="res://assets/png/sprite/background.png" id="2_afdh1"]
-[ext_resource type="Texture2D" uid="uid://ebphvoxa2byn" path="res://assets/png/sprite/wall_tile_set.png" id="2_q5y65"]
+[ext_resource type="Texture2D" uid="uid://itgu8afr1rfp" path="res://assets/png/sprite/background.png" id="2_afdh1"]
+[ext_resource type="Texture2D" uid="uid://b7u7yi4fnf0et" path="res://assets/png/sprite/wall_tile_set.png" id="2_q5y65"]
 [ext_resource type="Script" path="res://scene/wall/Walls_tiles.gd" id="3_cav45"]
 [ext_resource type="PackedScene" uid="uid://doedtjatqxvg6" path="res://scene/snake/snake.tscn" id="4_i6ixr"]
 
@@ -89,6 +89,7 @@ sources/2 = SubResource("TileSetAtlasSource_f4e4u")
 
 [node name="Map" type="Node"]
 script = ExtResource("1_q4rdx")
+decr_timeout = 0.3
 apples_to_unloack_goal = 7
 
 [node name="Background" type="TileMap" parent="."]

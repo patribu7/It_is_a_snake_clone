@@ -1,8 +1,8 @@
 [gd_scene load_steps=12 format=3 uid="uid://cwv0asv0uynvf"]
 
-[ext_resource type="Texture2D" uid="uid://ebphvoxa2byn" path="res://assets/png/sprite/wall_tile_set.png" id="1_3hcua"]
+[ext_resource type="Texture2D" uid="uid://b7u7yi4fnf0et" path="res://assets/png/sprite/wall_tile_set.png" id="1_3hcua"]
 [ext_resource type="Script" path="res://scene/maps/script/map2.gd" id="1_s512w"]
-[ext_resource type="Texture2D" uid="uid://jv7vrxu033h" path="res://assets/png/sprite/background.png" id="2_pi1cb"]
+[ext_resource type="Texture2D" uid="uid://itgu8afr1rfp" path="res://assets/png/sprite/background.png" id="2_pi1cb"]
 [ext_resource type="Script" path="res://scene/wall/Walls_tiles.gd" id="2_ykfku"]
 [ext_resource type="PackedScene" uid="uid://doedtjatqxvg6" path="res://scene/snake/snake.tscn" id="4_bwsh2"]
 [ext_resource type="PackedScene" uid="uid://bhxev8xcd4qb3" path="res://scene/goal/goal.tscn" id="5_fdh5g"]
@@ -83,18 +83,6 @@ texture_region_size = Vector2i(50, 50)
 2:1/0 = 0
 2:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 2:1/0/physics_layer_0/angular_velocity = 0.0
-0:2/0 = 0
-0:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-0:2/0/physics_layer_0/angular_velocity = 0.0
-1:2/0 = 0
-1:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-1:2/0/physics_layer_0/angular_velocity = 0.0
-2:2/0 = 0
-2:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-2:2/0/physics_layer_0/angular_velocity = 0.0
-1:1/0 = 0
-1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
-1:1/0/physics_layer_0/angular_velocity = 0.0
 
 [sub_resource type="TileSet" id="TileSet_s0ev6"]
 tile_size = Vector2i(50, 50)

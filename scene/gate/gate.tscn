@@ -2,13 +2,13 @@
 
 [ext_resource type="PackedScene" uid="uid://1e5nwgt71uaq" path="res://scene/cell_block/block.tscn" id="1_w7xsr"]
 [ext_resource type="Script" path="res://scene/gate/gate.gd" id="2_n0cnu"]
-[ext_resource type="Texture2D" uid="uid://bro6yr5jtqgdu" path="res://assets/png/sprite/gate.png" id="3_h1khh"]
+[ext_resource type="Texture2D" uid="uid://da25tg53yb11i" path="res://assets/png/sprite/gate.png" id="3_h1khh"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_um3j5"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_bsjag"]
 atlas = ExtResource("3_h1khh")
 region = Rect2(0, 0, 50, 50)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_11mcf"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_5xnic"]
 atlas = ExtResource("3_h1khh")
 region = Rect2(50, 0, 50, 50)
 
@@ -16,7 +16,7 @@ region = Rect2(50, 0, 50, 50)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_um3j5")
+"texture": SubResource("AtlasTexture_bsjag")
 }],
 "loop": true,
 "name": &"close",
@@ -24,7 +24,7 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_11mcf")
+"texture": SubResource("AtlasTexture_5xnic")
 }],
 "loop": true,
 "name": &"open",

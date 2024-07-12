@@ -1,14 +1,14 @@
 [gd_scene load_steps=7 format=3 uid="uid://bhxev8xcd4qb3"]
 
 [ext_resource type="PackedScene" uid="uid://1e5nwgt71uaq" path="res://scene/cell_block/block.tscn" id="1_m2nrv"]
-[ext_resource type="Texture2D" uid="uid://jxspsx2qckyi" path="res://assets/png/sprite/goal.png" id="2_l1g3h"]
+[ext_resource type="Texture2D" uid="uid://c7d8afvla15jp" path="res://assets/png/sprite/goal.png" id="2_l1g3h"]
 [ext_resource type="Script" path="res://scene/goal/goal.gd" id="2_w5kyu"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_1wnq2"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_ca8jg"]
 atlas = ExtResource("2_l1g3h")
 region = Rect2(0, 0, 50, 50)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_jguyj"]
+[sub_resource type="AtlasTexture" id="AtlasTexture_q1yh0"]
 atlas = ExtResource("2_l1g3h")
 region = Rect2(50, 0, 50, 50)
 
@@ -16,14 +16,14 @@ region = Rect2(50, 0, 50, 50)
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_1wnq2")
+"texture": SubResource("AtlasTexture_ca8jg")
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_jguyj")
+"texture": SubResource("AtlasTexture_q1yh0")
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 2.0
 }]
 
 [node name="Goal" instance=ExtResource("1_m2nrv")]

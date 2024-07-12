@@ -52,7 +52,7 @@ func _on_snake_win():
 
 
 func handler_gates():
-	if GameData.apple_score >= apples_to_unloack_goal:
+	if GameData.apple_score == apples_to_unloack_goal:
 		if has_node("Gates"):
 			for gate in $Gates.get_children():
 				gate.open()
@@ -60,6 +60,7 @@ func handler_gates():
 		elif has_node("GoalPos"):
 			var _goal = load("res://scene/goal/goal.tscn")
 			spawn(_goal, $GoalPos.position)
+			$GoalPos.queue_free()
 			
 	else:
 		pass
@@ -78,6 +79,14 @@ func handler_time():
 		$Snake/Timer.set_wait_time(timeout)
 
 
+func update_timer():
+	var timeout = start_timeout - (log(GameData.apple_score + 1) * decr_timeout)
+	if timeout < timeout_min:
+		timeout = timeout_min
+	
+	return timeout
+
+
 func spawn(_obj, pos:Vector2):
 	var obj = _obj.instantiate()
 	obj.take_position(pos)
@@ -85,9 +94,3 @@ func spawn(_obj, pos:Vector2):
 	return obj
 
 
-func update_timer():
-	var timeout = start_timeout - (log(GameData.apple_score + 1) * decr_timeout)
-	if timeout < timeout_min:
-		timeout = timeout_min
-	
-	return timeout

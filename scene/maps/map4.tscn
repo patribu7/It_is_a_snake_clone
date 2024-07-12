@@ -1,8 +1,8 @@
 [gd_scene load_steps=11 format=3 uid="uid://dxaxx0lu07xbi"]
 
 [ext_resource type="Script" path="res://scene/maps/script/map4.gd" id="1_qt48h"]
-[ext_resource type="Texture2D" uid="uid://ebphvoxa2byn" path="res://assets/png/sprite/wall_tile_set.png" id="2_tp8a2"]
-[ext_resource type="Texture2D" uid="uid://jv7vrxu033h" path="res://assets/png/sprite/background.png" id="2_wpikn"]
+[ext_resource type="Texture2D" uid="uid://b7u7yi4fnf0et" path="res://assets/png/sprite/wall_tile_set.png" id="2_tp8a2"]
+[ext_resource type="Texture2D" uid="uid://itgu8afr1rfp" path="res://assets/png/sprite/background.png" id="2_wpikn"]
 [ext_resource type="Script" path="res://scene/wall/Walls_tiles.gd" id="3_3vvjm"]
 [ext_resource type="PackedScene" uid="uid://doedtjatqxvg6" path="res://scene/snake/snake.tscn" id="4_h2n3r"]
 [ext_resource type="PackedScene" uid="uid://bhxev8xcd4qb3" path="res://scene/goal/goal.tscn" id="5_4d0jn"]
