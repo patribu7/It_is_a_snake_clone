@@ -16,58 +16,53 @@ func ready_game_map():
 	
 	if has_node("Snake"):
 		var snake = get_node("Snake")
-		snake.get_node("Player").area_entered.connect(_on_player_entered)
+		snake.get_node("Player").snake_eat.connect(_on_snake_eat)
+		snake.get_node("Player").snake_be_defeat.connect(_on_snake_be_defeat)
+		snake.get_node("Player").snake_win.connect(_on_snake_win)
 		$Snake/Timer.set_wait_time(start_timeout)
 
 
-func _on_player_entered(area):
-	print("collide with: ", area)
-	if area.snake_can == "eat":
-		$Snake.show_eat()
-		handle_eats(area)
-		
-		
-	elif area.snake_can == "be_defeat":
-		
-		var game = get_parent()
-		
-		if game.name == "Game":
-			$Snake.show_crash()
-			game.emit_signal("defeat")
-			
-		
-		else:
-			print("defeat!")
-	
-	elif area.snake_can == "win":
-		var game = get_parent()
-		
-		if game.name == "Game":
-			game.stage_clear.emit()
-		
-		else:
-			print("win!")
-
-	
-func handle_eats(obj):
+func _on_snake_eat(obj):
 		GameData.apple_score += obj.score_handler
-		obj.handler_after_eating() #cambia posizione oppure sparisce
 		
-		#func handler_gates issue
-		if GameData.apple_score >= apples_to_unloack_goal:
-			if has_node("Gates"):
-				for gate in $Gates.get_children():
-					gate.open()
-			
-			elif has_node("GoalPos"):
-				var _goal = load("res://scene/goal/goal.tscn")
-				spawn(_goal, $GoalPos.position)
-				
-		else:
-			pass
-			
+		obj.handler_after_eating() #cambia posizione oppure sparisce
+		handler_gates()
 		handler_time()
 		handler_snake(obj.type_obj)
+	
+	
+func _on_snake_be_defeat():
+	var game = get_parent()
+	
+	if game.name == "Game":
+		game.emit_signal("defeat")
+		
+	else:
+		print("defeat!")
+
+
+func _on_snake_win():
+	var game = get_parent()
+	
+	if game.name == "Game":
+		game.stage_clear.emit()
+	
+	else:
+		print("win!")
+
+
+func handler_gates():
+	if GameData.apple_score >= apples_to_unloack_goal:
+		if has_node("Gates"):
+			for gate in $Gates.get_children():
+				gate.open()
+		
+		elif has_node("GoalPos"):
+			var _goal = load("res://scene/goal/goal.tscn")
+			spawn(_goal, $GoalPos.position)
+			
+	else:
+		pass
 
 			
 func handler_snake(type):
