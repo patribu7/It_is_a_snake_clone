@@ -76,9 +76,14 @@ func get_collision():
 		if ray.is_colliding() and (velocity + ray.get_meta("Velocity")) != Vector2.ZERO and velocity == ray.get_meta("Velocity"):
 			var area = ray.get_collider()
 			
-			if area.snake_can == "eat":  #issue e se è uno spider?
-				set_sprite_eat_apple()
+			if area.snake_can == "eat":
 				snake_eat.emit(area)
+				
+				if area.type_obj == "apple":
+					set_sprite_eat_apple()
+				
+				elif area.type_obj == "spider":
+					pass
 
 			elif area.snake_can == "be_defeat":
 				snake_be_defeat.emit()

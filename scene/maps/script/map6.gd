@@ -24,7 +24,5 @@ func _ready():
 func handler_time():
 		var timeout = update_timer()
 		$Snake/Timer.set_wait_time(timeout)
-		print("wait time 1: ", $Snake/Timer.get_wait_time())
-
 		$Snake2/Timer.set_wait_time(timeout)
-		print("wait time 2: ", $Snake2/Timer.get_wait_time())
+

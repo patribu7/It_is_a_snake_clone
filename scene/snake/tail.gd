@@ -28,7 +28,7 @@ func set_sprite(velocity_behind):
 
 
 func set_sprite_last_tail(wag_tail):
-	$Sprite.play("end_tile")
+	$Sprite.play("end_tail")
 	$Sprite.frame = wag_tail
 
 	$Sprite.rotation = velocity.angle() + PI/2

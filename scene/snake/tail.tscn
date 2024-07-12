@@ -60,7 +60,7 @@ animations = [{
 "texture": SubResource("AtlasTexture_xpvtc")
 }],
 "loop": true,
-"name": &"end_tile",
+"name": &"end_tail",
 "speed": 0.0
 }]
 
@@ -71,4 +71,4 @@ snake_can = "be_defeat"
 
 [node name="Sprite" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_4k3d1")
-animation = &"end_tile"
+animation = &"end_tail"
