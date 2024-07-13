@@ -94,3 +94,10 @@ func spawn(_obj, pos:Vector2):
 	return obj
 
 
+var velocity_list: Array
+func set_velocity_for_tail_in_scene():
+	#imposto la velocity per ogni coda in scena per poter orientare l'ultima coda una volta che snake si muove
+	var i = 0
+	for tail in $Snake/Tail_queue.get_children():
+		tail.velocity = velocity_list[i]
+		i += 1

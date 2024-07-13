@@ -1,11 +1,14 @@
-[gd_scene load_steps=11 format=3 uid="uid://dxaxx0lu07xbi"]
+[gd_scene load_steps=14 format=3 uid="uid://dxaxx0lu07xbi"]
 
 [ext_resource type="Script" path="res://scene/maps/script/map4.gd" id="1_qt48h"]
 [ext_resource type="Texture2D" uid="uid://b7u7yi4fnf0et" path="res://assets/png/sprite/wall_tile_set.png" id="2_tp8a2"]
 [ext_resource type="Texture2D" uid="uid://itgu8afr1rfp" path="res://assets/png/sprite/background.png" id="2_wpikn"]
 [ext_resource type="Script" path="res://scene/wall/Walls_tiles.gd" id="3_3vvjm"]
-[ext_resource type="PackedScene" uid="uid://doedtjatqxvg6" path="res://scene/snake/snake.tscn" id="4_h2n3r"]
 [ext_resource type="PackedScene" uid="uid://bhxev8xcd4qb3" path="res://scene/goal/goal.tscn" id="5_4d0jn"]
+[ext_resource type="Script" path="res://scene/snake/snake.gd" id="5_4su10"]
+[ext_resource type="Script" path="res://scene/snake/tail_queue.gd" id="6_0sf8h"]
+[ext_resource type="PackedScene" uid="uid://cttxj65xn4xwq" path="res://scene/snake/tail.tscn" id="7_ebfji"]
+[ext_resource type="PackedScene" uid="uid://3hyoamlqamqj" path="res://scene/snake/player.tscn" id="8_hdcr8"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jdkd7"]
 texture = ExtResource("2_wpikn")
@@ -109,8 +112,219 @@ format = 2
 layer_0/tile_data = PackedInt32Array(851968, 65538, 0, 851969, 2, 1342177280, 917505, 65538, 1342177280)
 script = ExtResource("3_3vvjm")
 
-[node name="Snake" parent="." instance=ExtResource("4_h2n3r")]
-position = Vector2(350, 600)
+[node name="Snake" type="Node2D" parent="."]
+position = Vector2(600, 200)
+script = ExtResource("5_4su10")
+metadata/_edit_group_ = true
+
+[node name="Tail_queue" type="Node2D" parent="Snake"]
+script = ExtResource("6_0sf8h")
+
+[node name="Tail1" parent="Snake/Tail_queue" instance=ExtResource("7_ebfji")]
+position = Vector2(0, 50)
+
+[node name="Sprite" parent="Snake/Tail_queue/Tail1" index="0"]
+rotation = -1.5708
+animation = &"default"
+
+[node name="Tail2" parent="Snake/Tail_queue" instance=ExtResource("7_ebfji")]
+position = Vector2(0, 100)
+
+[node name="Sprite" parent="Snake/Tail_queue/Tail2" index="0"]
+rotation = -1.5708
+animation = &"default"
+
+[node name="Tail3" parent="Snake/Tail_queue" instance=ExtResource("7_ebfji")]
+position = Vector2(0, 150)
+
+[node name="Sprite" parent="Snake/Tail_queue/Tail3" index="0"]
+rotation = -1.5708
+animation = &"default"
+
+[node name="Tail4" parent="Snake/Tail_queue" instance=ExtResource("7_ebfji")]
+position = Vector2(0, 200)
+
+[node name="Sprite" parent="Snake/Tail_queue/Tail4" index="0"]
+rotation = -1.5708
+animation = &"default"
+
+[node name="Tail5" parent="Snake/Tail_queue" instance=ExtResource("7_ebfji")]
+position = Vector2(0, 250)
+
+[node name="Sprite" parent="Snake/Tail_queue/Tail5" index="0"]
+rotation = 3.14159
+animation = &"angle"
+
+[node name="Tail6" parent="Snake/Tail_queue" instance=ExtResource("7_ebfji")]
+position = Vector2(-50, 250)
+
+[node name="Sprite" parent="Snake/Tail_queue/Tail6" index="0"]
+rotation = -1.5708
+animation = &"angle"
+
+[node name="Tail7" parent="Snake/Tail_queue" instance=ExtResource("7_ebfji")]
+position = Vector2(-50, 200)
+
+[node name="Sprite" parent="Snake/Tail_queue/Tail7" index="0"]
+rotation = 1.5708
+animation = &"angle"
+
+[node name="Tail8" parent="Snake/Tail_queue" instance=ExtResource("7_ebfji")]
+position = Vector2(-100, 200)
+
+[node name="Sprite" parent="Snake/Tail_queue/Tail8" index="0"]
+animation = &"angle"
+
+[node name="Tail9" parent="Snake/Tail_queue" instance=ExtResource("7_ebfji")]
+position = Vector2(-100, 250)
+
+[node name="Sprite" parent="Snake/Tail_queue/Tail9" index="0"]
+rotation = -1.5708
+animation = &"default"
+
+[node name="Tail10" parent="Snake/Tail_queue" instance=ExtResource("7_ebfji")]
+position = Vector2(-100, 300)
+
+[node name="Sprite" parent="Snake/Tail_queue/Tail10" index="0"]
+rotation = -1.5708
+animation = &"default"
+
+[node name="Tail11" parent="Snake/Tail_queue" instance=ExtResource("7_ebfji")]
+position = Vector2(-100, 350)
+
+[node name="Sprite" parent="Snake/Tail_queue/Tail11" index="0"]
+rotation = -1.5708
+animation = &"default"
+
+[node name="Tail12" parent="Snake/Tail_queue" instance=ExtResource("7_ebfji")]
+position = Vector2(-100, 400)
+
+[node name="Sprite" parent="Snake/Tail_queue/Tail12" index="0"]
+rotation = -1.5708
+animation = &"angle"
+
+[node name="Tail13" parent="Snake/Tail_queue" instance=ExtResource("7_ebfji")]
+position = Vector2(-50, 400)
+
+[node name="Sprite" parent="Snake/Tail_queue/Tail13" index="0"]
+rotation = 3.14159
+animation = &"angle"
+
+[node name="Tail14" parent="Snake/Tail_queue" instance=ExtResource("7_ebfji")]
+position = Vector2(-50, 350)
+
+[node name="Sprite" parent="Snake/Tail_queue/Tail14" index="0"]
+rotation = -1.5708
+animation = &"default"
+
+[node name="Tail15" parent="Snake/Tail_queue/Tail14" instance=ExtResource("7_ebfji")]
+position = Vector2(0, 50)
+
+[node name="Sprite" parent="Snake/Tail_queue/Tail14/Tail15" index="0"]
+rotation = 3.14159
+animation = &"angle"
+
+[node name="Tail15" parent="Snake/Tail_queue" instance=ExtResource("7_ebfji")]
+position = Vector2(-50, 300)
+
+[node name="Sprite" parent="Snake/Tail_queue/Tail15" index="0"]
+animation = &"angle"
+
+[node name="Tail16" parent="Snake/Tail_queue" instance=ExtResource("7_ebfji")]
+position = Vector2(0, 300)
+
+[node name="Sprite" parent="Snake/Tail_queue/Tail16" index="0"]
+rotation = 1.5708
+animation = &"angle"
+
+[node name="Tail17" parent="Snake/Tail_queue" instance=ExtResource("7_ebfji")]
+position = Vector2(0, 350)
+
+[node name="Sprite" parent="Snake/Tail_queue/Tail17" index="0"]
+rotation = -1.5708
+animation = &"default"
+
+[node name="Tail18" parent="Snake/Tail_queue" instance=ExtResource("7_ebfji")]
+position = Vector2(0, 400)
+
+[node name="Sprite" parent="Snake/Tail_queue/Tail18" index="0"]
+rotation = -1.5708
+animation = &"angle"
+
+[node name="Tail19" parent="Snake/Tail_queue" instance=ExtResource("7_ebfji")]
+position = Vector2(50, 400)
+
+[node name="Sprite" parent="Snake/Tail_queue/Tail19" index="0"]
+rotation = 3.14159
+animation = &"angle"
+
+[node name="Tail20" parent="Snake/Tail_queue" instance=ExtResource("7_ebfji")]
+position = Vector2(50, 350)
+
+[node name="Sprite" parent="Snake/Tail_queue/Tail20" index="0"]
+rotation = 1.5708
+animation = &"default"
+
+[node name="Tail21" parent="Snake/Tail_queue" instance=ExtResource("7_ebfji")]
+position = Vector2(50, 300)
+
+[node name="Sprite" parent="Snake/Tail_queue/Tail21" index="0"]
+rotation = 3.14159
+
+[node name="Player" parent="Snake" instance=ExtResource("8_hdcr8")]
+z_index = -1
+
+[node name="Timer" type="Timer" parent="Snake"]
+wait_time = 0.365
+autostart = true
 
 [node name="Goal" parent="." instance=ExtResource("5_4d0jn")]
 position = Vector2(0, 700)
+
+[connection signal="property_list_changed" from="Snake/Tail_queue/Tail1" to="Snake/Tail_queue/Tail1" method="_on_property_list_changed"]
+[connection signal="property_list_changed" from="Snake/Tail_queue/Tail2" to="Snake/Tail_queue/Tail2" method="_on_property_list_changed"]
+[connection signal="property_list_changed" from="Snake/Tail_queue/Tail3" to="Snake/Tail_queue/Tail3" method="_on_property_list_changed"]
+[connection signal="property_list_changed" from="Snake/Tail_queue/Tail4" to="Snake/Tail_queue/Tail4" method="_on_property_list_changed"]
+[connection signal="property_list_changed" from="Snake/Tail_queue/Tail5" to="Snake/Tail_queue/Tail5" method="_on_property_list_changed"]
+[connection signal="property_list_changed" from="Snake/Tail_queue/Tail6" to="Snake/Tail_queue/Tail6" method="_on_property_list_changed"]
+[connection signal="property_list_changed" from="Snake/Tail_queue/Tail7" to="Snake/Tail_queue/Tail7" method="_on_property_list_changed"]
+[connection signal="property_list_changed" from="Snake/Tail_queue/Tail8" to="Snake/Tail_queue/Tail8" method="_on_property_list_changed"]
+[connection signal="property_list_changed" from="Snake/Tail_queue/Tail9" to="Snake/Tail_queue/Tail9" method="_on_property_list_changed"]
+[connection signal="property_list_changed" from="Snake/Tail_queue/Tail10" to="Snake/Tail_queue/Tail10" method="_on_property_list_changed"]
+[connection signal="property_list_changed" from="Snake/Tail_queue/Tail11" to="Snake/Tail_queue/Tail11" method="_on_property_list_changed"]
+[connection signal="property_list_changed" from="Snake/Tail_queue/Tail12" to="Snake/Tail_queue/Tail12" method="_on_property_list_changed"]
+[connection signal="property_list_changed" from="Snake/Tail_queue/Tail13" to="Snake/Tail_queue/Tail13" method="_on_property_list_changed"]
+[connection signal="property_list_changed" from="Snake/Tail_queue/Tail14" to="Snake/Tail_queue/Tail14" method="_on_property_list_changed"]
+[connection signal="property_list_changed" from="Snake/Tail_queue/Tail14/Tail15" to="Snake/Tail_queue/Tail14/Tail15" method="_on_property_list_changed"]
+[connection signal="property_list_changed" from="Snake/Tail_queue/Tail15" to="Snake/Tail_queue/Tail15" method="_on_property_list_changed"]
+[connection signal="property_list_changed" from="Snake/Tail_queue/Tail16" to="Snake/Tail_queue/Tail16" method="_on_property_list_changed"]
+[connection signal="property_list_changed" from="Snake/Tail_queue/Tail17" to="Snake/Tail_queue/Tail17" method="_on_property_list_changed"]
+[connection signal="property_list_changed" from="Snake/Tail_queue/Tail18" to="Snake/Tail_queue/Tail18" method="_on_property_list_changed"]
+[connection signal="property_list_changed" from="Snake/Tail_queue/Tail19" to="Snake/Tail_queue/Tail19" method="_on_property_list_changed"]
+[connection signal="property_list_changed" from="Snake/Tail_queue/Tail20" to="Snake/Tail_queue/Tail20" method="_on_property_list_changed"]
+[connection signal="property_list_changed" from="Snake/Tail_queue/Tail21" to="Snake/Tail_queue/Tail21" method="_on_property_list_changed"]
+[connection signal="timeout" from="Snake/Timer" to="Snake" method="_on_timer_timeout"]
+
+[editable path="Snake/Tail_queue/Tail1"]
+[editable path="Snake/Tail_queue/Tail2"]
+[editable path="Snake/Tail_queue/Tail3"]
+[editable path="Snake/Tail_queue/Tail4"]
+[editable path="Snake/Tail_queue/Tail5"]
+[editable path="Snake/Tail_queue/Tail6"]
+[editable path="Snake/Tail_queue/Tail7"]
+[editable path="Snake/Tail_queue/Tail8"]
+[editable path="Snake/Tail_queue/Tail9"]
+[editable path="Snake/Tail_queue/Tail10"]
+[editable path="Snake/Tail_queue/Tail11"]
+[editable path="Snake/Tail_queue/Tail12"]
+[editable path="Snake/Tail_queue/Tail13"]
+[editable path="Snake/Tail_queue/Tail14"]
+[editable path="Snake/Tail_queue/Tail14/Tail15"]
+[editable path="Snake/Tail_queue/Tail15"]
+[editable path="Snake/Tail_queue/Tail16"]
+[editable path="Snake/Tail_queue/Tail17"]
+[editable path="Snake/Tail_queue/Tail18"]
+[editable path="Snake/Tail_queue/Tail19"]
+[editable path="Snake/Tail_queue/Tail20"]
+[editable path="Snake/Tail_queue/Tail21"]
+[editable path="Snake/Player"]

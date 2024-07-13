@@ -35,7 +35,7 @@ func lost_tail():
 		var map = get_parent().get_parent()
 		
 		remove_child(last_tail)
-		last_tail.position += Vector2(350, 350) #issue numero magico ottenuto ad occhio fatto in base ad una griglia 750x750
+		last_tail.position += Vector2(300, 300) #issue numero magico. è la posizione di snake
 		map.add_child(last_tail)
 
 		last_tail.get_node("Sprite").sprite_frames.set_animation_speed("end_tail", 2.0)
