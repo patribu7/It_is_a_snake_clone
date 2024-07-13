@@ -5,7 +5,7 @@
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ueil6"]
 size = Vector2(42, 42)
 
-[node name="Block" type="Area2D"]
+[node name="Block" type="Area2D" groups=["solid_obj"]]
 script = ExtResource("1_p5j3y")
 
 [node name="Sprite" type="AnimatedSprite2D" parent="."]

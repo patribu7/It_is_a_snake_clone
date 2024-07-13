@@ -4,7 +4,7 @@ func _ready():
 	#apple score reset
 	GameData.apple_score = 0
 	
-	spawn(_apple, Global.get_rand_coords())
+	spawn(_apple, Global.get_valid_rand_coords())
 	
 	if has_node("Snake"):
 		var snake = get_node("Snake")

@@ -12,8 +12,10 @@ func ready_game_map():
 	#apple score reset
 	GameData.apple_score = 0
 	
-	spawn(_apple, Global.get_rand_coords())
+	#spawn apple:
+	spawn(_apple, Global.get_valid_rand_coords())
 	
+	#connect Snake
 	if has_node("Snake"):
 		var snake = get_node("Snake")
 		snake.get_node("Player").snake_eat.connect(_on_snake_eat)
