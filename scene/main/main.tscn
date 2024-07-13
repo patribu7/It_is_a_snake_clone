@@ -17,5 +17,4 @@ visible = false
 [node name="Title_screen" parent="." instance=ExtResource("4_crwnh")]
 process_mode = 3
 
-[connection signal="stage_clear" from="Game" to="." method="_on_stage_clear"]
 [connection signal="request_main_menu" from="Title_screen" to="." method="_on_request_main_menu"]

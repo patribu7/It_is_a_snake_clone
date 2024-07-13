@@ -265,7 +265,7 @@ text = "LEVEL CLEAR
 Congratualtions"
 
 [connection signal="visibility_changed" from="Menu" to="Menu" method="_on_visibility_changed"]
-[connection signal="pressed" from="Menu/MainMenu/NewGame" to="Menu" method="_on_new_game_button_up"]
+[connection signal="pressed" from="Menu/MainMenu/NewGame" to="Menu" method="_on_new_game_button_pressed"]
 [connection signal="button_up" from="Menu/MainMenu/SelectLv" to="Menu" method="_on_select_lv_button_up"]
 [connection signal="button_up" from="Menu/MainMenu/Credits" to="Menu" method="_on_credits_button_up"]
 [connection signal="button_up" from="Menu/MainMenu/Quit" to="Menu" method="_on_quit_button_up"]

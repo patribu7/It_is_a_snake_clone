@@ -2,11 +2,6 @@ extends Node
 
 signal start_level
 
-var _box_panel = preload("res://scene/gui/box_panel.tscn")
-
-var state_game = "main_menu"
-#usare i set qui issue
-
 var states = {
 	"main_menu": true,
 	"run": false,
@@ -15,10 +10,15 @@ var states = {
 	"game_over": true
 }
 
+var state_game = "main_menu":
+	set(value):
+		state_game = value
+		$Game.get_tree().paused = states[state_game]
+
 func _ready():
 	#connessioni
 	$Game.defeat.connect(_on_defeat)
-	#$Game.stage_clear.connect(_on_stage_clear)
+	$Game.stage_clear.connect(_on_stage_clear)
 	$GUI/Menu.request.connect(_on_request)
 	
 	#dimensioni dello schermo
@@ -38,7 +38,6 @@ func _input(event):
 		elif state_game == "paused":
 			state_game = "run"
 		
-		$Game.get_tree().paused = states[state_game]
 		$GUI.toggle_menu(state_game)
 
 
@@ -59,7 +58,6 @@ func _on_request(type:String, lv:int):
 func _on_stage_clear():
 	state_game = "stage_clear"
 	$GUI.toggle_menu(state_game)
-	$Game.get_tree().paused = states[state_game]
 
 
 func go_to_next_lv():
@@ -73,26 +71,18 @@ func start_game_at_level(lv):
 	var can_go = $Game.set_new_game()
 
 	if can_go:
-		#da spostare nel GUI issue
-		var box_panel = _box_panel.instantiate()
-		box_panel.is_in_scenario = true
-		box_panel.add_context("text_box")
-		box_panel.set_back_btn_text("OK")
-		
+		var box_panel = $GUI.open_desc_senario()
 		box_panel.start.connect(_on_start)
-		get_node("GUI/Menu").add_child(box_panel)
-	
+
 
 func _on_start():
 	state_game = "run"
 	$GUI.hide_menu()
-	$Game.get_tree().paused = states[state_game]
 
 
 func _on_defeat():
 	state_game = "game_over"
 	$GUI.toggle_menu(state_game)
-	$Game.get_tree().paused = states[state_game]
 	
 	if $Game.level == 0: #0 == endless mode
 		GameData.set_record() #registra il record
@@ -101,8 +91,6 @@ func _on_defeat():
 func resume():
 	state_game = "run"
 	$GUI.hide_menu()
-	$Game.get_tree().paused = states[state_game]
-
 
 
 func _on_request_main_menu():

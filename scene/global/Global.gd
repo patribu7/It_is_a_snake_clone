@@ -42,7 +42,7 @@ func get_occupied_cells(node):
 func is_free_cell(pos, list_pos_cells):
 	var position_is_free = true
 		
-	for pos_occupied in list_pos_cells: #issue get_parent funziona solo partendo dal presupposto che sia direttamente nella mappa e non in un sottonodo
+	for pos_occupied in list_pos_cells:
 		if pos_occupied == pos:
 			position_is_free = false
 			print("position not valid: ", pos, " changing position")

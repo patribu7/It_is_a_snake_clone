@@ -27,7 +27,7 @@ func _on_lv_selected(select_lv):
 	request.emit("set_level", select_lv)
 
 
-func _on_new_game_button_up(): #issue cambiato con l'evento pressed
+func _on_new_game_button_pressed():
 	var grid_panel = open_panel("new_game")
 	
 	grid_panel.get_node("EndlessBtn").button_up.connect(_on_new_endless)
