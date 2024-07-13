@@ -44,8 +44,17 @@ func _on_snake_be_defeat():
 
 
 func _on_snake_win():
+	#animation win
+	var i = 0
+	$Snake/Timer.stop()
+	$Snake/Player.hide()
+	while i <= apples_to_unloack_goal + $Snake/Tail_queue.get_child_count():
+		$Snake/Tail_queue.move($Snake/Player.position, Vector2.ZERO)
+		$Snake/Tail_queue.get_child(0).free()
+		i += 1
+		await Global.wait(0.2)
+		
 	var game = get_parent()
-	
 	if game.name == "Game":
 		game.stage_clear.emit()
 	

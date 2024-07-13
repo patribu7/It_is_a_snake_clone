@@ -90,7 +90,6 @@ sources/2 = SubResource("TileSetAtlasSource_f4e4u")
 [node name="Map" type="Node"]
 script = ExtResource("1_q4rdx")
 decr_timeout = 0.3
-apples_to_unloack_goal = 7
 
 [node name="Background" type="TileMap" parent="."]
 z_index = -1

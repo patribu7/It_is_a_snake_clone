@@ -33,3 +33,6 @@ snake_can = "win"
 [node name="Sprite" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_b7gma")
 autoplay = "default"
+
+[node name="CollisionShape2D" parent="." index="1"]
+visible = true
