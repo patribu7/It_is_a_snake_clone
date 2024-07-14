@@ -29,16 +29,20 @@ func handler_time():
 		
 		
 func animation_level_clear():
-	var i = 0
-	$Timer.stop()
+	var i = 1
+	$Snake2/Timer.stop()
 	$Snake2/Player.hide()
-	$Snake2/Tail_queue.is_animation_win = true
-	while i < 2:
-		$Snake2/Tail_queue.move($Snake2/Player.position, Vector2.ZERO)
-		$Snake2/Tail_queue.get_child(0).free()
+	var t = $Snake2/Tail_queue.get_child_count()
+
+	var wag_tail = 0
+	while i < t:
+		var tail_block = $Snake2/Tail_queue.get_child(-1)
+		tail_block.free()
+		$Snake2/Tail_queue.get_child(-1).set_sprite_last_tail(wag_tail)
+		wag_tail = (wag_tail + 1) % 2
 		i += 1
 		
-		await Global.wait(0.15)
+		await Global.wait(0.3)
 
 
 func _on_snake_be_defeat():

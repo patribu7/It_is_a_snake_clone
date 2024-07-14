@@ -8,6 +8,8 @@ var _apple = preload("res://scene/apple/apple.tscn")
 
 @export var apples_to_unloack_goal = 1
 
+var count_tail_on_start
+
 func ready_game_map():
 	#apple score reset
 	GameData.apple_score = 0
@@ -21,7 +23,10 @@ func ready_game_map():
 		snake.get_node("Player").snake_eat.connect(_on_snake_eat)
 		snake.get_node("Player").snake_be_defeat.connect(_on_snake_be_defeat)
 		snake.get_node("Player").snake_win.connect(_on_snake_win)
+		
 		$Snake/Timer.set_wait_time(start_timeout)
+		
+		count_tail_on_start = $Snake/Tail_queue.get_child_count()
 
 
 func _on_snake_eat(obj):
@@ -56,15 +61,20 @@ func _on_snake_win():
 
 
 func animation_level_clear():
-	var i = 0
+	var i = 1
 	$Snake/Timer.stop()
 	$Snake/Player.hide()
-	$Snake/Tail_queue.is_animation_win = true
-	while i <= apples_to_unloack_goal + $Snake/Tail_queue.get_child_count(): #le code che dovrebbe avrere + le code che ha a inizio partita. issue controllare se il numero è corretto
-		$Snake/Tail_queue.move($Snake/Player.position, Vector2.ZERO)
-		$Snake/Tail_queue.get_child(0).free()
+	var t = apples_to_unloack_goal + count_tail_on_start
+
+	var wag_tail = 0
+	while i < t:
+		var tail_block = $Snake/Tail_queue.get_child(-1)
+		tail_block.free()
+		$Snake/Tail_queue.get_child(-1).set_sprite_last_tail(wag_tail)
+		wag_tail = (wag_tail + 1) % 2
 		i += 1
-		await Global.wait(0.15)
+		
+		await Global.wait(0.3)
 
 
 func handler_gates():
