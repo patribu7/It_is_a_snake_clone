@@ -2,21 +2,18 @@ extends Node2D
 
 var _tail = preload("res://scene/snake/tail.tscn")
 var wag_tail = 0
-var is_animation_win = false
 
 func move(player_pos:Vector2, player_velocity):
 	var tail_block = get_child(-1)
 	move_child(tail_block, 0)
+	tail_block.position = player_pos
+	tail_block.velocity = player_velocity
+	tail_block.set_sprite(get_child(1).velocity)
 	
 	get_child(-1).set_sprite_last_tail(wag_tail)
 	wag_tail = (wag_tail + 1) % 2
 	
-	tail_block.position = player_pos
-	tail_block.velocity = player_velocity
-	
-	if not is_animation_win:
-		tail_block.set_sprite(get_child(1).velocity)
-		tail_block.show()
+	tail_block.show() #se non è visibile nel caso sia stata aggiunta con stretch()
 
 
 func add_tail(pos):
