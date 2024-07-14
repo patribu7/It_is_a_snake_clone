@@ -18,6 +18,8 @@ var velocity = inputs[direction]
 
 func _ready():
 	type_obj = "snake"
+	
+	set_ray_velocity()
 
 
 func _input(event):
@@ -34,6 +36,10 @@ func move():
 
 	pacman_effect()
 
+
+func set_ray_velocity():
+	for ray in $Rays.get_children():
+		ray.get_parent_velocity()
 
 func set_sprite_crash():
 	if current_velocity == velocity: #se il crash è frontale
@@ -72,10 +78,10 @@ func pacman_effect():
 
 
 func get_collision():
-	for ray in get_node("Rays").get_children():
-		if ray.is_colliding() and (velocity + ray.get_meta("Velocity")) != Vector2.ZERO and velocity == ray.get_meta("Velocity"):
-			var area = ray.get_collider()
-			
+	for ray in $Rays.get_children():
+		var area = ray.collider()
+		if area != null and velocity == ray.velocity:
+
 			if area.snake_can == "eat":
 				snake_eat.emit(area)
 				
