@@ -44,22 +44,27 @@ func _on_snake_be_defeat():
 
 
 func _on_snake_win():
-	#animation win:
+	await animation_level_clear()
+
+	var game = get_parent()
+	if game.name == "Game":
+		game.stage_clear.emit()
+		print("win!")
+		
+	else:
+		print("win!")
+
+
+func animation_level_clear():
 	var i = 0
 	$Snake/Timer.stop()
 	$Snake/Player.hide()
+	$Snake/Tail_queue.is_animation_win = true
 	while i <= apples_to_unloack_goal + $Snake/Tail_queue.get_child_count(): #le code che dovrebbe avrere + le code che ha a inizio partita. issue controllare se il numero è corretto
 		$Snake/Tail_queue.move($Snake/Player.position, Vector2.ZERO)
 		$Snake/Tail_queue.get_child(0).free()
 		i += 1
 		await Global.wait(0.15)
-	#emit signal:
-	var game = get_parent()
-	if game.name == "Game":
-		game.stage_clear.emit()
-	
-	else:
-		print("win!")
 
 
 func handler_gates():

@@ -6,6 +6,3 @@
 [node name="Wall" instance=ExtResource("1_xpdg3")]
 script = ExtResource("2_2jecn")
 snake_can = "be_defeat"
-
-[node name="Sprite" parent="." index="0"]
-frame = 8

@@ -2,6 +2,7 @@ extends Node2D
 
 var _tail = preload("res://scene/snake/tail.tscn")
 var wag_tail = 0
+var is_animation_win = false
 
 func move(player_pos:Vector2, player_velocity):
 	var tail_block = get_child(-1)
@@ -13,8 +14,9 @@ func move(player_pos:Vector2, player_velocity):
 	tail_block.position = player_pos
 	tail_block.velocity = player_velocity
 	
-	tail_block.set_sprite(get_child(1).velocity)
-	tail_block.show()
+	if not is_animation_win:
+		tail_block.set_sprite(get_child(1).velocity)
+		tail_block.show()
 
 
 func add_tail(pos):
