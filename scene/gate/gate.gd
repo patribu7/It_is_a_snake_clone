@@ -9,4 +9,5 @@ func _ready():
 func open():
 	snake_can = "pass_through"
 	$Sprite.play("open")
-	#issue qui va l'avviso a schermo "the gate is open"
+	GameData.show_alert("THE GATE IS OPEN!")
+	

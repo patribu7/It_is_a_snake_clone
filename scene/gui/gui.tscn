@@ -25,7 +25,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 
-[node name="Alerts" type="Control" parent="HUD"]
+[node name="Alert" type="Label" parent="HUD"]
 layout_mode = 1
 anchors_preset = 7
 anchor_left = 0.5

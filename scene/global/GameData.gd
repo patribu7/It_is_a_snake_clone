@@ -9,7 +9,7 @@ var apple_score = 0:
 	set(value):
 		apple_score = value
 		print("apple score: ", apple_score)
-		if is_instance_valid(counter_score):
+		if is_instance_valid(counter_score): #issue la condizina va nella funzione
 			update_HUD_score(value)
 
 var current_level: int:
@@ -25,12 +25,13 @@ var description = {
 		
 
 @onready var counter_score = get_node("/root/Main/GUI/HUD/Score/Counter")
+@onready var alert_box = get_node("/root/Main/GUI/HUD/Alert")
 
 func _ready():
 	change_level.connect(_on_change_level)
 
 
-func _on_change_level():
+func _on_change_level(): #issue non serve il signal, basta chiamare la funzione?
 	#get description of that level
 	var file = FileAccess.open("res://scenarios/description/desc%s.txt" % current_level, FileAccess.READ)
 	var text = file.get_as_text()
@@ -53,18 +54,25 @@ func get_credits_text():
 	var content = file.get_as_text()
 	file.close()
 	return content
-	
-	
-func update_HUD_score(i:int):
-	counter_score.text = str(i)
-
-
-func set_record():
-	if apple_score > record_on_endless:
-		record_on_endless = apple_score
 
 
 func check_for_unlocked_levels(lv):
 	current_level = lv
 	if current_level > unlocked_levels:
 		unlocked_levels = current_level
+	
+	
+func set_record():
+	if apple_score > record_on_endless:
+		record_on_endless = apple_score
+
+
+func update_HUD_score(i:int):
+	counter_score.text = str(i)
+
+
+func show_alert(t: String):
+	if is_instance_valid(alert_box):
+		alert_box.text = t
+		await Global.wait(3)
+		alert_box.text = ""
