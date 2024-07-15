@@ -1,39 +1,32 @@
 extends Node
 
-signal change_level
-
 var record_on_endless = 0
 var unlocked_levels = 1
 
 var apple_score = 0:
 	set(value):
 		apple_score = value
+		update_HUD_score(value)
 		print("apple score: ", apple_score)
-		if is_instance_valid(counter_score): #issue la condizina va nella funzione
-			update_HUD_score(value)
 
 var current_level: int:
 	set(value):
 		current_level = value
-		change_level.emit()
+		load_desc_scene(value)
 
 var description = {
-	"header": "no text",
-	"body": "no text",
-	"goal": "no text"
+	"header": "text not find ç_ç",
+	"body": "text not find ç_ç",
+	"goal": "text not find ç_ç"
 }
-		
 
 @onready var counter_score = get_node("/root/Main/GUI/HUD/Score/Counter")
 @onready var alert_box = get_node("/root/Main/GUI/HUD/Alert")
 
-func _ready():
-	change_level.connect(_on_change_level)
 
-
-func _on_change_level(): #issue non serve il signal, basta chiamare la funzione?
+func load_desc_scene(lv):
 	#get description of that level
-	var file = FileAccess.open("res://scenarios/description/desc%s.txt" % current_level, FileAccess.READ)
+	var file = FileAccess.open("res://scenarios/description/desc%s.txt" % lv, FileAccess.READ)
 	var text = file.get_as_text()
 	
 	#get header
@@ -53,6 +46,7 @@ func get_credits_text():
 	var file = FileAccess.open("res://credits/credits.txt", FileAccess.READ)
 	var content = file.get_as_text()
 	file.close()
+	
 	return content
 
 
@@ -68,7 +62,8 @@ func set_record():
 
 
 func update_HUD_score(i:int):
-	counter_score.text = str(i)
+	if is_instance_valid(counter_score):
+		counter_score.text = str(i)
 
 
 func show_alert(t: String):
