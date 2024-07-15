@@ -3,7 +3,6 @@ extends Node2D
 var last_pos
 
 func move():
-	last_pos = $Player.position
 	$Tail_queue.move($Player.position, $Player.velocity)
 	$Player.move()
 
@@ -21,6 +20,7 @@ func take_position(pos):
 
 
 func _on_timer_timeout():
+	last_pos = $Player.position
 	if not $Player.get_collision() == "on_obstacle":
 		move()
 	

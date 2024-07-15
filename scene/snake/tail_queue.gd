@@ -16,7 +16,7 @@ func move(player_pos:Vector2, player_velocity):
 	tail_block.show() #se non è visibile nel caso sia stata aggiunta con stretch()
 
 
-func add_tail(pos):
+func add_tail(pos): #issue nel caso la mela appaia all'inizio questo nodo non è pronto e crasha
 	var num = get_child_count() + 1
 	var tail = _tail.instantiate()
 	tail.name += str(num)
