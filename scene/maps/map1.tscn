@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cthd5ga10t206"]
+[gd_scene load_steps=13 format=3 uid="uid://cthd5ga10t206"]
 
 [ext_resource type="Script" path="res://scene/maps/script/map1.gd" id="1_5u22n"]
 [ext_resource type="Texture2D" uid="uid://b7u7yi4fnf0et" path="res://assets/png/sprite/wall_tile_set.png" id="2_1d8ny"]
@@ -7,6 +7,7 @@
 [ext_resource type="PackedScene" uid="uid://doedtjatqxvg6" path="res://scene/snake/snake.tscn" id="4_xhvip"]
 [ext_resource type="PackedScene" uid="uid://bhxev8xcd4qb3" path="res://scene/goal/goal.tscn" id="5_m3f8l"]
 [ext_resource type="PackedScene" uid="uid://d2m11att7xtb0" path="res://scene/gate/gate.tscn" id="6_spmow"]
+[ext_resource type="PackedScene" uid="uid://0tk54xpq8c1s" path="res://scene/gui/hud.tscn" id="8_w61ed"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5nn7e"]
 texture = ExtResource("2_yhbt5")
@@ -123,3 +124,5 @@ position = Vector2(350, 350)
 
 [node name="Gate" parent="Gates" instance=ExtResource("6_spmow")]
 position = Vector2(350, 400)
+
+[node name="HUD" parent="." instance=ExtResource("8_w61ed")]

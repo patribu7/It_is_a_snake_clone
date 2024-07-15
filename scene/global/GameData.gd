@@ -20,9 +20,6 @@ var description = {
 	"goal": "text not find ç_ç"
 }
 
-@onready var counter_score = get_node("/root/Main/GUI/HUD/Score/Counter")
-@onready var alert_box = get_node("/root/Main/GUI/HUD/Alert")
-
 
 func load_desc_scene(lv):
 	#get description of that level
@@ -62,12 +59,31 @@ func set_record():
 
 
 func update_HUD_score(i:int):
+	var counter_score = get_node("/root/Main/Game/Map/HUD/Score/Counter")
 	if is_instance_valid(counter_score):
 		counter_score.text = str(i)
+	
+	elif is_instance_valid(get_node("/root/Map")): #se sono nel debug del livello
+		counter_score = get_node("/root/Map/HUD/Score/Counter")
+		counter_score.text = str(i)
+		
+	else:
+		print("can't find HUD")
 
 
 func show_alert(t: String):
+	var alert_box = get_node("/root/Main/Game/Map/HUD/Alert")
+	
 	if is_instance_valid(alert_box):
 		alert_box.text = t
 		await Global.wait(3)
 		alert_box.text = ""
+	
+	elif is_instance_valid(get_node("/root/Map")): #se sono nel debug del livello
+		alert_box = get_node("/root/Map/HUD/Alert")
+		alert_box.text = t
+		await Global.wait(3)
+		alert_box.text = ""
+	
+	else:
+		print("can't find Alert")

@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dt2o4335io3wc"]
+[gd_scene load_steps=16 format=3 uid="uid://dt2o4335io3wc"]
 
 [ext_resource type="Script" path="res://scene/maps/script/map3.gd" id="1_0u3jt"]
 [ext_resource type="Texture2D" uid="uid://itgu8afr1rfp" path="res://assets/png/sprite/background.png" id="2_03xxf"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://d2m11att7xtb0" path="res://scene/gate/gate.tscn" id="6_jfsxs"]
 [ext_resource type="PackedScene" uid="uid://cttxj65xn4xwq" path="res://scene/snake/tail.tscn" id="7_3uexw"]
 [ext_resource type="PackedScene" uid="uid://3hyoamlqamqj" path="res://scene/snake/player.tscn" id="8_uk5ug"]
+[ext_resource type="PackedScene" uid="uid://0tk54xpq8c1s" path="res://scene/gui/hud.tscn" id="11_h4knb"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0w8dy"]
 texture = ExtResource("2_03xxf")
@@ -243,6 +244,8 @@ position = Vector2(350, 350)
 
 [node name="Gate" parent="Gates" instance=ExtResource("6_jfsxs")]
 position = Vector2(350, 400)
+
+[node name="HUD" parent="." instance=ExtResource("11_h4knb")]
 
 [connection signal="property_list_changed" from="Snake/Tail_queue/Tail1" to="Snake/Tail_queue/Tail1" method="_on_property_list_changed"]
 [connection signal="property_list_changed" from="Snake/Tail_queue/Tail2" to="Snake/Tail_queue/Tail2" method="_on_property_list_changed"]

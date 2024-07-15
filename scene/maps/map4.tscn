@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://dxaxx0lu07xbi"]
+[gd_scene load_steps=15 format=3 uid="uid://dxaxx0lu07xbi"]
 
 [ext_resource type="Script" path="res://scene/maps/script/map4.gd" id="1_qt48h"]
 [ext_resource type="Texture2D" uid="uid://b7u7yi4fnf0et" path="res://assets/png/sprite/wall_tile_set.png" id="2_tp8a2"]
@@ -9,6 +9,7 @@
 [ext_resource type="Script" path="res://scene/snake/tail_queue.gd" id="6_0sf8h"]
 [ext_resource type="PackedScene" uid="uid://cttxj65xn4xwq" path="res://scene/snake/tail.tscn" id="7_ebfji"]
 [ext_resource type="PackedScene" uid="uid://3hyoamlqamqj" path="res://scene/snake/player.tscn" id="8_hdcr8"]
+[ext_resource type="PackedScene" uid="uid://0tk54xpq8c1s" path="res://scene/gui/hud.tscn" id="10_38ev2"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_0wsyh"]
 texture = ExtResource("2_wpikn")
@@ -280,6 +281,8 @@ autostart = true
 
 [node name="Goal" parent="." instance=ExtResource("5_4d0jn")]
 position = Vector2(0, 700)
+
+[node name="HUD" parent="." instance=ExtResource("10_38ev2")]
 
 [connection signal="property_list_changed" from="Snake/Tail_queue/Tail1" to="Snake/Tail_queue/Tail1" method="_on_property_list_changed"]
 [connection signal="property_list_changed" from="Snake/Tail_queue/Tail2" to="Snake/Tail_queue/Tail2" method="_on_property_list_changed"]

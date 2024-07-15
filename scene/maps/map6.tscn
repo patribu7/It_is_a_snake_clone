@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=3 uid="uid://dsts51aaqnnqr"]
+[gd_scene load_steps=14 format=3 uid="uid://dsts51aaqnnqr"]
 
 [ext_resource type="Script" path="res://scene/maps/script/map6.gd" id="1_q4rdx"]
 [ext_resource type="Texture2D" uid="uid://itgu8afr1rfp" path="res://assets/png/sprite/background.png" id="2_afdh1"]
@@ -8,6 +8,7 @@
 [ext_resource type="Script" path="res://scene/snake/tail_queue.gd" id="6_irgio"]
 [ext_resource type="PackedScene" uid="uid://cttxj65xn4xwq" path="res://scene/snake/tail.tscn" id="7_b33iy"]
 [ext_resource type="PackedScene" uid="uid://3hyoamlqamqj" path="res://scene/snake/player.tscn" id="8_ggiv7"]
+[ext_resource type="PackedScene" uid="uid://0tk54xpq8c1s" path="res://scene/gui/hud.tscn" id="9_at4ec"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jy3gc"]
 texture = ExtResource("2_afdh1")
@@ -159,6 +160,8 @@ position = Vector2(200, 0)
 [node name="Timer" type="Timer" parent="."]
 wait_time = 0.365
 autostart = true
+
+[node name="HUD" parent="." instance=ExtResource("9_at4ec")]
 
 [connection signal="property_list_changed" from="Snake2/Tail_queue/Tail1" to="Snake2/Tail_queue/Tail1" method="_on_property_list_changed"]
 [connection signal="property_list_changed" from="Snake2/Tail_queue/Tail2" to="Snake2/Tail_queue/Tail2" method="_on_property_list_changed"]

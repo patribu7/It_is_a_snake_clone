@@ -1,8 +1,9 @@
-[gd_scene load_steps=6 format=3 uid="uid://cfcrhossc7bqg"]
+[gd_scene load_steps=7 format=3 uid="uid://cfcrhossc7bqg"]
 
 [ext_resource type="Script" path="res://scene/maps/script/map0.gd" id="1_bva7q"]
 [ext_resource type="PackedScene" uid="uid://doedtjatqxvg6" path="res://scene/snake/snake.tscn" id="2_mrcyp"]
 [ext_resource type="Texture2D" uid="uid://itgu8afr1rfp" path="res://assets/png/sprite/background.png" id="2_r88gq"]
+[ext_resource type="PackedScene" uid="uid://0tk54xpq8c1s" path="res://scene/gui/hud.tscn" id="4_dgsqv"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_jnpcb"]
 texture = ExtResource("2_r88gq")
@@ -75,3 +76,5 @@ layer_0/tile_data = PackedInt32Array(524301, 131073, 0, 524299, 1, 0, 524300, 65
 
 [node name="Snake" parent="." instance=ExtResource("2_mrcyp")]
 position = Vector2(350, 550)
+
+[node name="HUD" parent="." instance=ExtResource("4_dgsqv")]

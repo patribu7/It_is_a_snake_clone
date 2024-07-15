@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://c2hiha3ak80jr"]
+[gd_scene load_steps=17 format=3 uid="uid://c2hiha3ak80jr"]
 
 [ext_resource type="Script" path="res://scene/maps/script/map5.gd" id="1_6kxoc"]
 [ext_resource type="Texture2D" uid="uid://b7u7yi4fnf0et" path="res://assets/png/sprite/wall_tile_set.png" id="2_gt6jv"]
@@ -11,6 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cd0ckluym4lmc" path="res://scene/spider/spider.tscn" id="7_3lpsb"]
 [ext_resource type="PackedScene" uid="uid://3hyoamlqamqj" path="res://scene/snake/player.tscn" id="7_7ls3b"]
 [ext_resource type="Script" path="res://scene/apple/apple_still.gd" id="7_x8h70"]
+[ext_resource type="PackedScene" uid="uid://0tk54xpq8c1s" path="res://scene/gui/hud.tscn" id="12_vs7mw"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_4tfsx"]
 texture = ExtResource("2_hi6yo")
@@ -303,6 +304,8 @@ z_index = -1
 [node name="Timer" type="Timer" parent="Snake"]
 wait_time = 0.365
 autostart = true
+
+[node name="HUD" parent="." instance=ExtResource("12_vs7mw")]
 
 [connection signal="property_list_changed" from="Snake/Tail_queue/Tail1" to="Snake/Tail_queue/Tail1" method="_on_property_list_changed"]
 [connection signal="property_list_changed" from="Snake/Tail_queue/Tail2" to="Snake/Tail_queue/Tail2" method="_on_property_list_changed"]
