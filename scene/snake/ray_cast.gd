@@ -5,7 +5,6 @@ var velocity
 
 func _ready():
 	velocity = get_meta("Velocity")
-	print(velocity)
 
 
 func get_parent_velocity():

@@ -74,7 +74,7 @@ func animation_level_clear():
 		wag_tail = (wag_tail + 1) % 2
 		i += 1
 		
-		await Global.wait(0.3)
+		await Global.wait(0.05)
 
 
 func handler_gates():

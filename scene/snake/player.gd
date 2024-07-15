@@ -64,17 +64,39 @@ func pacman_effect():
 	var vector_min = Global.convert_grid_coords_in_px(Vector2.ONE)
 	var vector_max = Global.convert_grid_coords_in_px(Global.grid_size)
 	
-	if global_position.x < vector_min.x:
-		global_position.x = vector_max.x
+	if global_position.x <= vector_min.x: # left
+		if global_position.x < vector_min.x:
+			global_position.x = vector_max.x
+		elif global_position.x == vector_min.x:
+			$Rays/RayCastLeft.position.x = vector_max.x - global_position.x + 75 #issue numero magico -->
+			# --> vector_max è 700 nella griglia l'origine anchor è in alto a sinistra perciò 75 == 25 + cell_size
+			
+	else:
+		$Rays/RayCastLeft.position.x = 25
 		
-	if global_position.y < vector_min.y:
-		global_position.y = vector_max.y
+	if global_position.y <= vector_min.y: # up
+		if global_position.y < vector_min.y:
+			global_position.y = vector_max.y
+		elif global_position.y == vector_min.y:
+			$Rays/RayCastUp.position.y = vector_max.y - global_position.y + 75
+	else:
+		$Rays/RayCastUp.position.y = 25
 		
-	if global_position.x > vector_max.x:
-		global_position.x = vector_min.x
+	if global_position.x >= vector_max.x: # right
+		if global_position.x > vector_max.x:
+			global_position.x = vector_min.x
+		elif global_position.x == vector_max.x:
+			$Rays/RayCastRight.position.x = vector_min.x - global_position.x - 25
+	else:
+		$Rays/RayCastRight.position.x = 25
 		
-	if global_position.y > vector_max.y:
-		global_position.y = vector_min.y
+	if global_position.y >= vector_max.y: # down
+		if global_position.y > vector_max.y:
+			global_position.y = vector_min.y
+		elif global_position.y == vector_max.y:
+			$Rays/RayCastDown.position.y = vector_min.y - global_position.y - 25
+	else:
+		$Rays/RayCastLeft.position.y = 25
 
 
 func get_collision():
