@@ -16,6 +16,7 @@ var state_game = "main_menu":
 		$Game.get_tree().paused = states[state_game]
 
 func _ready():
+	GameData.load_data()
 	#connessioni
 	$Game.defeat.connect(_on_defeat)
 	$Game.stage_clear.connect(_on_stage_clear)
@@ -58,6 +59,7 @@ func _on_request(type:String, lv:int):
 func _on_stage_clear():
 	state_game = "stage_clear"
 	$GUI.toggle_menu(state_game)
+	GameData.unlocked_next_level_on_clear()
 
 
 func go_to_next_lv():
@@ -66,7 +68,8 @@ func go_to_next_lv():
 
 func start_game_at_level(lv):
 	$Game.level = lv
-	GameData.check_for_unlocked_levels(lv)
+	#GameData.check_for_unlocked_levels(lv) #issue forse questo non serve perché basta salvare ogni volta che sbloccon un livello ovvero ogni volta che è settato unlock_levels
+	GameData.current_level = lv
 	
 	var can_go = $Game.set_new_game()
 

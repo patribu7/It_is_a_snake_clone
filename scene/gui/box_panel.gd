@@ -52,7 +52,14 @@ func add_context(context:String):
 			i += 1
 			var btn = _btn.instantiate()
 			btn.text = str(i)
-			box.add_child(btn)		
+			
+			if i <= GameData.unlocked_levels:
+				btn.disabled = false
+			else:
+				btn.disabled = true
+			print("unlocked ", GameData.unlocked_levels, " num i ", i)
+			
+			box.add_child(btn)
 	
 	$SubMenu/Container.add_child(box)
 	
