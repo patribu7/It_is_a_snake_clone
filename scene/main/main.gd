@@ -56,12 +56,6 @@ func _on_request(type:String, lv:int):
 		start_game_at_level(lv)
 
 
-func _on_stage_clear():
-	state_game = "stage_clear"
-	$GUI.toggle_menu(state_game)
-	GameData.unlocked_next_level_on_clear()
-
-
 func go_to_next_lv():
 	start_game_at_level($Game.level + 1)
 
@@ -83,6 +77,12 @@ func _on_start():
 	$GUI.hide_menu()
 
 
+func _on_stage_clear():
+	state_game = "stage_clear"
+	$GUI.toggle_menu(state_game)
+	GameData.unlocked_next_level_on_clear()
+	
+	
 func _on_defeat():
 	state_game = "game_over"
 	$GUI.toggle_menu(state_game)

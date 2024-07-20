@@ -1,6 +1,6 @@
 extends "res://scene/maps/script/game_map.gd"
 
-var is_win = false
+var already_signal_emit = false #assicurarsi che il segnare sia inviato una volta sola
 
 func _ready():
 	#apple score reset
@@ -29,41 +29,36 @@ func handler_time():
 		
 		
 func animation_level_clear():
-	var i = 1
-	$Snake2/Timer.stop()
+	$Timer.stop()
+	
 	$Snake2/Player.hide()
-	var t = $Snake2/Tail_queue.get_child_count()
-
-	var wag_tail = 0
-	while i < t:
-		var tail_block = $Snake2/Tail_queue.get_child(-1)
-		tail_block.free()
-		$Snake2/Tail_queue.get_child(-1).set_sprite_last_tail(wag_tail)
-		wag_tail = (wag_tail + 1) % 2
-		i += 1
-		
-		await Global.wait(0.3)
+	$Snake2/Tail_queue.get_child(-1).free()
+	$Snake2/Tail_queue.get_child(-1).set_sprite_last_tail(1)
 
 
 func _on_snake_be_defeat():
 	var game = get_parent()
 	
-	if not is_win:
+	if not already_signal_emit:
 		
 		if game.name == "Game":
 			game.emit_signal("defeat")
+			already_signal_emit = true
 		
 		else:
 			print("defeat!")
-
-
+			
+	
+	
 func _on_snake_win():
-	is_win = true
 	await animation_level_clear()
-
 	var game = get_parent()
+
 	if game.name == "Game":
 		game.stage_clear.emit()
+		already_signal_emit = true
 		
 	else:
 		print("win!")
+	 
+	

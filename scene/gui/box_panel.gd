@@ -57,7 +57,6 @@ func add_context(context:String):
 				btn.disabled = false
 			else:
 				btn.disabled = true
-			print("unlocked ", GameData.unlocked_levels, " num i ", i)
 			
 			box.add_child(btn)
 	

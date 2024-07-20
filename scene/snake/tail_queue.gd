@@ -8,7 +8,9 @@ func move(player_pos:Vector2, player_velocity):
 	move_child(tail_block, 0)
 	tail_block.position = player_pos
 	tail_block.velocity = player_velocity
-	tail_block.set_sprite(get_child(1).velocity)
+	
+	if get_child(1) != null: #questo controllo è solo per map6
+		tail_block.set_sprite(get_child(1).velocity)
 	
 	get_child(-1).set_sprite_last_tail(wag_tail)
 	wag_tail = (wag_tail + 1) % 2
@@ -16,7 +18,7 @@ func move(player_pos:Vector2, player_velocity):
 	tail_block.show() #se non è visibile nel caso sia stata aggiunta con stretch()
 
 
-func add_tail(pos): #issue nel caso la mela appaia all'inizio questo nodo non è pronto e crasha
+func add_tail(pos):
 	var num = get_child_count() + 1
 	var tail = _tail.instantiate()
 	tail.name += str(num)

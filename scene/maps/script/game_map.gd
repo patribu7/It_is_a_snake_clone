@@ -51,7 +51,6 @@ func _on_snake_win():
 	var game = get_parent()
 	if game.name == "Game":
 		game.stage_clear.emit()
-		print("win!")
 		
 	else:
 		print("win!")
@@ -92,7 +91,6 @@ func handler_gates():
 func handler_snake(type):
 	if type == "apple":
 		$Snake.stretch()
-		print($Snake/Tail_queue.get_child_count())
 	
 	elif type == "spider":
 		$Snake.leave_tail()
