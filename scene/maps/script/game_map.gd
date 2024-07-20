@@ -8,7 +8,6 @@ var _apple = preload("res://scene/apple/apple.tscn")
 
 @export var apples_to_unloack_goal = 1
 
-var count_tail_on_start
 
 func ready_game_map():
 	#apple score reset
@@ -25,8 +24,6 @@ func ready_game_map():
 		snake.get_node("Player").snake_win.connect(_on_snake_win)
 		
 		$Snake/Timer.set_wait_time(start_timeout)
-		
-		count_tail_on_start = $Snake/Tail_queue.get_child_count()
 
 
 func _on_snake_eat(obj):
@@ -64,7 +61,7 @@ func animation_level_clear():
 	var i = 1
 	$Snake/Timer.stop()
 	$Snake/Player.hide()
-	var t = apples_to_unloack_goal + count_tail_on_start
+	var t = $Snake/Tail_queue.get_child_count() - (GameData.apple_score - apples_to_unloack_goal)
 
 	var wag_tail = 0
 	while i < t:
@@ -95,6 +92,7 @@ func handler_gates():
 func handler_snake(type):
 	if type == "apple":
 		$Snake.stretch()
+		print($Snake/Tail_queue.get_child_count())
 	
 	elif type == "spider":
 		$Snake.leave_tail()
