@@ -119,6 +119,7 @@ func get_collision():
 			
 			elif area.snake_can == "win":
 				snake_win.emit()
+			
 
 	
 	

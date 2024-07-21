@@ -16,7 +16,7 @@ var description = {
 	"goal": "text not found ç_ç"
 }
 
-var SAVE_PATH = "res://it_is_a_snake_clone.save" #issue change path to user for distr
+var SAVE_PATH = "res://_debug/it_is_a_snake_clone.save" #issue change path to user for distr
 
 var apple_score = 0:
 	set(value):
