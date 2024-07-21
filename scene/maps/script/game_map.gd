@@ -2,7 +2,7 @@ extends Node
 
 var _apple = preload("res://scene/apple/apple.tscn")
 
-@export var start_timeout = 1.0
+@export var start_timeout = 1
 @export var decr_timeout = 0.1
 @export var timeout_min = 0.1
 

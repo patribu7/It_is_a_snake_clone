@@ -78,13 +78,3 @@ grow_horizontal = 2
 grow_vertical = 2
 theme_override_font_sizes/font_size = 30
 text = "🍎"
-
-[node name="Game_over" type="Label" parent="."]
-visible = false
-layout_mode = 0
-offset_left = 230.0
-offset_top = 193.0
-offset_right = 494.0
-offset_bottom = 375.0
-theme_override_font_sizes/font_size = 50
-text = "Game over"
