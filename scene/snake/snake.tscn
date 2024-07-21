@@ -30,8 +30,6 @@ z_index = -1
 wait_time = 0.365
 autostart = true
 
-[connection signal="property_list_changed" from="Tail_queue/Tail1" to="Tail_queue/Tail1" method="_on_property_list_changed"]
-[connection signal="property_list_changed" from="Tail_queue/Tail2" to="Tail_queue/Tail2" method="_on_property_list_changed"]
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 
 [editable path="Tail_queue/Tail1"]

@@ -16,7 +16,6 @@ func convert_grid_coords_in_px(pos_grid: Vector2):
 
 
 func get_valid_rand_coords():
-	
 	var rand_x = randi_range(1, grid_size.x)
 	var rand_y = randi_range(1, grid_size.y)
 	var coords = convert_grid_coords_in_px(Vector2i(rand_x, rand_y))
@@ -34,7 +33,7 @@ func get_valid_rand_coords():
 func get_occupied_cells(node):
 	var pos_occupied = []
 	for obj in node.get_tree().get_nodes_in_group("solid_obj"):
-		pos_occupied.append(obj.position)
+		pos_occupied.append(obj.global_position)
 	
 	return pos_occupied
 

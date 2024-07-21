@@ -116,7 +116,7 @@ func get_collision():
 				snake_be_defeat.emit()
 				set_sprite_crash()
 				return "on_obstacle"
-			
+
 			elif area.snake_can == "win":
 				snake_win.emit()
 			

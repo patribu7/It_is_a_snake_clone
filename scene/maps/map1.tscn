@@ -93,6 +93,7 @@ sources/0 = SubResource("TileSetAtlasSource_0pw36")
 [node name="Map" type="Node"]
 process_mode = 1
 script = ExtResource("1_5u22n")
+start_timeout = 1.0
 decr_timeout = 0.2
 apples_to_unloack_goal = 5
 

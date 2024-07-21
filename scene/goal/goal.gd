@@ -10,3 +10,8 @@ func _on_area_overlying(area):
 		area.collision_layer = 0
 	
 
+
+
+func _on_area_exited(area):
+	area.collision_mask = 1
+	area.collision_layer = 1

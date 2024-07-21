@@ -15,7 +15,7 @@ func _ready():
 		$Snake/Timer.set_wait_time(start_timeout)
  
 
-	velocity_list = [
+	var velocity_list = [
 		Vector2.UP,
 		Vector2.LEFT,
 		Vector2.LEFT,
@@ -38,5 +38,5 @@ func _ready():
 		Vector2.LEFT,
 		Vector2.DOWN
 	]	
-	set_velocity_for_tail_in_scene()
+	set_velocity_for_tail_in_scene(velocity_list)
 

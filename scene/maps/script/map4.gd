@@ -4,7 +4,7 @@ extends "res://scene/maps/script/game_map.gd"
 func _ready():
 	ready_game_map() #richiamo una funzione nello script originale come se fosse _ready
 
-	velocity_list = [
+	var velocity_list = [
 		Vector2.UP,
 		Vector2.UP,
 		Vector2.UP,
@@ -28,4 +28,4 @@ func _ready():
 		Vector2.DOWN
 		]
 		
-	set_velocity_for_tail_in_scene()
+	set_velocity_for_tail_in_scene(velocity_list)
