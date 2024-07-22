@@ -27,6 +27,8 @@ animations = [{
 }]
 
 [node name="Goal" instance=ExtResource("1_m2nrv")]
+collision_layer = 3
+collision_mask = 3
 script = ExtResource("2_w5kyu")
 snake_can = "win"
 
