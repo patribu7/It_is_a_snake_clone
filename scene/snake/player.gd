@@ -25,7 +25,7 @@ func _ready():
 func _input(event):
 	for dir in inputs.keys():
 		#sanke can't turn back!
-		if event.is_action_pressed(dir) and (inputs[dir] + current_velocity) != Vector2.ZERO:
+		if event.is_action_pressed(dir) and not event.is_shift_pressed() and (inputs[dir] + current_velocity) != Vector2.ZERO:
 			velocity = inputs[dir]
 
 
@@ -40,6 +40,7 @@ func move():
 func set_ray_velocity():
 	for ray in $Rays.get_children():
 		ray.get_parent_velocity()
+
 
 func set_sprite_crash():
 	if current_velocity == velocity: #se il crash è frontale
