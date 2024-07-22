@@ -36,5 +36,3 @@ type_obj = "apple"
 sprite_frames = SubResource("SpriteFrames_emvxm")
 autoplay = "default"
 frame_progress = 0.299197
-
-[connection signal="area_entered" from="." to="." method="_on_area_entered"]

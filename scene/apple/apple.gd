@@ -7,8 +7,3 @@ func _init():
 
 func handler_after_eating():
 	take_position(Global.get_valid_rand_coords())
-
-
-func _on_area_entered(area):
-	if area.type_obj != "player":
-		take_position(Global.get_valid_rand_coords())
