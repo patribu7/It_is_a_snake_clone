@@ -1,6 +1,5 @@
 extends "res://scene/maps/script/game_map.gd"
 
-var exited_from_hole = false
 
 func _ready():
 	#apple score reset
@@ -15,11 +14,3 @@ func _ready():
 		
 		$Snake/Timer.set_wait_time(start_timeout)
 
-
-func _on_timeout():
-	if exited_from_hole:
-		$Snake.stretch()
-
-
-func _on_hole_entered(_area):
-	exited_from_hole = true

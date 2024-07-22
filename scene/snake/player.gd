@@ -120,8 +120,8 @@ func get_collision():
 
 			elif area.snake_can == "win":
 				snake_win.emit()
-			
 
-	
-	
-	
+
+func _on_area_entered(area):
+	if area.snake_can == "be_defeat":
+		snake_be_defeat.emit()

@@ -121,7 +121,7 @@ position = Vector2(650, 650)
 snake_can = "be_teleported"
 
 [node name="Teleport_pos" parent="Hole" index="2"]
-position = Vector2(100, 650)
+position = Vector2(100, 700)
 
 [node name="HUD" parent="." instance=ExtResource("8_xh77l")]
 

@@ -36,5 +36,7 @@ sprite_frames = SubResource("SpriteFrames_m8cfg")
 position = Vector2(50, 0)
 
 [node name="Sprite" type="AnimatedSprite2D" parent="Teleport_pos" index="0"]
-position = Vector2(25, 75)
+position = Vector2(25, 25)
 sprite_frames = SubResource("SpriteFrames_m8cfg")
+
+[connection signal="area_entered" from="." to="." method="_on_area_entered"]
