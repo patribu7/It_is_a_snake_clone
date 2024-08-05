@@ -2,13 +2,13 @@
 ---
 This is the story of this snake.
 He came from the hill to find his loss.
-He is a tiny thing and the world is big.
-He wont to grow up but he can't see.
+He's a tiny thing and the world is big.
+He wants to grow up but he can't see.
 
-He's blind snake.
-Don't you think he should be more careful then?
+He's a blind snake.
+You do think he should be more careful, don't you?
 
-I think 5 will be enough to open the gate!
+5 will be enough to open the gate!
 ---
 eat 5 apples
 ---

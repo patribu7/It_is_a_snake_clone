@@ -1,10 +1,9 @@
-7 - I've got it!
+7 - Got it!
 ---
 That's what apples are for!
 You're trying to force the gates of Eden!
 
-For this you will need the apples you find in the tunnel...
+To achieve this you will need the apples you find in the tunnel...
 ---
-Goes through!
+Go through it!
 ---
-	
