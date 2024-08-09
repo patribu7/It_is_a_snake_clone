@@ -7,7 +7,7 @@ var inputs = {
 	"move_down": Vector2.DOWN,
 }
 
-var invalid_pos = [
+var invalid_pos = [ #issue questo andrebbe nelle istruzioni della mappa! Non nell'oggetto!
 	Vector2(0, 0),
 	Vector2(0, 50),
 	Vector2(0, 100),

@@ -46,7 +46,7 @@ func update_timer():
 	return timeout * 0.1
 
 func pacman_effect():
-	var vector_min = Global.convert_grid_coords_in_px(Vector2.ONE)
+	var vector_min = Vector2.ZERO
 	var vector_max = Global.convert_grid_coords_in_px(Global.grid_size)
 
 	if has_node("Apple"):

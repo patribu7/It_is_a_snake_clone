@@ -9,7 +9,7 @@ func _ready():
 func place(walls):
 	for wall_place in walls:
 		var wall = Wall.instantiate()
-		wall.global_position = Global.convert_grid_coords_in_px(wall_place + Vector2i.ONE)
+		wall.global_position = Global.convert_grid_coords_in_px(wall_place)
 		self.call("add_child", wall)
 		
 		

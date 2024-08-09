@@ -4,6 +4,10 @@ signal snake_eat
 signal snake_be_defeat
 signal snake_win
 
+#values for pacman-effect
+var vector_min = Vector2.ZERO
+var vector_max = Global.convert_grid_coords_in_px(Global.grid_size)
+
 var inputs = {
 	"move_right": Vector2.RIGHT,
 	"move_left": Vector2.LEFT,
@@ -62,9 +66,6 @@ func set_sprite_eat_apple():
 
 	
 func pacman_effect():
-	var vector_min = Global.convert_grid_coords_in_px(Vector2.ONE)
-	var vector_max = Global.convert_grid_coords_in_px(Global.grid_size)
-	
 	# left
 	if global_position.x < vector_min.x:
 		global_position.x = vector_max.x

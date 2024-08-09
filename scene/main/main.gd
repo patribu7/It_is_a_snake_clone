@@ -23,8 +23,8 @@ func _ready():
 	$GUI/Menu.request.connect(_on_request)
 	
 	#dimensioni dello schermo
-	var screen_size = get_tree().root.get_window().size
-	Global.grid_size = screen_size / Global.tile_size
+	#var screen_size = get_tree().root.get_window().size    issue posso togliere?
+	#Global.grid_size = screen_size / Global.tile_size  issue posso togliere?
 	
 	#paused the game by default
 	$Game.get_tree().paused = true
