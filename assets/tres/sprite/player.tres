@@ -1,0 +1,75 @@
+[gd_resource type="SpriteFrames" load_steps=9 format=3 uid="uid://dj0kfj7ppwise"]
+
+[ext_resource type="Texture2D" uid="uid://bp4p4w2y0g1kh" path="res://assets/png/sprite/snake.png" id="1_3hq8a"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fjoeq"]
+atlas = ExtResource("1_3hq8a")
+region = Rect2(100, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_vlom8"]
+atlas = ExtResource("1_3hq8a")
+region = Rect2(150, 50, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ykdjq"]
+atlas = ExtResource("1_3hq8a")
+region = Rect2(0, 100, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fyts4"]
+atlas = ExtResource("1_3hq8a")
+region = Rect2(100, 100, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_kt64p"]
+atlas = ExtResource("1_3hq8a")
+region = Rect2(150, 100, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_8esef"]
+atlas = ExtResource("1_3hq8a")
+region = Rect2(150, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3l7bd"]
+atlas = ExtResource("1_3hq8a")
+region = Rect2(200, 0, 50, 50)
+
+[resource]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fjoeq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vlom8")
+}],
+"loop": true,
+"name": &"default",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ykdjq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fyts4")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_kt64p")
+}],
+"loop": false,
+"name": &"eat",
+"speed": 3.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_8esef")
+}],
+"loop": false,
+"name": &"frontal_crash",
+"speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3l7bd")
+}],
+"loop": true,
+"name": &"side_crash",
+"speed": 5.0
+}]
