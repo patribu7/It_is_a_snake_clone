@@ -5,4 +5,3 @@ Eat 100 apples! Will you find them?
 ---
 Eat 100 apples
 ---
-	

@@ -5,4 +5,5 @@ The endless mode is endless.
 It's a snake clone!
 You already know how it works. Don't you?
 ---
-Survive as long as you can.
+Survive as long as you can
+---
