@@ -7,17 +7,7 @@ var inputs = {
 	"move_down": Vector2.DOWN,
 }
 
-var invalid_pos = [ #issue questo andrebbe nelle istruzioni della mappa! Non nell'oggetto!
-	Vector2(0, 0),
-	Vector2(0, 50),
-	Vector2(0, 100),
-	Vector2(50, 0),
-	Vector2(50, 50),
-	Vector2(50, 100),
-	Vector2(100, 0),
-	Vector2(100, 50),
-	Vector2(100, 100)
-]
+var invalid_pos = []
 
 func _on_area_entered(area):
 	if area.name == "Player":
