@@ -29,7 +29,7 @@ func _input(event):
 	
 	for dir in inputs.keys():
 		
-		if event.is_action_pressed(dir) and event.is_shift_pressed():
+		if event.is_action_pressed(dir) and Input.is_action_pressed("action_for_shift"):
 			
 			for i_pos in invalid_pos:
 				

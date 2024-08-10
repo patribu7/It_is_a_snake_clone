@@ -24,5 +24,5 @@ func _on_area_exited(area):
 
 func _input(event):
 	for dir in inputs.keys():
-		if event.is_action_pressed(dir) and event.is_shift_pressed():
+		if event.is_action_pressed(dir) and Input.is_action_pressed("action_for_shift"):
 			position += inputs[dir] * 50
