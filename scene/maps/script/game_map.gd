@@ -60,7 +60,7 @@ func animation_level_clear():
 	var i = 1
 	$Snake/Timer.stop()
 	$Snake/Player.hide()
-	var t = $Snake/Tail_queue.get_child_count() - (GameData.apple_score - apples_to_unloack_goal)
+	var t = $Snake/Tail_queue.get_child_count() - (GameData.apple_score - apples_to_unloack_goal) #issue sarebbe meglio metterlo come property cosi' e' piu' facile modificarlo nelle children anziche' sistituire l'intera funzione ogni volta
 
 	var wag_tail = 0
 	while i < t:

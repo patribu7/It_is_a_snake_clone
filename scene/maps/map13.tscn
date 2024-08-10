@@ -1,4 +1,4 @@
-[gd_scene load_steps=39 format=3 uid="uid://cg2v36m81amth"]
+[gd_scene load_steps=63 format=3 uid="uid://cg2v36m81amth"]
 
 [ext_resource type="Script" path="res://scene/maps/script/map13.gd" id="1_17a0i"]
 [ext_resource type="Texture2D" uid="uid://itgu8afr1rfp" path="res://assets/png/sprite/background.png" id="2_g0cv4"]
@@ -20,9 +20,30 @@
 [ext_resource type="Script" path="res://scene/spider/spider_still.gd" id="14_hhem8"]
 [ext_resource type="Texture2D" uid="uid://d1aqbvkmvulxa" path="res://assets/png/sprite/spider.png" id="15_c3ssb"]
 [ext_resource type="PackedScene" uid="uid://d2m11att7xtb0" path="res://scene/gate/gate.tscn" id="19_ry0cc"]
-[ext_resource type="Script" path="res://scene/hole/hole.gd" id="21_00vy4"]
-[ext_resource type="Texture2D" uid="uid://bra2cnxnhschn" path="res://assets/png/sprite/hole.png" id="22_6rn8i"]
+[ext_resource type="Texture2D" uid="uid://cvr4wo6rqh234" path="res://assets/animations/old_style/frame0000.png" id="22_ob1l3"]
 [ext_resource type="PackedScene" uid="uid://cd0ckluym4lmc" path="res://scene/spider/spider.tscn" id="23_71487"]
+[ext_resource type="Texture2D" uid="uid://8whxhwygnj1f" path="res://assets/animations/old_style/frame0001.png" id="23_tstiy"]
+[ext_resource type="Texture2D" uid="uid://ss7nxre71e0s" path="res://assets/animations/old_style/frame0002.png" id="24_ncref"]
+[ext_resource type="Texture2D" uid="uid://yv3ic0g5rvs3" path="res://assets/animations/old_style/frame0003.png" id="25_w3eim"]
+[ext_resource type="Texture2D" uid="uid://dikuf7hl82hp8" path="res://assets/animations/old_style/frame0004.png" id="26_rll2a"]
+[ext_resource type="Texture2D" uid="uid://cs4k7sr14625n" path="res://assets/animations/old_style/frame0005.png" id="27_gjf23"]
+[ext_resource type="Texture2D" uid="uid://h07tpynu6dah" path="res://assets/animations/old_style/frame0006.png" id="28_hfhhy"]
+[ext_resource type="Texture2D" uid="uid://cyqir48786s0e" path="res://assets/animations/old_style/frame0007.png" id="29_sbgrv"]
+[ext_resource type="Texture2D" uid="uid://b0sc3u863rjry" path="res://assets/animations/old_style/frame0008.png" id="30_nkwmb"]
+[ext_resource type="Texture2D" uid="uid://blc1qtxhdc0pj" path="res://assets/animations/old_style/frame0009.png" id="31_jym6r"]
+[ext_resource type="Texture2D" uid="uid://bqkiluyap1f0e" path="res://assets/animations/old_style/frame0010.png" id="32_nwqsi"]
+[ext_resource type="Texture2D" uid="uid://bvbvg4i63gt1d" path="res://assets/animations/old_style/frame0011.png" id="33_g3wbt"]
+[ext_resource type="Texture2D" uid="uid://cf6sn2gilx82a" path="res://assets/animations/old_style/frame0012.png" id="34_8ejh1"]
+[ext_resource type="Texture2D" uid="uid://bognwg8gnfi11" path="res://assets/animations/old_style/frame0013.png" id="35_80upu"]
+[ext_resource type="Texture2D" uid="uid://vyv7b5kj56yy" path="res://assets/animations/old_style/frame0014.png" id="36_bt4us"]
+[ext_resource type="Texture2D" uid="uid://bdfbck4fxls5j" path="res://assets/animations/old_style/frame0015.png" id="37_ykebg"]
+[ext_resource type="Texture2D" uid="uid://07ng0csvkbu1" path="res://assets/animations/old_style/frame0016.png" id="38_sypy7"]
+[ext_resource type="Texture2D" uid="uid://bemoseg382kos" path="res://assets/animations/old_style/frame0017.png" id="39_gfdi0"]
+[ext_resource type="Texture2D" uid="uid://beoar6v1emjyn" path="res://assets/animations/old_style/frame0018.png" id="40_2ut0e"]
+[ext_resource type="Texture2D" uid="uid://dnc7vywuyllg6" path="res://assets/animations/old_style/frame0020.png" id="42_vie2l"]
+[ext_resource type="SpriteFrames" uid="uid://dj0kfj7ppwise" path="res://assets/tres/sprite/player.tres" id="42_xhe0h"]
+[ext_resource type="SpriteFrames" uid="uid://qkq4tcigbh5a" path="res://assets/tres/sprite/tail.tres" id="43_35t60"]
+[ext_resource type="Texture2D" uid="uid://uemw46yq12jg" path="res://assets/png/sprite/apple.png" id="44_3a052"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_5nn7e"]
 texture = ExtResource("2_g0cv4")
@@ -165,30 +186,233 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_ueil6"]
 size = Vector2(42, 42)
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_p8c1y"]
-atlas = ExtResource("22_6rn8i")
-region = Rect2(0, 0, 50, 50)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_u5bgi"]
-atlas = ExtResource("22_6rn8i")
-region = Rect2(50, 0, 50, 50)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_m8cfg"]
+[sub_resource type="SpriteFrames" id="SpriteFrames_fu203"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_p8c1y")
+"texture": null
 }, {
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_u5bgi")
+"texture": ExtResource("22_ob1l3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_tstiy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_ncref")
+}, {
+"duration": 1.0,
+"texture": ExtResource("25_w3eim")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_rll2a")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_gjf23")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_hfhhy")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_sbgrv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("30_nkwmb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("31_jym6r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("32_nwqsi")
+}, {
+"duration": 1.0,
+"texture": ExtResource("33_g3wbt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("34_8ejh1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("35_80upu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("36_bt4us")
+}, {
+"duration": 1.0,
+"texture": ExtResource("37_ykebg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("38_sypy7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("39_gfdi0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("40_2ut0e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("42_vie2l")
+}, {
+"duration": 1.0,
+"texture": null
+}],
+"loop": false,
+"name": &"default",
+"speed": 7.0
+}]
+
+[sub_resource type="Animation" id="Animation_gfqec"]
+length = 14.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Snake:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.8, 1.6, 2.4, 3.2, 4, 8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(350, -8300), Vector2(350, -8250), Vector2(350, -8200), Vector2(350, -8150), Vector2(350, -8100), Vector2(350, -8050), Vector2(350, -8100)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Apple:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.8, 1.6, 2.4, 3.2, 4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [Vector2(350, -8250), Vector2(350, -8200), Vector2(350, -8150), Vector2(350, -8100), Vector2(350, -8050), Vector2(350, -8000)]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Snake:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Apple:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 0.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Snake/Head:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 0.825, 1.6),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": [false, false, true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Snake/Tail1:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0.8, 2.4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("Snake/Tail2:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0.8, 3.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("SnakeDialog:text")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 8.8),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": ["", "For you"]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("CreatorDialog:text")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 10.8, 14),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 1,
+"values": ["", "...", "For me? Not for Eva?"]
+}
+
+[sub_resource type="Animation" id="Animation_js55m"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("CreatorDialog:text")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [""]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m07j0"]
+_data = {
+"RESET": SubResource("Animation_js55m"),
+"animation": SubResource("Animation_gfqec")
+}
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_lvfj0"]
+atlas = ExtResource("44_3a052")
+region = Rect2(0, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y2370"]
+atlas = ExtResource("44_3a052")
+region = Rect2(50, 0, 50, 50)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_76e8e"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_lvfj0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y2370")
 }],
 "loop": true,
 "name": &"default",
 "speed": 2.0
 }]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_srpty"]
-size = Vector2(42, 42)
 
 [node name="Map" type="Node"]
 process_mode = 1
@@ -252,7 +476,7 @@ position = Vector2(350, -3350)
 position = Vector2(350, -3100)
 
 [node name="Snake" type="Node2D" parent="."]
-position = Vector2(350, -3750)
+position = Vector2(350, -7700)
 script = ExtResource("6_3dckf")
 metadata/_edit_group_ = true
 
@@ -345,6 +569,12 @@ position = Vector2(200, -1250)
 [node name="Out" type="Marker2D" parent="Teleports/TeleIn9"]
 position = Vector2(200, -100)
 
+[node name="TeleIn10" type="Marker2D" parent="Teleports"]
+position = Vector2(400, -3900)
+
+[node name="Out" type="Marker2D" parent="Teleports/TeleIn10"]
+position = Vector2(150, -50)
+
 [node name="FallingObj" type="Node" parent="."]
 
 [node name="Apple1" parent="FallingObj" instance=ExtResource("10_a77ln")]
@@ -385,6 +615,15 @@ position = Vector2(450, -2500)
 
 [node name="TurnBack" type="Marker2D" parent="Triggers"]
 position = Vector2(250, -3300)
+
+[node name="LookingBack" type="Marker2D" parent="Triggers"]
+position = Vector2(350, -4800)
+
+[node name="TheEdgeOFCam1" type="Marker2D" parent="Triggers"]
+position = Vector2(350, 500)
+
+[node name="TheEdgeOFCam2" type="Marker2D" parent="Triggers"]
+position = Vector2(350, -7800)
 
 [node name="Texts" type="Control" parent="."]
 layout_mode = 3
@@ -468,20 +707,20 @@ autowrap_mode = 2
 
 [node name="Label8" type="Label" parent="Texts"]
 layout_mode = 0
-offset_left = 500.0
-offset_top = -4600.0
-offset_right = 700.0
-offset_bottom = -4531.0
+offset_left = 450.0
+offset_top = -4500.0
+offset_right = 650.0
+offset_bottom = -4431.0
 theme = ExtResource("12_lgnde")
 text = "Qualcosa inevitabilmete è stato lasciato indietro"
 autowrap_mode = 2
 
 [node name="Label9" type="Label" parent="Texts"]
 layout_mode = 0
-offset_left = 50.0
+offset_left = 100.0
 offset_top = -4900.0
-offset_right = 250.0
-offset_bottom = -4831.0
+offset_right = 300.0
+offset_bottom = -4808.0
 theme = ExtResource("12_lgnde")
 text = "e guardando il tempo speso troverai certamente qualcosa che avresti fatto meglio."
 horizontal_alignment = 2
@@ -542,9 +781,9 @@ autowrap_mode = 2
 [node name="Label15" type="Label" parent="Texts"]
 layout_mode = 0
 offset_left = 150.0
-offset_top = -7450.0
+offset_top = -7500.0
 offset_right = 350.0
-offset_bottom = -7358.0
+offset_bottom = -7385.0
 theme = ExtResource("12_lgnde")
 text = "E l'unico modo che hai per farlo è tirare ancora i dadi per salire con altre Ladders e scendere con altri Snakes"
 autowrap_mode = 2
@@ -557,25 +796,6 @@ position = Vector2(300, -3500)
 [node name="Goal" parent="." instance=ExtResource("13_xgdmj")]
 position = Vector2(350, -8250)
 
-[node name="Hole" type="Area2D" parent="." groups=["solid_obj"]]
-position = Vector2(400, -3900)
-script = ExtResource("21_00vy4")
-
-[node name="Sprite" type="AnimatedSprite2D" parent="Hole"]
-position = Vector2(25, 25)
-sprite_frames = SubResource("SpriteFrames_m8cfg")
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Hole"]
-position = Vector2(25, 25)
-shape = SubResource("RectangleShape2D_srpty")
-
-[node name="Teleport_pos" type="Marker2D" parent="Hole"]
-position = Vector2(150, -50)
-
-[node name="Sprite" type="AnimatedSprite2D" parent="Hole/Teleport_pos"]
-position = Vector2(25, 25)
-sprite_frames = SubResource("SpriteFrames_m8cfg")
-
 [node name="Eatable" type="Node" parent="."]
 
 [node name="Apple1" parent="Eatable" instance=ExtResource("10_a77ln")]
@@ -585,13 +805,73 @@ script = ExtResource("11_36fgk")
 [node name="Spider" parent="Eatable" instance=ExtResource("23_71487")]
 position = Vector2(350, -4450)
 
+[node name="VisualElements" type="Node" parent="."]
+
+[node name="OldSnake" type="AnimatedSprite2D" parent="VisualElements"]
+position = Vector2(0, -5250)
+sprite_frames = SubResource("SpriteFrames_fu203")
+offset = Vector2(375, 25)
+
+[node name="CutsceneElements" type="Node" parent="."]
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="CutsceneElements"]
+libraries = {
+"": SubResource("AnimationLibrary_m07j0")
+}
+
+[node name="Snake" type="Node2D" parent="CutsceneElements"]
+visible = false
+position = Vector2(350, -8300)
+
+[node name="Head" type="AnimatedSprite2D" parent="CutsceneElements/Snake"]
+visible = false
+position = Vector2(25, 25)
+rotation = 1.5708
+sprite_frames = ExtResource("42_xhe0h")
+
+[node name="Tail1" type="AnimatedSprite2D" parent="CutsceneElements/Snake"]
+position = Vector2(25, -25)
+rotation = 1.5708
+sprite_frames = ExtResource("43_35t60")
+
+[node name="Tail2" type="AnimatedSprite2D" parent="CutsceneElements/Snake"]
+position = Vector2(25, -75)
+rotation = 3.14159
+sprite_frames = ExtResource("43_35t60")
+animation = &"end_tail"
+autoplay = "end_tail"
+
+[node name="Apple" type="Node2D" parent="CutsceneElements" groups=["solid_obj"]]
+visible = false
+position = Vector2(350, -8250)
+
+[node name="Sprite" type="AnimatedSprite2D" parent="CutsceneElements/Apple"]
+position = Vector2(25, 25)
+sprite_frames = SubResource("SpriteFrames_76e8e")
+autoplay = "default"
+frame_progress = 0.299197
+
+[node name="SnakeDialog" type="Label" parent="CutsceneElements"]
+offset_left = 450.0
+offset_top = -8100.0
+offset_right = 600.0
+offset_bottom = -8050.0
+theme = ExtResource("12_lgnde")
+
+[node name="CreatorDialog" type="Label" parent="CutsceneElements"]
+offset_left = 300.0
+offset_top = -7650.0
+offset_right = 450.0
+offset_bottom = -7600.0
+theme = ExtResource("12_lgnde")
+
 [node name="debug" type="Node2D" parent="."]
+position = Vector2(750, -8300)
 
 [node name="testPosition" type="Marker2D" parent="debug"]
 position = Vector2(700, 250)
 
 [node name="test for cam dimensions" type="ColorRect" parent="debug"]
-visible = false
 offset_right = 750.0
 offset_bottom = 750.0
 color = Color(0.333333, 1, 1, 1)
@@ -606,7 +886,6 @@ color = Color(0.583895, 0.9362, 0.446893, 1)
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
 [connection signal="area_entered" from="FallingObj/Spider" to="FallingObj/Spider" method="_on_area_entered"]
-[connection signal="area_entered" from="Hole" to="Hole" method="_on_area_entered"]
 
 [editable path="Snake/Tail_queue/Tail1"]
 [editable path="Snake/Tail_queue/Tail2"]
