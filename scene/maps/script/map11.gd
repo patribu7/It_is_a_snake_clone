@@ -1,6 +1,8 @@
 extends "res://scene/maps/script/game_map.gd"
 
 
+
+
 func _ready():
 		#apple score reset
 	GameData.apple_score = 0

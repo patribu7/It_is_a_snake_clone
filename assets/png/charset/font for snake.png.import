@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://b0sc3u863rjry"
-path="res://.godot/imported/frame0008.png-4f4e0c5cf485fbd65b72d9170864b0e5.ctex"
+uid="uid://ckdi1dfbtbn8x"
+path="res://.godot/imported/font for snake.png-7c711720a21e83e6a3f7b519fd9eb84d.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/animations/old_style/frame0008.png"
-dest_files=["res://.godot/imported/frame0008.png-4f4e0c5cf485fbd65b72d9170864b0e5.ctex"]
+source_file="res://assets/png/charset/font for snake.png"
+dest_files=["res://.godot/imported/font for snake.png-7c711720a21e83e6a3f7b519fd9eb84d.ctex"]
 
 [params]
 

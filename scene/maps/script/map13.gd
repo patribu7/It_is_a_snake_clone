@@ -1,14 +1,10 @@
 extends "res://scene/maps/script/game_map.gd"
 
-var cam_is_not_on_border = true
-
 var triggers = {
 	"FallingObj" : "fall_objs",
 	"ChoosingWay1" : "reveal_obstacle",
 	"TurnBack" : "change_text_turn_back",
 	"LookingBack" : "play_old_snake",
-	"TheEdgeOFCam1" : "toggle_stop_cam",
-	"TheEdgeOFCam2" : "toggle_stop_cam"
 }
 
 func _ready():
@@ -33,7 +29,7 @@ func _on_timer_timeout():
 
 
 func move_cam():
-	if cam_is_not_on_border:
+	if $Snake/Player.global_position.y < $Triggers/TheEdgeOFSheet1.global_position.y and $Snake/Player.global_position.y > $Triggers/TheEdgeOFSheet2.global_position.y:
 		$Snake/Cam.global_position.y = $Snake/Player.global_position.y - 10 * Global.tile_size.y
 
 
@@ -45,17 +41,13 @@ func teleport():
 
 func detect_trigger():
 	for trigger in $Triggers.get_children():
-		if $Snake/Player.global_position.y == trigger.global_position.y:
-			self.call(triggers[trigger.name])
+		if not trigger.name == "TheEdgeOFSheet1" and not trigger.name == "TheEdgeOFSheet2":
+			if $Snake/Player.global_position.y == trigger.global_position.y:
+				self.call(triggers[trigger.name])
 
-
-func toggle_stop_cam():
-	cam_is_not_on_border = !cam_is_not_on_border
-	
 
 func fall_objs():
-	print("start animation")
-	for obj in $FallingObj.get_children():
+	for obj in $Animations/FallingObj.get_children():
 		await Global.wait(obj.get_meta("timing_to_fall"))
 		_move_obj(obj)
 
@@ -81,11 +73,11 @@ func change_text_turn_back():
 
 
 func play_old_snake():
-	$VisualElements/OldSnake.play("default")
-
+	$Animations/Player.play("old_snake")
+	
 	
 func handler_time():
-	pass
+	pass #do not change time
 
 
 func animation_level_clear():
@@ -121,5 +113,5 @@ func _on_snake_win():
 	
 
 func play_cutscene():
-	$CutsceneElements/AnimationPlayer.play("animation")
+	$Animations/Player.play("cutscene")
 	
