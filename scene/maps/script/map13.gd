@@ -1,8 +1,9 @@
 extends "res://scene/maps/script/game_map.gd"
 
+signal continue_
+
 var triggers = {
 	"FallingObj" : "fall_objs",
-	"ChoosingWay1" : "reveal_obstacle",
 	"TurnBack" : "change_text_turn_back",
 	"LookingBack" : "play_old_snake",
 }
@@ -29,7 +30,7 @@ func _on_timer_timeout():
 
 
 func move_cam():
-	if $Snake/Player.global_position.y < $Triggers/TheEdgeOFSheet1.global_position.y and $Snake/Player.global_position.y > $Triggers/TheEdgeOFSheet2.global_position.y:
+	if $Snake/Player.global_position.y < $Markers/TheEdgeOFSheet1.global_position.y and $Snake/Player.global_position.y > $Markers/TheEdgeOFSheet2.global_position.y:
 		$Snake/Cam.global_position.y = $Snake/Player.global_position.y - 10 * Global.tile_size.y
 
 
@@ -41,9 +42,9 @@ func teleport():
 
 func detect_trigger():
 	for trigger in $Triggers.get_children():
-		if not trigger.name == "TheEdgeOFSheet1" and not trigger.name == "TheEdgeOFSheet2":
-			if $Snake/Player.global_position.y == trigger.global_position.y:
-				self.call(triggers[trigger.name])
+		
+		if $Snake/Player.global_position.y == trigger.global_position.y:
+			self.call(triggers[trigger.name])
 
 
 func fall_objs():
@@ -65,7 +66,7 @@ func _move_obj(obj):
 
 
 func reveal_obstacle():
-	pass #issue pass
+	pass #issue pass se togli questo togli anche il marker
 	
 	
 func change_text_turn_back():
@@ -78,6 +79,9 @@ func play_old_snake():
 	
 func handler_time():
 	pass #do not change time
+
+func  reveal_text_errors():
+	$Texts/Label5bis.show()
 
 
 func animation_level_clear():
@@ -94,10 +98,15 @@ func animation_level_clear():
 		$Snake/Tail_queue.get_child(-1).set_sprite_last_tail(wag_tail)
 		wag_tail = (wag_tail + 1) % 2
 		i += 1
-		
 
 	
 func _on_snake_be_defeat(): #considero questo livello come saluto. Non voglio che si debba ricaricarlo da capo
+	if $Snake/Player.global_position == $Markers/ChoosingWay.global_position:
+		reveal_obstacle()
+	
+	if $Snake/Player.global_position.y >= $Markers/Errors1.global_position.y and $Snake/Player.global_position.y <= $Markers/Errors2.global_position.y and $Snake/Player.global_position.x == $Markers/Errors2.global_position.x:
+		reveal_text_errors()
+	
 	await Global.wait(3)
 	$Snake/Player/Sprite.play("default")
 	#aspetta 3 secondi e rimetti lo sprite default della testa 
@@ -113,5 +122,25 @@ func _on_snake_win():
 	
 
 func play_cutscene():
-	$Animations/Player.play("cutscene")
+	var anim = $Animations/Player
 	
+	anim.play("cutscene1")
+	await anim.animation_finished
+	await continue_
+	
+	anim.play("cutscene2")
+	await anim.animation_finished
+	await continue_
+	
+	anim.play("cutscene3")
+	await anim.animation_finished
+	go_to_closing_credits()
+
+
+func _input(event):
+	if event.is_action_pressed("ui_accept"):
+		self.continue_.emit()
+
+
+func go_to_closing_credits():
+	pass
