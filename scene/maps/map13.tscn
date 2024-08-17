@@ -519,54 +519,14 @@ tracks/15/keys = {
 tracks/16/type = "value"
 tracks/16/imported = false
 tracks/16/enabled = true
-tracks/16/path = NodePath("../../Snake:position")
+tracks/16/path = NodePath("../../Snake/Cam:offset")
 tracks/16/interp = 1
 tracks/16/loop_wrap = true
 tracks/16/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(350, 500), Vector2(350, 500)]
-}
-
-[sub_resource type="Animation" id="Animation_2a6i7"]
-resource_name = "closing_credits"
-length = 120.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../ClosingCredits:visible")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.1),
-"transitions": PackedFloat32Array(1, 1),
-"update": 1,
-"values": [false, true]
-}
-tracks/1/type = "value"
-tracks/1/imported = false
-tracks/1/enabled = true
-tracks/1/path = NodePath("../../Texts:visible")
-tracks/1/interp = 1
-tracks/1/loop_wrap = true
-tracks/1/keys = {
-"times": PackedFloat32Array(1.2),
+"times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
-"update": 1,
-"values": [false]
-}
-tracks/2/type = "value"
-tracks/2/imported = false
-tracks/2/enabled = true
-tracks/2/path = NodePath("../../Snake:position")
-tracks/2/interp = 1
-tracks/2/loop_wrap = true
-tracks/2/keys = {
-"times": PackedFloat32Array(0, 119.9, 120),
-"transitions": PackedFloat32Array(1, 1, 1),
 "update": 0,
-"values": [Vector2(350, -9400), Vector2(350, 500), Vector2(350, 500)]
+"values": [Vector2(0, 0)]
 }
 
 [sub_resource type="Animation" id="Animation_gfqec"]
@@ -965,10 +925,26 @@ tracks/3/keys = {
 "values": [false, true]
 }
 
+[sub_resource type="Animation" id="Animation_0bkus"]
+resource_name = "closing_credits"
+length = 120.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Snake/Cam:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 120),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 9900)]
+}
+
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_m07j0"]
 _data = {
 "RESET": SubResource("Animation_js55m"),
-"closing_credits": SubResource("Animation_2a6i7"),
+"closing_credits": SubResource("Animation_0bkus"),
 "cutscene1": SubResource("Animation_gfqec"),
 "cutscene2": SubResource("Animation_1q2me"),
 "cutscene3": SubResource("Animation_1p1rm"),
@@ -1035,7 +1011,7 @@ position = Vector2(25, 25)
 shape = SubResource("RectangleShape2D_ueil6")
 
 [node name="Snake" type="Node2D" parent="."]
-position = Vector2(350, 500)
+position = Vector2(350, -8550)
 script = ExtResource("6_3dckf")
 metadata/_edit_group_ = true
 

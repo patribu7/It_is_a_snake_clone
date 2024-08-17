@@ -30,9 +30,13 @@ func _on_timer_timeout():
 
 
 func move_cam():
-	if $Snake/Player.global_position.y < $Markers/TheEdgeOFSheet1.global_position.y and $Snake/Player.global_position.y > $Markers/TheEdgeOFSheet2.global_position.y:
-		$Snake/Cam.global_position.y = $Snake/Player.global_position.y - 10 * Global.tile_size.y
-
+	if not $Snake/Player == null:
+		if $Snake/Player.global_position.y < $Markers/TheEdgeOFSheet1.global_position.y and $Snake/Player.global_position.y > $Markers/TheEdgeOFSheet2.global_position.y:
+			$Snake/Cam.global_position.y = $Snake/Player.global_position.y - 10 * Global.tile_size.y
+	
+	else:
+		pass #issue volevo usare questo per l'animazione deti titili di coda...
+	
 
 func teleport():
 	for point in $Teleports.get_children():
@@ -80,6 +84,7 @@ func play_old_snake():
 func handler_time():
 	pass #do not change time
 
+
 func  reveal_text_errors():
 	$Texts/Label5bis.show()
 
@@ -106,6 +111,7 @@ func _on_snake_be_defeat(): #considero questo livello come saluto. Non voglio ch
 	
 	if $Snake/Player.global_position.y >= $Markers/Errors1.global_position.y and $Snake/Player.global_position.y <= $Markers/Errors2.global_position.y and $Snake/Player.global_position.x == $Markers/Errors2.global_position.x:
 		reveal_text_errors()
+	
 	
 	await Global.wait(3)
 	$Snake/Player/Sprite.play("default")
@@ -143,7 +149,10 @@ func _input(event):
 
 
 func go_to_closing_credits():
+	$Animations/ClosingCredits.show() #issue questo sarebbe da farlo con transazione
+	$Texts.hide()
 	$Animations/Player.play("closing_credits")
+	
 	await $Animations/Player.animation_finished
 	go_to_main_menu()
 	
