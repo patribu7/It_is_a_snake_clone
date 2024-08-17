@@ -66,7 +66,6 @@ text = "CREDITS"
 [node name="Quit" parent="Menu/MainMenu" instance=ExtResource("3_to2iy")]
 layout_mode = 2
 focus_previous = NodePath("../Credits")
-disabled = true
 text = "QUIT"
 
 [node name="MenuPaused" type="HBoxContainer" parent="Menu"]
@@ -150,6 +149,7 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="GameOver" type="Label" parent="Menu"]
+visible = false
 layout_mode = 0
 offset_left = 59.0
 offset_top = 336.0
@@ -194,6 +194,10 @@ offset_bottom = 499.0
 theme_override_font_sizes/font_size = 50
 text = "LEVEL CLEAR
 Congratualtions"
+
+[node name="ConfirmationDialog" type="ConfirmationDialog" parent="Menu"]
+initial_position = 1
+dialog_autowrap = true
 
 [connection signal="visibility_changed" from="Menu" to="Menu" method="_on_visibility_changed"]
 [connection signal="pressed" from="Menu/MainMenu/NewGame" to="Menu" method="_on_new_game_button_pressed"]

@@ -56,7 +56,14 @@ func clear_box_panel():
 		
 
 func _on_quit_button_up():
-	pass
+	var dialog = ConfirmationDialog.new()
+	dialog.initial_position = Window.WINDOW_INITIAL_POSITION_CENTER_PRIMARY_SCREEN
+	dialog.dialog_text = "Quit?"
+	add_child(dialog)
+	dialog.show()
+	
+	await dialog.confirmed
+	get_tree().quit()
 
 
 func open_panel(type:String, in_scenario = false):
@@ -71,7 +78,6 @@ func open_panel(type:String, in_scenario = false):
 			btn.button_up.connect(_on_lv_selected.bind(int(btn.text)))
 	
 	add_child(box_panel)
-
 	
 	return context_box
 
@@ -79,6 +85,7 @@ func open_panel(type:String, in_scenario = false):
 func _on_visibility_changed():
 	if visible == true and is_instance_valid(new_game_btn):
 		new_game_btn.grab_focus()
+		clear_box_panel()
 	
 	if state_game == "paused":
 		$MenuPaused.show()
