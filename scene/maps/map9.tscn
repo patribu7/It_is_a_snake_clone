@@ -94,8 +94,7 @@ sources/0 = SubResource("TileSetAtlasSource_0pw36")
 [node name="Map" type="Node"]
 process_mode = 1
 script = ExtResource("1_gsi7i")
-start_timeout = 0.8
-decr_timeout = 0.1
+start_timeout = 0.6
 
 [node name="Background" type="TileMap" parent="."]
 z_index = -1
