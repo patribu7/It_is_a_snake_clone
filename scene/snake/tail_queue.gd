@@ -30,13 +30,13 @@ func add_tail(pos):
 	self.call_deferred("add_child", tail)
 
 
-func lost_tail():
+func lost_tail(snake_pos):
 	if get_child_count() > 2:
 		var last_tail = get_child(-1)
 		var map = get_parent().get_parent()
 		
 		remove_child(last_tail)
-		last_tail.position += Vector2(300, 300) #issue numero magico. è la posizione di snake
+		last_tail.position += snake_pos #issue numero magico. è la posizione di snake - update: sistemato?
 		map.add_child(last_tail)
 
 		last_tail.get_node("Sprite").sprite_frames.set_animation_speed("end_tail", 2.0)

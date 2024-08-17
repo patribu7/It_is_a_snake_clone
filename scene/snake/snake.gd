@@ -12,7 +12,7 @@ func stretch():
 
 
 func leave_tail():
-	$Tail_queue.lost_tail()
+	$Tail_queue.lost_tail(self.global_position)
 
 
 func take_position(pos):

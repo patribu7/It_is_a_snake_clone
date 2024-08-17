@@ -143,4 +143,9 @@ func _input(event):
 
 
 func go_to_closing_credits():
-	pass
+	$Animations/Player.play("closing_credits")
+	await $Animations/Player.animation_finished
+	go_to_main_menu()
+	
+func go_to_main_menu():
+	pass #issue
