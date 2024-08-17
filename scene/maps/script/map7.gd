@@ -23,3 +23,4 @@ func _on_timeout():
 
 func _on_hole_entered(_area):
 	exited_from_hole = true
+	GameData.show_alert("Loooooong tail!")

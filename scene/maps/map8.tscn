@@ -97,6 +97,8 @@ size = Vector2(42, 42)
 [node name="Map" type="Node"]
 process_mode = 1
 script = ExtResource("1_8jbuu")
+start_timeout = 1.0
+decr_timeout = 0.1
 apples_to_unloack_goal = 200
 
 [node name="Background" type="TileMap" parent="."]
