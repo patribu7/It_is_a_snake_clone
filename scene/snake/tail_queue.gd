@@ -36,7 +36,7 @@ func lost_tail(snake_pos):
 		var map = get_parent().get_parent()
 		
 		remove_child(last_tail)
-		last_tail.position += snake_pos #issue numero magico. è la posizione di snake - update: sistemato?
+		last_tail.position += snake_pos
 		map.add_child(last_tail)
 
 		last_tail.get_node("Sprite").sprite_frames.set_animation_speed("end_tail", 2.0)

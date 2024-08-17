@@ -102,7 +102,7 @@ func _on_visibility_changed():
 		$Congratulations.show()
 		
 	else:
-		$Congratulations.hide()
+		$Congratulations.hide() #issue da togliere
 	
 	if state_game == "main_menu":
 		pass

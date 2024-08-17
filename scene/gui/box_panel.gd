@@ -48,7 +48,7 @@ func add_context(context:String):
 	if context == "level_selection":
 		box = _level_select_panel.instantiate()
 		
-		for i in 6: #issue cambiare il numero magico 6 con un dato globale
+		for i in GameData.qty_maps:
 			i += 1
 			var btn = _btn.instantiate()
 			btn.text = str(i)

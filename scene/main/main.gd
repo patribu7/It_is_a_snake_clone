@@ -21,6 +21,8 @@ func _ready():
 	$Game.defeat.connect(_on_defeat)
 	$Game.stage_clear.connect(_on_stage_clear)
 	$GUI/Menu.request.connect(_on_request)
+	$GUI/Menu/StageClear/NextLevel.pressed.connect(go_to_next_lv)
+	$GUI/Menu/GameOver/Retry.pressed.connect(_on_retry_button_pressed)
 	
 	#dimensioni dello schermo
 	#var screen_size = get_tree().root.get_window().size    issue posso togliere?
@@ -56,13 +58,20 @@ func _on_request(type:String, lv:int):
 		start_game_at_level(lv)
 
 
+func _on_retry_button_pressed():
+	start_game_at_level($Game.level)
+	
+	
 func go_to_next_lv():
-	start_game_at_level($Game.level + 1)
+	if not $Game.level == GameData.qty_maps:
+		start_game_at_level($Game.level + 1)
+	else:
+		pass #issue non credo serva nulla di piu' perche' dopo i titoli di coda si arangia a tornare alla scermata giusta oppure emetto il segnale alla fine dell'animazione?
 
 
 func start_game_at_level(lv):
 	$Game.level = lv
-	#GameData.check_for_unlocked_levels(lv) #issue forse questo non serve perché basta salvare ogni volta che sbloccon un livello ovvero ogni volta che è settato unlock_levels
+	#GameData.check_for_unlocked_levels(lv) #issue forse questo non serve perché basta salvare ogni volta che sblocca un livello ovvero ogni volta che è settato unlock_levels
 	GameData.current_level = lv
 	
 	var can_go = $Game.set_new_game()

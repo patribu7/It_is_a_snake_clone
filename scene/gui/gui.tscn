@@ -150,7 +150,6 @@ vertical_alignment = 1
 autowrap_mode = 2
 
 [node name="GameOver" type="Label" parent="Menu"]
-visible = false
 layout_mode = 0
 offset_left = 59.0
 offset_top = 336.0
@@ -158,6 +157,14 @@ offset_right = 454.0
 offset_bottom = 499.0
 theme_override_font_sizes/font_size = 50
 text = "GAME OVER"
+
+[node name="Retry" type="Button" parent="Menu/GameOver"]
+layout_mode = 0
+offset_left = 35.0
+offset_top = 71.0
+offset_right = 255.0
+offset_bottom = 145.0
+text = "Retry"
 
 [node name="StageClear" type="Label" parent="Menu"]
 visible = false
@@ -168,6 +175,14 @@ offset_right = 454.0
 offset_bottom = 499.0
 theme_override_font_sizes/font_size = 50
 text = "LEVEL CLEAR"
+
+[node name="NextLevel" type="Button" parent="Menu/StageClear"]
+layout_mode = 0
+offset_left = 47.5
+offset_top = 64.0
+offset_right = 231.5
+offset_bottom = 134.0
+text = "Next Level >"
 
 [node name="Congratulations" type="Label" parent="Menu"]
 visible = false

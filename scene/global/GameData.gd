@@ -1,5 +1,6 @@
 extends Node
 
+var qty_maps = 13
 var record_on_endless = 0
 var unlocked_levels = 1
 
