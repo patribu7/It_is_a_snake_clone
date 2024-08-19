@@ -1,13 +1,17 @@
-[gd_scene load_steps=28 format=3 uid="uid://dbhsex16afakt"]
+[gd_scene load_steps=33 format=3 uid="uid://dbhsex16afakt"]
 
 [ext_resource type="PackedScene" uid="uid://l7u4e1gehlty" path="res://scene/loading_icon/loading.tscn" id="1_hi4p0"]
 [ext_resource type="Script" path="res://scene/title_screen/title_screen.gd" id="1_wh6nj"]
 [ext_resource type="Texture2D" uid="uid://bmlt7jyjdylat" path="res://assets/png/keys/arrow.png" id="2_14mog"]
+[ext_resource type="AudioStream" uid="uid://4wfqhhyngiv8" path="res://assets/audio/sounds/scrib1.wav" id="2_mihvn"]
 [ext_resource type="Texture2D" uid="uid://bfqe4lh1n6x7" path="res://assets/png/background/bulletin_board.png" id="2_nvvji"]
 [ext_resource type="Theme" uid="uid://co61eblyar1bp" path="res://assets/tres/theme_handwriting.tres" id="3_5ur1x"]
 [ext_resource type="Texture2D" uid="uid://5eecgdof5i2h" path="res://assets/png/keys/wasd.png" id="3_aoxaw"]
+[ext_resource type="AudioStream" uid="uid://coyyqxovlg3w7" path="res://assets/audio/sounds/scrib2.wav" id="3_nth24"]
+[ext_resource type="AudioStream" uid="uid://b6icnmindh2t6" path="res://assets/audio/sounds/scrib3.wav" id="4_2mh3u"]
 [ext_resource type="Texture2D" uid="uid://cvhlm2jhh6xl5" path="res://assets/png/keys/space.png" id="4_tccn6"]
 [ext_resource type="Texture2D" uid="uid://daoaddko0vkpq" path="res://assets/png/keys/shift.png" id="5_865u6"]
+[ext_resource type="AudioStream" uid="uid://da701gumcxb8v" path="res://assets/audio/sounds/scrib4.wav" id="5_ewxr6"]
 [ext_resource type="Texture2D" uid="uid://c3ydw28scrbnn" path="res://assets/png/background/background2.png" id="6_fln1s"]
 
 [sub_resource type="Animation" id="Animation_j4yf1"]
@@ -158,13 +162,68 @@ tracks/11/keys = {
 "update": 1,
 "values": [false, true]
 }
+tracks/12/type = "method"
+tracks/12/imported = false
+tracks/12/enabled = true
+tracks/12/path = NodePath("AnimationPlayer/Sounds")
+tracks/12/interp = 1
+tracks/12/loop_wrap = true
+tracks/12/keys = {
+"times": PackedFloat32Array(1, 2, 4, 6, 7, 12, 14, 15, 17, 19),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
+"values": [{
+"args": [0.0],
+"method": &"play"
+}, {
+"args": [0.0],
+"method": &"play"
+}, {
+"args": [0.0],
+"method": &"play"
+}, {
+"args": [0.0],
+"method": &"play"
+}, {
+"args": [0.0],
+"method": &"play"
+}, {
+"args": [0.0],
+"method": &"play"
+}, {
+"args": [0.0],
+"method": &"play"
+}, {
+"args": [0.0],
+"method": &"play"
+}, {
+"args": [0.0],
+"method": &"play"
+}, {
+"args": [0.0],
+"method": &"play"
+}]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_humgu"]
 _data = {
 "title": SubResource("Animation_j4yf1")
 }
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_mqc5q"]
+streams_count = 4
+stream_0/stream = ExtResource("2_mihvn")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("3_nth24")
+stream_1/weight = 1.0
+stream_2/stream = ExtResource("4_2mh3u")
+stream_2/weight = 1.0
+stream_3/stream = ExtResource("5_ewxr6")
+stream_3/weight = 1.0
+
 [sub_resource type="FontFile" id="FontFile_p2tja"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
 cache/0/16/0/ascent = 0.0
 cache/0/16/0/descent = 0.0
 cache/0/16/0/underline_position = 0.0
@@ -264,6 +323,9 @@ animations = [{
 }]
 
 [sub_resource type="FontFile" id="FontFile_bnilm"]
+subpixel_positioning = 0
+msdf_pixel_range = 14
+msdf_size = 128
 cache/0/16/0/ascent = 0.0
 cache/0/16/0/descent = 0.0
 cache/0/16/0/underline_position = 0.0
@@ -282,6 +344,9 @@ libraries = {
 "": SubResource("AnimationLibrary_humgu")
 }
 autoplay = "title"
+
+[node name="Sounds" type="AudioStreamPlayer2D" parent="AnimationPlayer"]
+stream = SubResource("AudioStreamRandomizer_mqc5q")
 
 [node name="BulletinBoard" type="Sprite2D" parent="."]
 position = Vector2(-50, -50)

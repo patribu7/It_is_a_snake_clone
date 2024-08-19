@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://cs4n5mfl2f6sj"]
+[gd_scene load_steps=8 format=3 uid="uid://cs4n5mfl2f6sj"]
 
 [ext_resource type="Theme" uid="uid://dk7an8w4p1xt1" path="res://scene/gui/tres/gui.tres" id="1_ddrtv"]
 [ext_resource type="Script" path="res://scene/gui/gui.gd" id="1_w5dbx"]
@@ -6,6 +6,7 @@
 [ext_resource type="SystemFont" uid="uid://dvuickalrmy8p" path="res://assets/tres/font_retry_btn.tres" id="2_pmpe1"]
 [ext_resource type="PackedScene" uid="uid://dr85gwailnjvj" path="res://scene/gui/btn_exp.tscn" id="3_to2iy"]
 [ext_resource type="Texture2D" uid="uid://bfqe4lh1n6x7" path="res://assets/png/background/bulletin_board.png" id="4_amiu3"]
+[ext_resource type="AudioStream" uid="uid://ck1psicpfnu5m" path="res://assets/audio/sounds/fanfare.wav" id="7_td1m6"]
 
 [node name="GUI" type="Control"]
 layout_mode = 3
@@ -233,6 +234,10 @@ text = "Thank you to complete the Demo!"
 [node name="ConfirmationDialog" type="ConfirmationDialog" parent="Menu"]
 initial_position = 1
 dialog_autowrap = true
+
+[node name="Fanfare" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("7_td1m6")
+autoplay = true
 
 [connection signal="visibility_changed" from="Menu" to="Menu" method="_on_visibility_changed"]
 [connection signal="pressed" from="Menu/MainMenu/NewGame" to="Menu" method="_on_new_game_button_pressed"]

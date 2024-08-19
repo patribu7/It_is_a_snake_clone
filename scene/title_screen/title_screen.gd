@@ -31,7 +31,9 @@ func _input(event):
 func not_that_key():
 	$PanelDx/Annunce_DEMO.hide()
 	$PanelDx/This_symbol.hide()
+	$AnimationPlayer/Sounds.play()
 	$PanelDx/Press_any_key.text = "No! Not that key!... argh!\nJust...just press...\nWait a second let me fix some issue..."
 	await Global.wait(5)
+	$AnimationPlayer/Sounds.play()
 	$PanelDx/Press_any_key.text = "OK, let's press space...\nJust... SPACE"
 	any_key_is_pressed_yet = true

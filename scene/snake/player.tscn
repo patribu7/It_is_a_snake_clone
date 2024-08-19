@@ -1,9 +1,12 @@
-[gd_scene load_steps=13 format=3 uid="uid://3hyoamlqamqj"]
+[gd_scene load_steps=17 format=3 uid="uid://3hyoamlqamqj"]
 
 [ext_resource type="PackedScene" uid="uid://1e5nwgt71uaq" path="res://scene/cell_block/block.tscn" id="1_n27hb"]
 [ext_resource type="Script" path="res://scene/snake/player.gd" id="2_ggnne"]
 [ext_resource type="Texture2D" uid="uid://bp4p4w2y0g1kh" path="res://assets/png/sprite/snake.png" id="3_s2lwf"]
 [ext_resource type="Script" path="res://scene/snake/ray_cast.gd" id="4_a62mu"]
+[ext_resource type="AudioStream" uid="uid://csuoojtwfefi5" path="res://assets/audio/sounds/eat.wav" id="5_gsc20"]
+[ext_resource type="AudioStream" uid="uid://djhufqgilfwyk" path="res://assets/audio/sounds/bleah2.wav" id="6_mbx6d"]
+[ext_resource type="AudioStream" uid="uid://d643k4fo1src" path="res://assets/audio/sounds/bleah1.wav" id="7_jobsx"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_fjoeq"]
 atlas = ExtResource("3_s2lwf")
@@ -77,6 +80,13 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="AudioStreamRandomizer" id="AudioStreamRandomizer_s3dat"]
+streams_count = 2
+stream_0/stream = ExtResource("6_mbx6d")
+stream_0/weight = 1.0
+stream_1/stream = ExtResource("7_jobsx")
+stream_1/weight = 1.0
+
 [node name="Player" instance=ExtResource("1_n27hb")]
 script = ExtResource("2_ggnne")
 direction = "move_up"
@@ -119,5 +129,15 @@ collide_with_areas = true
 collide_with_bodies = false
 script = ExtResource("4_a62mu")
 metadata/Velocity = Vector2(0, -1)
+
+[node name="Audio" type="Node" parent="." index="3"]
+
+[node name="Eat" type="AudioStreamPlayer2D" parent="Audio" index="0"]
+stream = ExtResource("5_gsc20")
+bus = &"Sounds"
+
+[node name="Bleah" type="AudioStreamPlayer2D" parent="Audio" index="1"]
+stream = SubResource("AudioStreamRandomizer_s3dat")
+bus = &"Sounds"
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

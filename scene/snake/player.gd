@@ -60,6 +60,7 @@ func set_sprite_crash():
 
 
 func set_sprite_eat_apple():
+	$Audio/Eat.play()
 	$Sprite.play("eat")
 	await $Sprite.animation_finished
 	$Sprite.play("default")
@@ -112,7 +113,7 @@ func get_collision():
 					set_sprite_eat_apple()
 				
 				elif area.type_obj == "spider":
-					pass
+					$Audio/Bleah.play()
 
 			elif area.snake_can == "be_defeat":
 				snake_be_defeat.emit()
