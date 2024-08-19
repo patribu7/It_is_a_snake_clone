@@ -47,7 +47,7 @@ func _on_scenario_btn_button_up():
 
 
 func _on_resume_btn_button_up():
-	request.emit("resume")
+	request.emit("resume", 0) # "0" numero che viene poi scartato
 
 
 func clear_box_panel():
@@ -109,7 +109,7 @@ func _on_visibility_changed():
 		$Congratulations.show()
 		
 	else:
-		$Congratulations.hide() #issue da togliere
+		$Congratulations.hide() #issue da togliere?
 	
 	if state_game == "main_menu":
 		pass

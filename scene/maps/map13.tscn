@@ -17,13 +17,13 @@
 [ext_resource type="PackedScene" uid="uid://0tk54xpq8c1s" path="res://scene/gui/hud.tscn" id="10_fx85e"]
 [ext_resource type="Script" path="res://scene/apple/apple_still.gd" id="11_36fgk"]
 [ext_resource type="Texture2D" uid="uid://da25tg53yb11i" path="res://assets/png/sprite/gate.png" id="11_ksynb"]
-[ext_resource type="Theme" uid="uid://osp3cmlsbr4d" path="res://assets/tres/theme.tres" id="12_lgnde"]
 [ext_resource type="PackedScene" uid="uid://bhxev8xcd4qb3" path="res://scene/goal/goal.tscn" id="13_xgdmj"]
 [ext_resource type="Script" path="res://scene/spider/spider_still.gd" id="14_hhem8"]
 [ext_resource type="Texture2D" uid="uid://d1aqbvkmvulxa" path="res://assets/png/sprite/spider.png" id="15_c3ssb"]
 [ext_resource type="Texture2D" uid="uid://bp4p4w2y0g1kh" path="res://assets/png/sprite/snake.png" id="15_crw35"]
 [ext_resource type="Texture2D" uid="uid://bra2cnxnhschn" path="res://assets/png/sprite/hole.png" id="16_ge63p"]
 [ext_resource type="PackedScene" uid="uid://d2m11att7xtb0" path="res://scene/gate/gate.tscn" id="19_ry0cc"]
+[ext_resource type="Theme" uid="uid://co61eblyar1bp" path="res://assets/tres/theme_handwriting.tres" id="20_rfb2l"]
 [ext_resource type="PackedScene" uid="uid://cd0ckluym4lmc" path="res://scene/spider/spider.tscn" id="23_71487"]
 [ext_resource type="Texture2D" uid="uid://87b4107tthov" path="res://assets/tres/sprite/snake_texture_2d.tres" id="27_xyrhn"]
 [ext_resource type="Texture2D" uid="uid://dc0ovmyjg6g5b" path="res://assets/png/background/tree_crown_2.png" id="28_3myvq"]
@@ -529,6 +529,22 @@ tracks/16/keys = {
 "values": [Vector2(0, 0)]
 }
 
+[sub_resource type="Animation" id="Animation_0bkus"]
+resource_name = "closing_credits"
+length = 120.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("../../Snake/Cam:offset")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 120),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(0, 9900)]
+}
+
 [sub_resource type="Animation" id="Animation_gfqec"]
 length = 12.4
 step = 0.4
@@ -539,7 +555,7 @@ tracks/0/path = NodePath("Snake:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.85, 1.6, 2.4, 3.2, 4.05, 8),
+"times": PackedFloat32Array(0, 0.8, 1.6, 2.4, 3.2, 4, 8),
 "transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": [Vector2(0, -50), Vector2(0, 0), Vector2(0, 50), Vector2(0, 100), Vector2(0, 150), Vector2(0, 200), Vector2(0, 150)]
@@ -641,6 +657,18 @@ tracks/8/keys = {
 "values": ["", "...", "For me? Not for Eva instead?", "For me? Not for Eva instead?
 >(continue)"]
 }
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("Snake/Tail2:frame")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [5, 11]
+}
 
 [sub_resource type="Animation" id="Animation_1q2me"]
 resource_name = "cutscene2"
@@ -695,13 +723,13 @@ tracks/1/path = NodePath("CreatorDialog:text")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
-"times": PackedFloat32Array(0, 8.8, 12.8, 16, 24.8),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1),
+"times": PackedFloat32Array(0, 8.8, 12.8, 16, 21.6, 24.8),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
 "update": 1,
 "values": ["", "W-WAIT!
 What dose it mean?", "Does this mean I have to take it if I dare and stop living in my dreams?", "Does this mean I have to take it if I dare and stop living in my dreams?
 
-or is THIS just a dream?", "...!?"]
+or is THIS just a dream?", "", "...!?"]
 }
 tracks/2/type = "value"
 tracks/2/imported = false
@@ -818,10 +846,10 @@ tracks/11/path = NodePath("Snake/Tail2:frame")
 tracks/11/interp = 1
 tracks/11/loop_wrap = true
 tracks/11/keys = {
-"times": PackedFloat32Array(1.6, 6.4, 7.2, 8, 8.8, 12.8),
-"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1),
+"times": PackedFloat32Array(1.6, 6.4, 7.2, 8, 8.8, 9.6, 12.8, 20.8, 21.6, 22.4),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1, 1, 1),
 "update": 1,
-"values": [5, 11, 5, 11, 5, 11]
+"values": [5, 11, 5, 11, 5, 11, 11, 5, 11, 5]
 }
 tracks/12/type = "value"
 tracks/12/imported = false
@@ -925,22 +953,6 @@ tracks/3/keys = {
 "values": [false, true]
 }
 
-[sub_resource type="Animation" id="Animation_0bkus"]
-resource_name = "closing_credits"
-length = 120.0
-tracks/0/type = "value"
-tracks/0/imported = false
-tracks/0/enabled = true
-tracks/0/path = NodePath("../../Snake/Cam:offset")
-tracks/0/interp = 1
-tracks/0/loop_wrap = true
-tracks/0/keys = {
-"times": PackedFloat32Array(0, 120),
-"transitions": PackedFloat32Array(1, 1),
-"update": 0,
-"values": [Vector2(0, 0), Vector2(0, 9900)]
-}
-
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_m07j0"]
 _data = {
 "RESET": SubResource("Animation_js55m"),
@@ -1011,7 +1023,7 @@ position = Vector2(25, 25)
 shape = SubResource("RectangleShape2D_ueil6")
 
 [node name="Snake" type="Node2D" parent="."]
-position = Vector2(350, -8550)
+position = Vector2(350, -9400)
 script = ExtResource("6_3dckf")
 metadata/_edit_group_ = true
 
@@ -1366,14 +1378,14 @@ layout_mode = 3
 anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
+theme = ExtResource("20_rfb2l")
 
 [node name="Label1" type="Label" parent="Texts"]
 layout_mode = 0
-offset_left = 100.0
+offset_left = 50.0
 offset_top = -600.0
 offset_right = 200.0
-offset_bottom = -554.0
-theme = ExtResource("12_lgnde")
+offset_bottom = -543.0
 text = "Il percorso fino a qui"
 horizontal_alignment = 2
 autowrap_mode = 2
@@ -1381,10 +1393,9 @@ autowrap_mode = 2
 [node name="Label2" type="Label" parent="Texts"]
 layout_mode = 0
 offset_left = 450.0
-offset_top = -1250.0
+offset_top = -1300.0
 offset_right = 650.0
-offset_bottom = -1181.0
-theme = ExtResource("12_lgnde")
+offset_bottom = -1231.0
 text = "ti ha portato dove sei"
 autowrap_mode = 2
 
@@ -1394,7 +1405,6 @@ offset_left = 50.0
 offset_top = -1900.0
 offset_right = 200.0
 offset_bottom = -1831.0
-theme = ExtResource("12_lgnde")
 text = "Hai imparato tante cose"
 horizontal_alignment = 2
 autowrap_mode = 2
@@ -1405,7 +1415,6 @@ offset_left = 550.0
 offset_top = -2600.0
 offset_right = 750.0
 offset_bottom = -2531.0
-theme = ExtResource("12_lgnde")
 text = "Quasi mai hai scelto la strada guista al primo tentativo"
 autowrap_mode = 2
 
@@ -1415,8 +1424,7 @@ offset_left = 50.0
 offset_top = -3300.0
 offset_right = 200.0
 offset_bottom = -3231.0
-theme = ExtResource("12_lgnde")
-text = "Spesso hai riprovato più e più volte"
+text = "Spesso hai riprovato piu' e piu' volte"
 horizontal_alignment = 2
 autowrap_mode = 2
 
@@ -1428,17 +1436,15 @@ offset_top = -3450.0
 offset_right = 550.0
 offset_bottom = -3381.0
 pivot_offset = Vector2(150, 50)
-theme = ExtResource("12_lgnde")
 text = "Imparando dagli errori"
 autowrap_mode = 2
 
 [node name="Label6" type="Label" parent="Texts"]
 layout_mode = 0
 offset_left = 550.0
-offset_top = -3750.0
+offset_top = -3780.0
 offset_right = 700.0
-offset_bottom = -3681.0
-theme = ExtResource("12_lgnde")
+offset_bottom = -3711.0
 text = "Superando ostacoli"
 autowrap_mode = 2
 
@@ -1448,7 +1454,6 @@ offset_left = 50.0
 offset_top = -3850.0
 offset_right = 200.0
 offset_bottom = -3800.0
-theme = ExtResource("12_lgnde")
 text = "Raggirandoli"
 horizontal_alignment = 2
 autowrap_mode = 2
@@ -1456,11 +1461,10 @@ autowrap_mode = 2
 [node name="Label8" type="Label" parent="Texts"]
 layout_mode = 0
 offset_left = 450.0
-offset_top = -4500.0
+offset_top = -4521.0
 offset_right = 650.0
-offset_bottom = -4431.0
-theme = ExtResource("12_lgnde")
-text = "Qualcosa inevitabilmete è stato lasciato indietro"
+offset_bottom = -4404.0
+text = "Qualcosa inevitabilmete e' stato lasciato indietro"
 autowrap_mode = 2
 
 [node name="Label9" type="Label" parent="Texts"]
@@ -1469,7 +1473,6 @@ offset_left = 100.0
 offset_top = -5200.0
 offset_right = 300.0
 offset_bottom = -5108.0
-theme = ExtResource("12_lgnde")
 text = "e guardando il tempo speso troverai certamente qualcosa che avresti fatto meglio"
 horizontal_alignment = 2
 autowrap_mode = 2
@@ -1480,7 +1483,6 @@ offset_left = 450.0
 offset_top = -5850.0
 offset_right = 600.0
 offset_bottom = -5800.0
-theme = ExtResource("12_lgnde")
 text = "Una collisione sbagliata"
 autowrap_mode = 2
 
@@ -1490,8 +1492,8 @@ offset_left = 100.0
 offset_top = -6350.0
 offset_right = 300.0
 offset_bottom = -6281.0
-theme = ExtResource("12_lgnde")
 text = "o un errore di battiutra "
+horizontal_alignment = 2
 autowrap_mode = 2
 
 [node name="Label12" type="Label" parent="Texts"]
@@ -1500,7 +1502,6 @@ offset_left = 450.0
 offset_top = -7000.0
 offset_right = 600.0
 offset_bottom = -6931.0
-theme = ExtResource("12_lgnde")
 text = "Ma non pensarci troppo"
 autowrap_mode = 2
 
@@ -1510,18 +1511,16 @@ offset_left = 100.0
 offset_top = -7550.0
 offset_right = 300.0
 offset_bottom = -7481.0
-theme = ExtResource("12_lgnde")
 text = "E' a questo che ti sono servito"
 horizontal_alignment = 2
 autowrap_mode = 2
 
 [node name="Label14" type="Label" parent="Texts"]
 layout_mode = 0
-offset_left = 300.0
-offset_top = -8150.0
+offset_left = 212.0
+offset_top = -8146.0
 offset_right = 450.0
-offset_bottom = -8058.0
-theme = ExtResource("12_lgnde")
+offset_bottom = -8054.0
 text = "Certamente hai ancora tanto da imparare...
 Oh! Davvero tanto!"
 horizontal_alignment = 2
@@ -1533,8 +1532,7 @@ offset_left = 150.0
 offset_top = -9100.0
 offset_right = 350.0
 offset_bottom = -8985.0
-theme = ExtResource("12_lgnde")
-text = "E l'unico modo che hai per farlo è tirare ancora i dadi per salire con altre Ladders e scendere con altri Snakes"
+text = "E l'unico modo che hai per farlo e' tirare ancora i dadi per salire con altre Ladders e scendere con altri Snakes"
 autowrap_mode = 2
 
 [node name="Gates" type="Node2D" parent="."]
@@ -1594,7 +1592,6 @@ visible = false
 position = Vector2(0, -50)
 
 [node name="Head" type="Sprite2D" parent="Animations/CutsceneElements/Snake"]
-visible = false
 position = Vector2(25, 25)
 rotation = 1.5708
 texture = ExtResource("27_xyrhn")
@@ -1628,11 +1625,13 @@ autoplay = "default"
 frame_progress = 0.299197
 
 [node name="SnakeDialog" type="Label" parent="Animations/CutsceneElements"]
-offset_left = 100.0
-offset_top = 100.0
-offset_right = 250.0
-offset_bottom = 150.0
-theme = ExtResource("12_lgnde")
+offset_left = -300.0
+offset_top = 350.0
+offset_right = 351.0
+offset_bottom = 442.0
+theme = ExtResource("20_rfb2l")
+theme_override_font_sizes/font_size = 32
+horizontal_alignment = 1
 autowrap_mode = 2
 
 [node name="CreatorDialog" type="Label" parent="Animations/CutsceneElements"]
@@ -1640,7 +1639,8 @@ offset_left = -300.0
 offset_top = 550.0
 offset_right = 350.0
 offset_bottom = 700.0
-theme = ExtResource("12_lgnde")
+theme = ExtResource("20_rfb2l")
+theme_override_font_sizes/font_size = 32
 horizontal_alignment = 1
 autowrap_mode = 2
 

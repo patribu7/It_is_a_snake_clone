@@ -2,6 +2,8 @@ extends "res://scene/maps/script/game_map.gd"
 
 signal continue_
 
+var is_in_closing_credits = false
+
 var triggers = {
 	"FallingObj" : "fall_objs",
 	"TurnBack" : "change_text_turn_back",
@@ -33,6 +35,7 @@ func move_cam():
 	if not $Snake/Player == null:
 		if $Snake/Player.global_position.y < $Markers/TheEdgeOFSheet1.global_position.y and $Snake/Player.global_position.y > $Markers/TheEdgeOFSheet2.global_position.y:
 			$Snake/Cam.global_position.y = $Snake/Player.global_position.y - 10 * Global.tile_size.y
+			get_parent().get_parent().get_node("GUI").position.y = $Snake/Player.global_position.y - 10 * Global.tile_size.y
 	
 	else:
 		pass #issue volevo usare questo per l'animazione deti titili di coda...
@@ -146,15 +149,25 @@ func play_cutscene():
 func _input(event):
 	if event.is_action_pressed("ui_accept"):
 		self.continue_.emit()
+	
+	if event.is_action_pressed("pause") and is_in_closing_credits:
+		get_parent().get_parent().get_node("GUI").hide()
 
 
 func go_to_closing_credits():
+	is_in_closing_credits = true
+	process_mode = Node.PROCESS_MODE_ALWAYS
+	
 	$Animations/ClosingCredits.show() #issue questo sarebbe da farlo con transazione
 	$Texts.hide()
 	$Animations/Player.play("closing_credits")
 	
 	await $Animations/Player.animation_finished
+	await Global.wait(5)
 	go_to_main_menu()
 	
 func go_to_main_menu():
-	pass #issue
+	get_parent().stage_clear.emit()
+	get_parent().get_parent().get_node("GUI").position.y = 0
+	queue_free()
+

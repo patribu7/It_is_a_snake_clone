@@ -7,7 +7,8 @@ var states = {
 	"run": false,
 	"paused": true,
 	"stage_clear": true,
-	"game_over": true
+	"game_over": true,
+	"game_complete": true
 }
 
 var state_game = "main_menu":
@@ -23,10 +24,6 @@ func _ready():
 	$GUI/Menu.request.connect(_on_request)
 	$GUI/Menu/StageClear/NextLevel.pressed.connect(go_to_next_lv)
 	$GUI/Menu/GameOver/Retry.pressed.connect(_on_retry_button_pressed)
-	
-	#dimensioni dello schermo
-	#var screen_size = get_tree().root.get_window().size    issue posso togliere?
-	#Global.grid_size = screen_size / Global.tile_size  issue posso togliere?
 	
 	#paused the game by default
 	$Game.get_tree().paused = true
@@ -87,9 +84,14 @@ func _on_start():
 
 
 func _on_stage_clear():
-	state_game = "stage_clear"
+	if $Game.level == 13:
+		state_game = "game_complete"
+	
+	else:
+		state_game = "stage_clear"
+		GameData.unlocked_next_level_on_clear()
+		#$GUI/Menu/Congratulations.show()
 	$GUI.toggle_menu(state_game)
-	GameData.unlocked_next_level_on_clear()
 	
 	
 func _on_defeat():
