@@ -1,9 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://cs4n5mfl2f6sj"]
+[gd_scene load_steps=7 format=3 uid="uid://cs4n5mfl2f6sj"]
 
-[ext_resource type="Theme" uid="uid://osp3cmlsbr4d" path="res://assets/tres/theme.tres" id="1_otfa5"]
+[ext_resource type="Theme" uid="uid://dk7an8w4p1xt1" path="res://scene/gui/tres/gui.tres" id="1_ddrtv"]
 [ext_resource type="Script" path="res://scene/gui/gui.gd" id="1_w5dbx"]
 [ext_resource type="Script" path="res://scene/gui/menu.gd" id="2_2e13r"]
+[ext_resource type="SystemFont" uid="uid://dvuickalrmy8p" path="res://assets/tres/font_retry_btn.tres" id="2_pmpe1"]
 [ext_resource type="PackedScene" uid="uid://dr85gwailnjvj" path="res://scene/gui/btn_exp.tscn" id="3_to2iy"]
+[ext_resource type="Texture2D" uid="uid://bfqe4lh1n6x7" path="res://assets/png/background/bulletin_board.png" id="4_amiu3"]
 
 [node name="GUI" type="Control"]
 layout_mode = 3
@@ -13,8 +15,13 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
-theme = ExtResource("1_otfa5")
+theme = ExtResource("1_ddrtv")
 script = ExtResource("1_w5dbx")
+
+[node name="BulletinBoard" type="Sprite2D" parent="."]
+z_index = -2
+position = Vector2(373, 371)
+texture = ExtResource("4_amiu3")
 
 [node name="Menu" type="Control" parent="."]
 layout_mode = 1
@@ -89,27 +96,30 @@ size_flags_horizontal = 3
 [node name="ScenarioBtn" parent="Menu/MenuPaused/Scenario" instance=ExtResource("3_to2iy")]
 layout_mode = 1
 focus_neighbor_top = NodePath("../../../MainMenu/Quit")
+theme_override_font_sizes/font_size = 25
 text = "SCENARIO
 "
 flat = true
-text_overrun_behavior = 2
+text_overrun_behavior = 1
 clip_text = false
 
-[node name="Paused" type="Control" parent="Menu/MenuPaused"]
+[node name="Paused" type="Panel" parent="Menu/MenuPaused"]
 layout_mode = 2
 size_flags_horizontal = 3
 size_flags_vertical = 3
 size_flags_stretch_ratio = 3.25
 
-[node name="ColorRect" type="ColorRect" parent="Menu/MenuPaused/Paused"]
+[node name="Label" type="Label" parent="Menu/MenuPaused/Paused"]
 layout_mode = 1
-anchors_preset = 15
+anchors_preset = 10
 anchor_right = 1.0
-anchor_bottom = 1.0
+offset_top = 26.0
+offset_bottom = 79.0
 grow_horizontal = 2
-grow_vertical = 2
-size_flags_horizontal = 3
-color = Color(0.319787, 0.214222, 0.19951, 0.988235)
+theme_override_font_sizes/font_size = 50
+text = "PAUSED"
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="ResumeBtn" parent="Menu/MenuPaused/Paused" instance=ExtResource("3_to2iy")]
 custom_minimum_size = Vector2(0, 20)
@@ -118,19 +128,9 @@ anchors_preset = 12
 anchor_top = 1.0
 offset_top = -31.0
 grow_vertical = 0
+theme_type_variation = &"FlatButton"
 text = "↩ Resume"
 flat = true
-
-[node name="Label" type="Label" parent="Menu/MenuPaused/Paused"]
-layout_mode = 1
-anchors_preset = 10
-anchor_right = 1.0
-offset_bottom = 53.0
-grow_horizontal = 2
-theme_override_font_sizes/font_size = 50
-text = "PAUSED"
-horizontal_alignment = 1
-vertical_alignment = 1
 
 [node name="Goal" type="Control" parent="Menu/MenuPaused"]
 layout_mode = 2
@@ -148,52 +148,87 @@ horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2
 
-[node name="GameOver" type="Label" parent="Menu"]
+[node name="GameOver" type="Panel" parent="Menu"]
 visible = false
 layout_mode = 0
-offset_left = 59.0
-offset_top = 336.0
-offset_right = 454.0
-offset_bottom = 499.0
+offset_left = 9.0
+offset_top = 335.0
+offset_right = 387.0
+offset_bottom = 444.0
+
+[node name="Label" type="Label" parent="Menu/GameOver"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -131.5
+offset_top = -25.0
+offset_right = 131.5
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_font_sizes/font_size = 50
 text = "GAME OVER"
 
 [node name="Retry" type="Button" parent="Menu/GameOver"]
-layout_mode = 0
-offset_left = 35.0
-offset_top = 71.0
-offset_right = 255.0
-offset_bottom = 145.0
-text = "Retry"
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -31.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_type_variation = &"FlatButton"
+theme_override_fonts/font = ExtResource("2_pmpe1")
+text = "↩ Retry"
 
-[node name="StageClear" type="Label" parent="Menu"]
+[node name="StageClear" type="Panel" parent="Menu"]
 visible = false
 layout_mode = 0
-offset_left = 59.0
-offset_top = 336.0
-offset_right = 454.0
-offset_bottom = 499.0
+offset_left = 9.0
+offset_top = 335.0
+offset_right = 387.0
+offset_bottom = 444.0
+
+[node name="Label" type="Label" parent="Menu/StageClear"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -150.0
+offset_top = -25.0
+offset_right = 150.0
+offset_bottom = 25.0
+grow_horizontal = 2
+grow_vertical = 2
 theme_override_font_sizes/font_size = 50
 text = "LEVEL CLEAR"
 
 [node name="NextLevel" type="Button" parent="Menu/StageClear"]
-layout_mode = 0
-offset_left = 47.5
-offset_top = 64.0
-offset_right = 231.5
-offset_bottom = 134.0
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -31.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_type_variation = &"FlatButton"
 text = "Next Level >"
 
 [node name="Congratulations" type="Label" parent="Menu"]
-visible = false
 layout_mode = 0
-offset_left = 59.0
-offset_top = 336.0
-offset_right = 454.0
-offset_bottom = 499.0
+offset_left = -111.5
+offset_top = -92.0
+offset_right = 512.5
+offset_bottom = -37.0
 theme_override_font_sizes/font_size = 50
-text = "LEVEL CLEAR
-Congratualtions"
+text = "Thank you to complete the Demo!"
 
 [node name="ConfirmationDialog" type="ConfirmationDialog" parent="Menu"]
 initial_position = 1

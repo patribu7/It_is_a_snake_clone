@@ -1,15 +1,16 @@
-[gd_scene load_steps=3 format=3 uid="uid://drks7g0klb1of"]
+[gd_scene load_steps=4 format=3 uid="uid://drks7g0klb1of"]
 
 [ext_resource type="Script" path="res://scene/gui/box_panel.gd" id="1_66ls2"]
+[ext_resource type="Theme" uid="uid://dk7an8w4p1xt1" path="res://scene/gui/tres/gui.tres" id="1_of4o1"]
 [ext_resource type="PackedScene" uid="uid://dr85gwailnjvj" path="res://scene/gui/btn_exp.tscn" id="2_t8b6q"]
 
-[node name="BoxPanel" type="ColorRect"]
+[node name="BoxPanel" type="Panel"]
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-color = Color(0.347407, 0.309845, 0.329535, 1)
+theme = ExtResource("1_of4o1")
 script = ExtResource("1_66ls2")
 
 [node name="SubMenu" type="VBoxContainer" parent="."]
@@ -30,6 +31,7 @@ size_flags_vertical = 3
 layout_mode = 2
 size_flags_vertical = 1
 size_flags_stretch_ratio = 0.0
+theme_type_variation = &"FlatButton"
 text = "↩ BACK"
 
 [connection signal="button_up" from="SubMenu/Back" to="." method="_on_back_btn_up"]

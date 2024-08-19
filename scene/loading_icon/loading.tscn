@@ -14,7 +14,6 @@
 [node name="Icon" type="Node2D"]
 
 [node name="Background" type="Sprite2D" parent="."]
-z_index = -1
 position = Vector2(75, 75)
 texture = ExtResource("1_2inhb")
 
@@ -30,6 +29,7 @@ metadata/_edit_group_ = true
 script = ExtResource("2_fatuw")
 
 [node name="Tail1" parent="Snake/Tail_queue" instance=ExtResource("4_ad1r0")]
+z_index = 0
 position = Vector2(0, 50)
 
 [node name="Sprite" parent="Snake/Tail_queue/Tail1" index="0"]
@@ -38,13 +38,13 @@ animation = &"default"
 script = SubResource("GDScript_a221u")
 
 [node name="Tail2" parent="Snake/Tail_queue" instance=ExtResource("4_ad1r0")]
+z_index = 0
 position = Vector2(0, 100)
 
 [node name="Sprite" parent="Snake/Tail_queue/Tail2" index="0"]
 script = SubResource("GDScript_a221u")
 
 [node name="Player" parent="Snake" instance=ExtResource("5_12vb2")]
-z_index = -1
 script = ExtResource("5_l46xc")
 
 [node name="Sprite" parent="Snake/Player" index="0"]

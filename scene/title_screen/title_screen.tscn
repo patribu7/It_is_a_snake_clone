@@ -1,12 +1,179 @@
-[gd_scene load_steps=20 format=3 uid="uid://dbhsex16afakt"]
+[gd_scene load_steps=28 format=3 uid="uid://dbhsex16afakt"]
 
-[ext_resource type="Script" path="res://scene/title_screen/Press_any_key.gd" id="1_cl87b"]
 [ext_resource type="PackedScene" uid="uid://l7u4e1gehlty" path="res://scene/loading_icon/loading.tscn" id="1_hi4p0"]
 [ext_resource type="Script" path="res://scene/title_screen/title_screen.gd" id="1_wh6nj"]
 [ext_resource type="Texture2D" uid="uid://bmlt7jyjdylat" path="res://assets/png/keys/arrow.png" id="2_14mog"]
+[ext_resource type="Texture2D" uid="uid://bfqe4lh1n6x7" path="res://assets/png/background/bulletin_board.png" id="2_nvvji"]
+[ext_resource type="Theme" uid="uid://co61eblyar1bp" path="res://assets/tres/theme_handwriting.tres" id="3_5ur1x"]
 [ext_resource type="Texture2D" uid="uid://5eecgdof5i2h" path="res://assets/png/keys/wasd.png" id="3_aoxaw"]
 [ext_resource type="Texture2D" uid="uid://cvhlm2jhh6xl5" path="res://assets/png/keys/space.png" id="4_tccn6"]
 [ext_resource type="Texture2D" uid="uid://daoaddko0vkpq" path="res://assets/png/keys/shift.png" id="5_865u6"]
+[ext_resource type="Texture2D" uid="uid://c3ydw28scrbnn" path="res://assets/png/background/background2.png" id="6_fln1s"]
+
+[sub_resource type="Animation" id="Animation_j4yf1"]
+resource_name = "title"
+length = 20.0
+step = 1.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Title/Snake:visible")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Title/Clone:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("Title/Itisa:visible")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 4),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("Title/Escl:visible")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0, 6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("Title/LupiCattivi:visible")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0, 7),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/5/type = "value"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("Controls:visible")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 9),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/6/type = "value"
+tracks/6/imported = false
+tracks/6/enabled = true
+tracks/6/path = NodePath("PanelDx:visible")
+tracks/6/interp = 1
+tracks/6/loop_wrap = true
+tracks/6/keys = {
+"times": PackedFloat32Array(0, 10),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/7/type = "value"
+tracks/7/imported = false
+tracks/7/enabled = true
+tracks/7/path = NodePath("PanelDx/Annunce_DEMO:visible")
+tracks/7/interp = 1
+tracks/7/loop_wrap = true
+tracks/7/keys = {
+"times": PackedFloat32Array(0, 12),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/8/type = "value"
+tracks/8/imported = false
+tracks/8/enabled = true
+tracks/8/path = NodePath("PanelDx/Annunce_DEMO/ThanksMom:visible")
+tracks/8/interp = 1
+tracks/8/loop_wrap = true
+tracks/8/keys = {
+"times": PackedFloat32Array(0, 14),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/9/type = "value"
+tracks/9/imported = false
+tracks/9/enabled = true
+tracks/9/path = NodePath("PanelDx/This_symbol:visible")
+tracks/9/interp = 1
+tracks/9/loop_wrap = true
+tracks/9/keys = {
+"times": PackedFloat32Array(0, 15),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/10/type = "value"
+tracks/10/imported = false
+tracks/10/enabled = true
+tracks/10/path = NodePath("PanelDx/This_symbol/This_symbol2:visible")
+tracks/10/interp = 1
+tracks/10/loop_wrap = true
+tracks/10/keys = {
+"times": PackedFloat32Array(0, 17),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+tracks/11/type = "value"
+tracks/11/imported = false
+tracks/11/enabled = true
+tracks/11/path = NodePath("PanelDx/Press_any_key:visible")
+tracks/11/interp = 1
+tracks/11/loop_wrap = true
+tracks/11/keys = {
+"times": PackedFloat32Array(0, 19),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_humgu"]
+_data = {
+"title": SubResource("Animation_j4yf1")
+}
+
+[sub_resource type="FontFile" id="FontFile_p2tja"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_kdyhi"]
+font = SubResource("FontFile_p2tja")
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_trwa0"]
 atlas = ExtResource("2_14mog")
@@ -96,95 +263,313 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="FontFile" id="FontFile_bnilm"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
+
+[sub_resource type="LabelSettings" id="LabelSettings_vjm8m"]
+font = SubResource("FontFile_bnilm")
+
 [node name="Title_screen" type="Node"]
 script = ExtResource("1_wh6nj")
 
-[node name="Title" type="Label" parent="."]
-anchors_preset = 5
-anchor_left = 0.5
-anchor_right = 0.5
-offset_left = -171.0
-offset_right = 172.0
-offset_bottom = 86.0
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_humgu")
+}
+autoplay = "title"
+
+[node name="BulletinBoard" type="Sprite2D" parent="."]
+position = Vector2(-50, -50)
+scale = Vector2(1.13333, 1.13333)
+texture = ExtResource("2_nvvji")
+centered = false
+
+[node name="Title" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 10
+anchor_right = 1.0
+offset_left = 1.0
+offset_top = 28.0
+offset_right = 1.0
+offset_bottom = 204.0
 grow_horizontal = 2
+size_flags_vertical = 0
+theme = ExtResource("3_5ur1x")
+theme_type_variation = &"black"
+
+[node name="Background2" type="Sprite2D" parent="Title"]
+position = Vector2(376, 129)
+rotation = 0.123918
+texture = ExtResource("6_fln1s")
+
+[node name="Pin" type="Label" parent="Title"]
+layout_mode = 0
+offset_left = 199.0
+offset_top = -17.0
+offset_right = 239.0
+offset_bottom = 6.0
+text = " 🔴"
+label_settings = SubResource("LabelSettings_kdyhi")
+
+[node name="Snake" type="Label" parent="Title"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -159.0
+offset_top = 10.5
+offset_right = -13.0
+offset_bottom = 79.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 50
 text = "Snake
 "
 horizontal_alignment = 1
 
-[node name="HSplitContainer" type="HBoxContainer" parent="."]
-anchors_preset = 11
+[node name="Clone" type="Label" parent="Title"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 3.0
+offset_top = 10.5
+offset_right = 141.0
+offset_bottom = 79.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "Clone
+"
+horizontal_alignment = 1
+
+[node name="Escl" type="Label" parent="Title"]
+layout_mode = 1
+anchors_preset = 6
 anchor_left = 1.0
+anchor_top = 0.5
 anchor_right = 1.0
-anchor_bottom = 1.0
-offset_left = -750.0
-offset_top = 179.0
+anchor_bottom = 0.5
+offset_left = -242.0
+offset_top = 10.5
+offset_right = -194.0
+offset_bottom = 79.5
 grow_horizontal = 0
 grow_vertical = 2
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 50
+text = "!
+"
+horizontal_alignment = 1
 
-[node name="Control" type="Control" parent="HSplitContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
+[node name="Itisa" type="Label" parent="Title"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -156.0
+offset_top = -11.0
+offset_right = -85.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(68.5, 35)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = "It is a
+"
+horizontal_alignment = 1
 
-[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="HSplitContainer/Control"]
-position = Vector2(166, 11)
+[node name="LupiCattivi" type="Label" parent="Title"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 23.0
+offset_top = 148.0
+offset_right = 171.0
+offset_bottom = 183.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(68.5, 35)
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_font_sizes/font_size = 25
+text = " by LupiCattivi
+"
+horizontal_alignment = 1
+
+[node name="Controls" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_left = 4.0
+offset_top = 171.0
+offset_right = 4.0
+offset_bottom = 742.0
+size_flags_horizontal = 8
+
+[node name="Arrow" type="AnimatedSprite2D" parent="Controls"]
+position = Vector2(92, 308)
 sprite_frames = SubResource("SpriteFrames_p2okm")
 autoplay = "default"
 
-[node name="AnimatedSprite2D2" type="AnimatedSprite2D" parent="HSplitContainer/Control"]
-position = Vector2(166, 137)
+[node name="Wasd" type="AnimatedSprite2D" parent="Controls"]
+position = Vector2(92, 408)
 sprite_frames = SubResource("SpriteFrames_qdw2p")
 autoplay = "default"
 
-[node name="AnimatedSprite2D3" type="AnimatedSprite2D" parent="HSplitContainer/Control"]
-position = Vector2(164, 378)
-sprite_frames = SubResource("SpriteFrames_xr3ou")
-autoplay = "default"
+[node name="Pause" type="AnimatedSprite2D" parent="Controls"]
+position = Vector2(21, 511)
 
-[node name="AnimatedSprite2D5" type="AnimatedSprite2D" parent="HSplitContainer/Control"]
-position = Vector2(123, 579)
-sprite_frames = SubResource("SpriteFrames_j3jvf")
-autoplay = "default"
-offset = Vector2(37, -100)
-
-[node name="Label" type="Label" parent="HSplitContainer/Control"]
-layout_mode = 0
-offset_left = 85.0
-offset_top = 241.0
-offset_right = 251.0
-offset_bottom = 304.0
+[node name="Label" type="Label" parent="Controls/Pause"]
+offset_left = 1.0
+offset_right = 167.0
+offset_bottom = 63.0
+theme_override_colors/font_color = Color(0, 0, 0, 1)
 theme_override_font_sizes/font_size = 31
 text = "P = Pause"
 
-[node name="VBoxContainer" type="VBoxContainer" parent="HSplitContainer"]
-layout_mode = 2
-size_flags_horizontal = 3
+[node name="Space" type="AnimatedSprite2D" parent="Controls"]
+position = Vector2(67, 483)
+sprite_frames = SubResource("SpriteFrames_xr3ou")
+autoplay = "default"
 
-[node name="Annunce_DEMO" type="RichTextLabel" parent="HSplitContainer/VBoxContainer"]
+[node name="Shift" type="AnimatedSprite2D" parent="Controls"]
+position = Vector2(167, 483)
+sprite_frames = SubResource("SpriteFrames_j3jvf")
+autoplay = "default"
+
+[node name="Pin" type="Label" parent="Controls"]
+layout_mode = 0
+offset_left = 143.0
+offset_top = 253.0
+offset_right = 183.0
+offset_bottom = 276.0
+text = " 🔴"
+
+[node name="PanelDx" type="Panel" parent="."]
+offset_left = 365.0
+offset_top = 324.0
+offset_right = 736.0
+offset_bottom = 754.0
+size_flags_horizontal = 10
+theme = ExtResource("3_5ur1x")
+
+[node name="Background" type="Node2D" parent="PanelDx"]
+position = Vector2(-5, 1)
+
+[node name="Img" type="Sprite2D" parent="PanelDx/Background"]
+texture = ExtResource("6_fln1s")
+centered = false
+
+[node name="Img2" type="Sprite2D" parent="PanelDx/Background"]
+position = Vector2(0, 252)
+texture = ExtResource("6_fln1s")
+centered = false
+
+[node name="Pin" type="Label" parent="PanelDx"]
+layout_mode = 0
+offset_left = 160.0
+offset_top = 9.0
+offset_right = 200.0
+offset_bottom = 32.0
+text = " 🔴"
+label_settings = SubResource("LabelSettings_vjm8m")
+
+[node name="Annunce_DEMO" type="Label" parent="PanelDx"]
 layout_mode = 2
+offset_left = 10.0
+offset_top = 64.0
+offset_right = 326.0
+offset_bottom = 136.0
 size_flags_vertical = 3
-text = "This is my first game DEMO.
-If you enjoy it just let me know... thank you mom!"
+text = "This is my first DEMO game.
+If you enjoy it just let me know..."
+autowrap_mode = 2
 
-[node name="Icon_container" type="AspectRatioContainer" parent="HSplitContainer/VBoxContainer"]
-layout_mode = 2
+[node name="ThanksMom" type="Label" parent="PanelDx/Annunce_DEMO"]
+layout_mode = 0
+offset_left = 92.0
+offset_top = 58.0
+offset_right = 242.0
+offset_bottom = 85.0
+text = "thank you mom!"
+
+[node name="This_symbol" type="Label" parent="PanelDx"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -178.5
+offset_top = -36.0
+offset_right = 174.5
+offset_bottom = 36.0
+grow_horizontal = 2
+grow_vertical = 2
 size_flags_vertical = 3
+text = "If you see this icon on the screen"
+autowrap_mode = 2
 
-[node name="Icon" parent="HSplitContainer/VBoxContainer/Icon_container" instance=ExtResource("1_hi4p0")]
-position = Vector2(93, 2)
-scale = Vector2(0.57099, 0.57099)
+[node name="This_symbol2" type="Label" parent="PanelDx/This_symbol"]
+layout_mode = 1
+anchors_preset = 14
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_top = 20.0
+offset_right = 6.0
+offset_bottom = 107.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "it means I want to show it to you.
+Cute huh?"
+autowrap_mode = 2
 
-[node name="This_symbol" type="RichTextLabel" parent="HSplitContainer/VBoxContainer"]
+[node name="Icon" parent="PanelDx/This_symbol" instance=ExtResource("1_hi4p0")]
+position = Vector2(-119, -3.00001)
+scale = Vector2(0.435, 0.435)
+
+[node name="Pin" type="Label" parent="PanelDx/This_symbol/Icon"]
+offset_left = -25.2874
+offset_top = -13.7931
+offset_right = 23.7126
+offset_bottom = 28.2069
+theme_override_font_sizes/font_size = 30
+text = " 🔴"
+
+[node name="Press_any_key" type="Label" parent="PanelDx"]
 layout_mode = 2
-size_flags_vertical = 3
-text = "If you see this icon on the screen it means I want to show it to you. Cute huh?"
-
-[node name="Press_any_key" type="RichTextLabel" parent="HSplitContainer/VBoxContainer"]
-layout_mode = 2
+offset_left = 39.0
+offset_top = 69.0
+offset_right = 333.0
+offset_bottom = 429.0
 size_flags_vertical = 3
 size_flags_stretch_ratio = 2.8
-theme_override_font_sizes/normal_font_size = 32
-text = "Now, press any key to continue..."
-script = ExtResource("1_cl87b")
+text = "
 
-[connection signal="title_pass" from="HSplitContainer/VBoxContainer/Press_any_key" to="." method="_on_press_any_key"]
+
+
+
+
+
+
+
+
+Now, press any key to continue..."
+autowrap_mode = 2
