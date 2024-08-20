@@ -1,5 +1,7 @@
 extends Node
 
+var is_first_access = true
+
 var qty_maps = 13
 var record_on_endless = 0
 var unlocked_levels = 1
@@ -101,6 +103,7 @@ func show_alert(t: String):
 
 
 func save_data():
+	is_first_access = false
 	var file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
 	file.store_var(unlocked_levels)
 	file.store_var(record_on_endless)

@@ -10,21 +10,20 @@ func _ready():
 	animation_is_finished = true
 
 func go_to_main_menu():
+	print("GO TO MAIN MENU")
 	request_main_menu.emit()
 	queue_free()
 
 
-func _input(event):
+func _input(event): #avrei potuto farlo tutto con l'animazione...
 	if not any_key_is_pressed_yet and animation_is_finished and event.is_pressed():
-		not_that_key()
+		if GameData.is_first_access:
+			not_that_key()
+		
+		else:
+			go_to_main_menu()
 	
 	if any_key_is_pressed_yet and event.is_action_released("Space"):
-		#go to main menu
-		print("GO TO MAIN MENU")
-		go_to_main_menu()
-		
-	if event.is_action_pressed("dev_skip"):
-		print("SKIP")
 		go_to_main_menu()
 		
 
