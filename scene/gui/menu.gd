@@ -90,18 +90,20 @@ func _on_visibility_changed():
 	
 	if state_game == "paused":
 		$MenuPaused.show()
+		$MenuPaused/Paused/ResumeBtn.grab_focus()
 		
 	else:
 		$MenuPaused.hide()
 		
 	if state_game == "game_over":
 		$GameOver.show()
-		
+		$GameOver/Retry.grab_focus()
 	else:
 		$GameOver.hide()
 	
 	if state_game == "stage_clear":
 		$StageClear.show()
+		$StageClear/NextLevel.grab_focus()
 		
 	else:
 		$StageClear.hide()
@@ -110,7 +112,7 @@ func _on_visibility_changed():
 		$Congratulations.show()
 		
 	else:
-		$Congratulations.hide() #issue da togliere?
+		$Congratulations.hide()
 	
 	if state_game == "main_menu":
 		pass

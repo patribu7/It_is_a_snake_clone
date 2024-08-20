@@ -1,4 +1,4 @@
-[gd_scene load_steps=68 format=3 uid="uid://cg2v36m81amth"]
+[gd_scene load_steps=61 format=3 uid="uid://cg2v36m81amth"]
 
 [ext_resource type="Script" path="res://scene/maps/script/map13.gd" id="1_17a0i"]
 [ext_resource type="Texture2D" uid="uid://itgu8afr1rfp" path="res://assets/png/sprite/background.png" id="2_g0cv4"]
@@ -152,36 +152,6 @@ physics_layer_0/collision_layer = 1
 sources/0 = SubResource("TileSetAtlasSource_0pw36")
 sources/1 = SubResource("TileSetAtlasSource_cyg8y")
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_bsjag"]
-atlas = ExtResource("11_ksynb")
-region = Rect2(0, 0, 50, 50)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_5xnic"]
-atlas = ExtResource("11_ksynb")
-region = Rect2(50, 0, 50, 50)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_iuclg"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_bsjag")
-}],
-"loop": true,
-"name": &"close",
-"speed": 2.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_5xnic")
-}],
-"loop": true,
-"name": &"open",
-"speed": 5.0
-}]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_ueil6"]
-size = Vector2(42, 42)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_fjoeq"]
 atlas = ExtResource("15_crw35")
 region = Rect2(100, 0, 50, 50)
@@ -252,28 +222,6 @@ animations = [{
 "loop": true,
 "name": &"side_crash",
 "speed": 5.0
-}]
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_p8c1y"]
-atlas = ExtResource("16_ge63p")
-region = Rect2(0, 0, 50, 50)
-
-[sub_resource type="AtlasTexture" id="AtlasTexture_u5bgi"]
-atlas = ExtResource("16_ge63p")
-region = Rect2(50, 0, 50, 50)
-
-[sub_resource type="SpriteFrames" id="SpriteFrames_m8cfg"]
-animations = [{
-"frames": [{
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_p8c1y")
-}, {
-"duration": 1.0,
-"texture": SubResource("AtlasTexture_u5bgi")
-}],
-"loop": true,
-"name": &"default",
-"speed": 2.0
 }]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_tbnm3"]
@@ -1009,19 +957,15 @@ position = Vector2(350, -3200)
 [node name="InvisibleWall4" parent="Walls" instance=ExtResource("8_fkfem")]
 position = Vector2(350, -3350)
 
-[node name="FakeGate" type="Area2D" parent="Walls" groups=["solid_obj"]]
+[node name="FakeGate" parent="Walls" instance=ExtResource("8_fkfem")]
 position = Vector2(500, -3600)
 
-[node name="Sprite" type="AnimatedSprite2D" parent="Walls/FakeGate"]
-position = Vector2(25, 25)
+[node name="Sprite2D" type="Sprite2D" parent="Walls/FakeGate"]
+position = Vector2(50, 0)
 rotation = 1.5708
-sprite_frames = SubResource("SpriteFrames_iuclg")
-animation = &"close"
-autoplay = "close"
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Walls/FakeGate"]
-position = Vector2(25, 25)
-shape = SubResource("RectangleShape2D_ueil6")
+texture = ExtResource("11_ksynb")
+centered = false
+hframes = 2
 
 [node name="Snake" type="Node2D" parent="."]
 position = Vector2(350, 500)
@@ -1335,16 +1279,19 @@ position = Vector2(200, -100)
 [node name="TeleIn10" type="Area2D" parent="Teleports" groups=["solid_obj"]]
 position = Vector2(450, -3950)
 
-[node name="Sprite" type="AnimatedSprite2D" parent="Teleports/TeleIn10"]
+[node name="Sprite" type="Sprite2D" parent="Teleports/TeleIn10"]
 position = Vector2(25, 25)
-sprite_frames = SubResource("SpriteFrames_m8cfg")
+texture = ExtResource("16_ge63p")
+hframes = 2
+frame = 1
 
 [node name="Out" type="Marker2D" parent="Teleports/TeleIn10"]
 position = Vector2(100, 0)
 
-[node name="Sprite" type="AnimatedSprite2D" parent="Teleports/TeleIn10/Out"]
+[node name="Sprite" type="Sprite2D" parent="Teleports/TeleIn10/Out"]
 position = Vector2(25, 25)
-sprite_frames = SubResource("SpriteFrames_m8cfg")
+texture = ExtResource("16_ge63p")
+hframes = 2
 
 [node name="Markers" type="Node" parent="."]
 
@@ -1416,7 +1363,7 @@ offset_left = 550.0
 offset_top = -2600.0
 offset_right = 750.0
 offset_bottom = -2531.0
-text = "Quasi mai hai scelto la strada guista al primo tentativo"
+text = "Quasi mai hai scelto la strada giusta al primo tentativo"
 autowrap_mode = 2
 
 [node name="Label5" type="Label" parent="Texts"]
@@ -1465,7 +1412,7 @@ offset_left = 450.0
 offset_top = -4521.0
 offset_right = 650.0
 offset_bottom = -4404.0
-text = "Qualcosa inevitabilmete e` stato lasciato indietro"
+text = "Qualcosa inevitabilmente e` stato lasciato indietro"
 autowrap_mode = 2
 
 [node name="Label9" type="Label" parent="Texts"]
@@ -1500,9 +1447,9 @@ autowrap_mode = 2
 [node name="Label12" type="Label" parent="Texts"]
 layout_mode = 0
 offset_left = 450.0
-offset_top = -7000.0
+offset_top = -7001.0
 offset_right = 600.0
-offset_bottom = -6931.0
+offset_bottom = -6932.0
 text = "Ma non pensarci troppo"
 autowrap_mode = 2
 

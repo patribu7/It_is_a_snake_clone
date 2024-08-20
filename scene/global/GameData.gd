@@ -1,17 +1,18 @@
 extends Node
 
+var SAVE_PATH = "res://_debug/it_is_a_snake_clone.save" #issue change path to user for distr
 var is_first_access = true
 
 var qty_maps = 13
 var record_on_endless = 0
 var unlocked_levels = 1
 
-#var ranking = {
-	#0: {
-		#"name": "AAAAAAAAA",
-		#"score": 1000
-		#}
-	#}
+var high_scores = {
+	0: {
+		"name": "AAAAAAAAA",
+		"score": 1000
+		}
+	}
 
 var description = {
 	"header": "text not found ç_ç",
@@ -19,7 +20,6 @@ var description = {
 	"goal": "text not found ç_ç"
 }
 
-var SAVE_PATH = "res://_debug/it_is_a_snake_clone.save" #issue change path to user for distr
 
 var apple_score = 0:
 	set(value):
@@ -36,7 +36,11 @@ var current_level: int:
 func set_record():
 	if apple_score > record_on_endless:
 		record_on_endless = apple_score
-		save_data()
+		
+		#get_node("/root/Main/GUI").add_child(Window.new())
+		
+		
+		#save_data()
 
 
 func unlocked_next_level_on_clear():
@@ -104,9 +108,13 @@ func show_alert(t: String):
 
 func save_data():
 	is_first_access = false
+	
 	var file = FileAccess.open(SAVE_PATH, FileAccess.WRITE)
+	
 	file.store_var(unlocked_levels)
-	file.store_var(record_on_endless)
+	#file.store_var(record_on_endless)
+	file.store_var(is_first_access)
+	
 	file.close()
 
 
@@ -114,6 +122,8 @@ func load_data():
 	if not FileAccess.file_exists(SAVE_PATH):
 		return # Error! We don't have a save to load.
 	var file = FileAccess.open(SAVE_PATH, FileAccess.READ)
+	
 	unlocked_levels = file.get_var(unlocked_levels)
-	record_on_endless = file.get_var(record_on_endless)
+	#record_on_endless = file.get_var(record_on_endless)
+	is_first_access = file.get_var(is_first_access)
 

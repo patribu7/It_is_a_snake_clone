@@ -38,7 +38,7 @@ func move_cam():
 			get_parent().get_parent().get_node("GUI").position.y = $Snake/Player.global_position.y - 10 * Global.tile_size.y
 	
 	else:
-		pass #issue volevo usare questo per l'animazione deti titili di coda...
+		pass #issue volevo usare questo per l'animazione dei titoli di coda...
 	
 
 func teleport():
@@ -66,7 +66,7 @@ func _move_obj(obj):
 
 	if obj.type_obj == "spider":
 		var i = 0
-		while i < 10: #issue vabbe' sarebbe meglio rimettere la posizine iniziale...
+		while i < 10: #sarebbe meglio rimettere la posizine iniziale
 			obj.position.y -= 50
 			await Global.wait(0.04)
 			i += 1
@@ -168,6 +168,6 @@ func go_to_closing_credits():
 	
 func go_to_main_menu():
 	get_parent().stage_clear.emit()
-	get_parent().get_parent().get_node("GUI").position.y = 0
+	get_parent().get_parent().get_node("GUI").position.y = 0 #issue, ok, so che non si dovrebbe fare cosi`, ma sono alla fine e non ho messo i singeton per il menu (perche` non lo sapevo fare all'inizio)...
 	queue_free()
 

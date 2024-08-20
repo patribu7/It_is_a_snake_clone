@@ -1,4 +1,4 @@
-1 - The story begin
+1 - The story begins
 ---
 This is the story of this snake.
 He came from the hill to find his loss.
@@ -6,7 +6,7 @@ He's a tiny thing and the world is big.
 He wants to grow up but he can't see.
 
 He's a blind snake.
-You do think he should be more careful, don't you?
+Do you think he should be more careful, don't you?
 
 5 will be enough to open the gate!
 ---

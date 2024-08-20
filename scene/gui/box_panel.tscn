@@ -5,6 +5,9 @@
 [ext_resource type="PackedScene" uid="uid://dr85gwailnjvj" path="res://scene/gui/btn_exp.tscn" id="2_t8b6q"]
 
 [node name="BoxPanel" type="Panel"]
+z_index = 2
+z_as_relative = false
+y_sort_enabled = true
 custom_minimum_size = Vector2(450, 0)
 anchors_preset = 9
 anchor_bottom = 1.0

@@ -66,6 +66,7 @@ sources/1 = SubResource("TileSetAtlasSource_jnpcb")
 script = ExtResource("1_bva7q")
 start_timeout = 1.0
 decr_timeout = 0.1
+apples_to_unloack_goal = 0
 
 [node name="Background" type="TileMap" parent="."]
 z_index = -1
