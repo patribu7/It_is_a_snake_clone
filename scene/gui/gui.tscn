@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://cs4n5mfl2f6sj"]
+[gd_scene load_steps=13 format=3 uid="uid://cs4n5mfl2f6sj"]
 
 [ext_resource type="Theme" uid="uid://dk7an8w4p1xt1" path="res://scene/gui/tres/gui.tres" id="1_ddrtv"]
 [ext_resource type="Script" path="res://scene/gui/gui.gd" id="1_w5dbx"]
@@ -34,6 +34,15 @@ cache/0/16/0/kerning_overrides/16/0 = Vector2(0, 0)
 
 [sub_resource type="LabelSettings" id="LabelSettings_vg3ty"]
 font = SubResource("FontFile_fj7l1")
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_egl8s"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 2
+border_width_top = 2
+border_width_right = 2
+border_width_bottom = 2
+border_color = Color(0.593134, 0.593134, 0.593133, 1)
+expand_margin_top = 8.0
 
 [node name="GUI" type="Control"]
 layout_mode = 3
@@ -163,33 +172,37 @@ layout_mode = 1
 anchors_preset = 4
 anchor_top = 0.5
 anchor_bottom = 0.5
-offset_top = -54.5
-offset_right = 343.0
-offset_bottom = 55.5
+offset_left = 26.0
+offset_top = -107.0
+offset_right = 369.0
+offset_bottom = 108.0
 grow_vertical = 2
 size_flags_vertical = 3
 
-[node name="Scenario" type="Control" parent="Menu/MenuPaused"]
-custom_minimum_size = Vector2(0, 40)
+[node name="ScenarioBtn" parent="Menu/MenuPaused" instance=ExtResource("3_to2iy")]
 layout_mode = 2
-size_flags_horizontal = 3
-size_flags_vertical = 2
-size_flags_stretch_ratio = 0.0
-
-[node name="ScenarioBtn" parent="Menu/MenuPaused/Scenario" instance=ExtResource("3_to2iy")]
-layout_mode = 1
-focus_neighbor_top = NodePath("../../../MainMenu/Quit")
+focus_neighbor_top = NodePath("../../MainMenu/Quit")
 theme_override_font_sizes/font_size = 25
 text = "SCENARIO >
 "
 text_overrun_behavior = 1
 clip_text = false
 
+[node name="Scenario" type="Control" parent="Menu/MenuPaused"]
+visible = false
+custom_minimum_size = Vector2(0, 40)
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_vertical = 2
+size_flags_stretch_ratio = 0.0
+
 [node name="Paused" type="Panel" parent="Menu/MenuPaused"]
+z_index = 2
 custom_minimum_size = Vector2(0, 90)
 layout_mode = 2
 size_flags_vertical = 3
 size_flags_stretch_ratio = 6.8
+theme_override_styles/panel = SubResource("StyleBoxFlat_egl8s")
 
 [node name="Label" type="Label" parent="Menu/MenuPaused/Paused"]
 layout_mode = 1
@@ -341,5 +354,5 @@ stream = ExtResource("7_td1m6")
 [connection signal="button_up" from="Menu/MainMenu/SelectLv" to="Menu" method="_on_select_lv_button_up"]
 [connection signal="button_up" from="Menu/MainMenu/Credits" to="Menu" method="_on_credits_button_up"]
 [connection signal="button_up" from="Menu/MainMenu/Quit" to="Menu" method="_on_quit_button_up"]
-[connection signal="button_up" from="Menu/MenuPaused/Scenario/ScenarioBtn" to="Menu" method="_on_scenario_btn_button_up"]
+[connection signal="button_up" from="Menu/MenuPaused/ScenarioBtn" to="Menu" method="_on_scenario_btn_button_up"]
 [connection signal="button_up" from="Menu/MenuPaused/Paused/ResumeBtn" to="Menu" method="_on_resume_btn_button_up"]
