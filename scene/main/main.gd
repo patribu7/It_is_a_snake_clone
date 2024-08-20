@@ -92,11 +92,13 @@ func _on_stage_clear():
 		GameData.unlocked_next_level_on_clear()
 		#$GUI/Menu/Congratulations.show()
 	$GUI.toggle_menu(state_game)
+	$Audio/Win.play()
 	
 	
 func _on_defeat():
 	state_game = "game_over"
 	$GUI.toggle_menu(state_game)
+	$Audio/Defeat.play()
 	
 	if $Game.level == 0: #0 == endless mode
 		GameData.set_record() #registra il record

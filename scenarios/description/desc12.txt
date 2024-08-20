@@ -1,6 +1,8 @@
-12 - Teleport
+12 - Tunnel
 ---
-Consider to move the tunnel to do this
+consider that even the tunnel exit can move.
+
+Yes, it has always been possible.
 ---
 Move the tunnel
 ---

@@ -38,7 +38,7 @@ func set_record():
 
 
 func unlocked_next_level_on_clear():
-	if current_level + 1 > unlocked_levels:
+	if current_level + 1 > unlocked_levels and current_level <= qty_maps:
 		unlocked_levels = current_level + 1
 		save_data()
 

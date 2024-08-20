@@ -4,26 +4,31 @@
 [ext_resource type="Script" path="res://scene/hole/hole.gd" id="2_5aynl"]
 [ext_resource type="Texture2D" uid="uid://bra2cnxnhschn" path="res://assets/png/sprite/hole.png" id="3_sj82e"]
 
-[sub_resource type="AtlasTexture" id="AtlasTexture_p8c1y"]
-atlas = ExtResource("3_sj82e")
-region = Rect2(0, 0, 50, 50)
-
 [sub_resource type="AtlasTexture" id="AtlasTexture_u5bgi"]
 atlas = ExtResource("3_sj82e")
 region = Rect2(50, 0, 50, 50)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x8my1"]
+atlas = ExtResource("3_sj82e")
+region = Rect2(0, 0, 50, 50)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_m8cfg"]
 animations = [{
 "frames": [{
 "duration": 1.0,
-"texture": SubResource("AtlasTexture_p8c1y")
-}, {
-"duration": 1.0,
 "texture": SubResource("AtlasTexture_u5bgi")
 }],
 "loop": true,
-"name": &"default",
+"name": &"in",
 "speed": 2.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x8my1")
+}],
+"loop": true,
+"name": &"out",
+"speed": 5.0
 }]
 
 [node name="Hole" instance=ExtResource("1_ck7l8")]
@@ -31,6 +36,8 @@ script = ExtResource("2_5aynl")
 
 [node name="Sprite" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_m8cfg")
+animation = &"in"
+autoplay = "in"
 
 [node name="Teleport_pos" type="Marker2D" parent="." index="2"]
 position = Vector2(50, 0)
@@ -38,5 +45,7 @@ position = Vector2(50, 0)
 [node name="Sprite" type="AnimatedSprite2D" parent="Teleport_pos" index="0"]
 position = Vector2(25, 25)
 sprite_frames = SubResource("SpriteFrames_m8cfg")
+animation = &"out"
+autoplay = "out"
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

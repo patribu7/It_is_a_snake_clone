@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://clpj0ds245kfl"]
+[gd_scene load_steps=7 format=3 uid="uid://clpj0ds245kfl"]
 
 [ext_resource type="Script" path="res://scene/main/main.gd" id="1_8emqb"]
 [ext_resource type="PackedScene" uid="uid://da6fgpgrvyqnu" path="res://scene/game/game.tscn" id="2_x128t"]
 [ext_resource type="PackedScene" uid="uid://dbhsex16afakt" path="res://scene/title_screen/title_screen.tscn" id="4_crwnh"]
+[ext_resource type="AudioStream" uid="uid://b40nq3up4ap0g" path="res://assets/audio/sounds/defeat.mp3" id="5_whr2o"]
+[ext_resource type="AudioStream" uid="uid://baq0buoxy2a50" path="res://assets/audio/sounds/win.mp3" id="6_2f7f0"]
 [ext_resource type="PackedScene" uid="uid://cs4n5mfl2f6sj" path="res://scene/gui/gui.tscn" id="10_7l1x6"]
 
 [node name="Main" type="Node"]
@@ -16,5 +18,13 @@ visible = false
 
 [node name="Title_screen" parent="." instance=ExtResource("4_crwnh")]
 process_mode = 3
+
+[node name="Audio" type="Node" parent="."]
+
+[node name="Defeat" type="AudioStreamPlayer2D" parent="Audio"]
+stream = ExtResource("5_whr2o")
+
+[node name="Win" type="AudioStreamPlayer2D" parent="Audio"]
+stream = ExtResource("6_2f7f0")
 
 [connection signal="request_main_menu" from="Title_screen" to="." method="_on_request_main_menu"]

@@ -1,4 +1,4 @@
-[gd_scene load_steps=67 format=3 uid="uid://cg2v36m81amth"]
+[gd_scene load_steps=68 format=3 uid="uid://cg2v36m81amth"]
 
 [ext_resource type="Script" path="res://scene/maps/script/map13.gd" id="1_17a0i"]
 [ext_resource type="Texture2D" uid="uid://itgu8afr1rfp" path="res://assets/png/sprite/background.png" id="2_g0cv4"]
@@ -28,6 +28,7 @@
 [ext_resource type="Texture2D" uid="uid://87b4107tthov" path="res://assets/tres/sprite/snake_texture_2d.tres" id="27_xyrhn"]
 [ext_resource type="Texture2D" uid="uid://dc0ovmyjg6g5b" path="res://assets/png/background/tree_crown_2.png" id="28_3myvq"]
 [ext_resource type="PackedScene" uid="uid://b2dpdjl6ls4u2" path="res://scene/closing_credits/closing_credits.tscn" id="30_2cwfo"]
+[ext_resource type="Texture2D" uid="uid://cuqnrq4kjah77" path="res://assets/png/sprite/woodpecker.png" id="31_gbia0"]
 [ext_resource type="SpriteFrames" uid="uid://qkq4tcigbh5a" path="res://assets/tres/sprite/tail.tres" id="43_35t60"]
 [ext_resource type="Texture2D" uid="uid://uemw46yq12jg" path="res://assets/png/sprite/apple.png" id="44_3a052"]
 
@@ -1023,7 +1024,7 @@ position = Vector2(25, 25)
 shape = SubResource("RectangleShape2D_ueil6")
 
 [node name="Snake" type="Node2D" parent="."]
-position = Vector2(350, -9400)
+position = Vector2(350, 500)
 script = ExtResource("6_3dckf")
 metadata/_edit_group_ = true
 
@@ -1770,6 +1771,12 @@ color = Color(0.133333, 1, 0.219608, 1)
 
 [node name="ClosingCredits" parent="Animations" instance=ExtResource("30_2cwfo")]
 visible = false
+
+[node name="Woodpecker" type="Sprite2D" parent="Animations"]
+position = Vector2(450, -2550)
+texture = ExtResource("31_gbia0")
+centered = false
+hframes = 2
 
 [node name="debug" type="Node2D" parent="."]
 position = Vector2(900, 50)

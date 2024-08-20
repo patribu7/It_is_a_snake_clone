@@ -1,10 +1,12 @@
 11 - Hole in wall
 ---
 This time you'll have to make a hole in the wall to get out! You have no choice.
-I see one in the top corner. Move it!
+I saw one in the top corner.
+Move it!
 
 How do you move a hole in a wall, you ask?
-Well, you weren't paying attention during the intro!
+Well, you weren't paying attention during the title screen!
+
 Hold shift key!
 ---
 Move the hole

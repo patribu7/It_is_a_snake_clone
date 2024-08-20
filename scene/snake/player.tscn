@@ -134,10 +134,8 @@ metadata/Velocity = Vector2(0, -1)
 
 [node name="Eat" type="AudioStreamPlayer2D" parent="Audio" index="0"]
 stream = ExtResource("5_gsc20")
-bus = &"Sounds"
 
 [node name="Bleah" type="AudioStreamPlayer2D" parent="Audio" index="1"]
 stream = SubResource("AudioStreamRandomizer_s3dat")
-bus = &"Sounds"
 
 [connection signal="area_entered" from="." to="." method="_on_area_entered"]

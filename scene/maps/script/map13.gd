@@ -73,7 +73,7 @@ func _move_obj(obj):
 
 
 func reveal_obstacle():
-	pass #issue pass se togli questo togli anche il marker
+	$Animations/Woodpecker.frame = 1
 	
 	
 func change_text_turn_back():
