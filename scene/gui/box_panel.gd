@@ -35,11 +35,11 @@ func add_context(context:String):
 		box = _text_panel.instantiate()
 
 		if is_in_scenario:
-			box.get_node("Header").text = GameData.description["header"]
-			box.get_node("Body").text = GameData.description["body"]
+			box.get_node("Container").get_node("Header").text = GameData.description["header"]
+			box.get_node("Container").get_node("Body").text = GameData.description["body"]
 			
 		else:
-			box.get_node("Body").text = GameData.get_credits_text()
+			box.get_node("Container").get_node("Body").text = GameData.get_credits_text()
 				
 	if context == "new_game":
 		box = _new_game_panel.instantiate()

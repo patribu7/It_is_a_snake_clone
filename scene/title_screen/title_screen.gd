@@ -10,8 +10,8 @@ func _ready():
 	animation_is_finished = true
 
 func go_to_main_menu():
-	queue_free()
 	request_main_menu.emit()
+	queue_free()
 
 
 func _input(event):

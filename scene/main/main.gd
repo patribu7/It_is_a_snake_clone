@@ -111,3 +111,4 @@ func resume():
 
 func _on_request_main_menu():
 	$GUI.show()
+	$GUI/Fanfare.play()

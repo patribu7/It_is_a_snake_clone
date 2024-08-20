@@ -1425,7 +1425,7 @@ offset_left = 50.0
 offset_top = -3300.0
 offset_right = 200.0
 offset_bottom = -3231.0
-text = "Spesso hai riprovato piu' e piu' volte"
+text = "Spesso hai riprovato piu` e piu` volte"
 horizontal_alignment = 2
 autowrap_mode = 2
 
@@ -1465,7 +1465,7 @@ offset_left = 450.0
 offset_top = -4521.0
 offset_right = 650.0
 offset_bottom = -4404.0
-text = "Qualcosa inevitabilmete e' stato lasciato indietro"
+text = "Qualcosa inevitabilmete e` stato lasciato indietro"
 autowrap_mode = 2
 
 [node name="Label9" type="Label" parent="Texts"]
@@ -1512,7 +1512,7 @@ offset_left = 100.0
 offset_top = -7550.0
 offset_right = 300.0
 offset_bottom = -7481.0
-text = "E' a questo che ti sono servito"
+text = "E` a questo che ti sono servito"
 horizontal_alignment = 2
 autowrap_mode = 2
 
@@ -1533,7 +1533,7 @@ offset_left = 150.0
 offset_top = -9100.0
 offset_right = 350.0
 offset_bottom = -8985.0
-text = "E l'unico modo che hai per farlo e' tirare ancora i dadi per salire con altre Ladders e scendere con altri Snakes"
+text = "E l'unico modo che hai per farlo e` tirare ancora i dadi per salire con altre Ladders e scendere con altri Snakes"
 autowrap_mode = 2
 
 [node name="Gates" type="Node2D" parent="."]
