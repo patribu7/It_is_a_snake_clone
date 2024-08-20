@@ -2,35 +2,21 @@
 
 [ext_resource type="FontFile" uid="uid://sskf8nua404j" path="res://assets/tres/custom_font_file.tres" id="1_e5v2c"]
 [ext_resource type="SystemFont" uid="uid://dvuickalrmy8p" path="res://assets/tres/font_retry_btn.tres" id="2_pd8bv"]
+[ext_resource type="StyleBox" uid="uid://cq134pfgqrifq" path="res://scene/gui/tres/styl_box_flat.tres" id="2_wotnl"]
 
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_2nl7w"]
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q1huo"]
 bg_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-
-[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_d5enq"]
-bg_color = Color(1, 1, 1, 1)
-corner_radius_top_left = 10
-corner_radius_top_right = 10
-corner_radius_bottom_right = 10
-corner_radius_bottom_left = 10
-shadow_color = Color(0.223103, 0.223103, 0.223103, 0.6)
-shadow_size = 3
-shadow_offset = Vector2(2, 2)
 
 [resource]
 default_font = ExtResource("1_e5v2c")
 Button/colors/font_color = Color(0, 0, 0, 1)
 Button/colors/font_disabled_color = Color(0, 0, 0, 1)
-Button/colors/font_focus_color = Color(0, 0, 0, 1)
-Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/colors/font_focus_color = Color(0, 0, 1, 1)
+Button/colors/font_hover_color = Color(0, 0, 0.972549, 1)
 Button/colors/font_hover_pressed_color = Color(0, 0, 0, 1)
 Button/colors/font_outline_color = Color(0, 0, 0, 1)
-Button/colors/font_pressed_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(1, 0, 0, 1)
 Button/colors/icon_disabled_color = Color(0, 0, 0, 1)
-Button/colors/icon_focus_color = Color(0, 0, 0, 1)
 Button/colors/icon_hover_color = Color(0, 0, 0, 1)
 Button/colors/icon_hover_pressed_color = Color(0, 0, 0, 1)
 Button/colors/icon_normal_color = Color(0, 0, 0, 1)
@@ -38,8 +24,8 @@ Button/colors/icon_pressed_color = Color(0, 0, 0, 1)
 Button/font_sizes/font_size = 30
 Button/fonts/font = ExtResource("1_e5v2c")
 Button/styles/disabled = null
-Button/styles/hover = null
-Button/styles/normal = SubResource("StyleBoxFlat_2nl7w")
+Button/styles/hover = ExtResource("2_wotnl")
+Button/styles/normal = ExtResource("2_wotnl")
 Button/styles/pressed = null
 FlatButton/base_type = &"Button"
 FlatButton/font_sizes/font_size = 17
@@ -53,7 +39,7 @@ Label/constants/shadow_offset_y = 0
 Label/constants/shadow_outline_size = 1
 Label/font_sizes/font_size = 30
 Label/fonts/font = ExtResource("1_e5v2c")
-Panel/styles/panel = SubResource("StyleBoxFlat_d5enq")
+Panel/styles/panel = SubResource("StyleBoxFlat_q1huo")
 RichTextLabel/colors/default_color = Color(0, 0, 0, 1)
 RichTextLabel/colors/font_outline_color = Color(0, 0, 0, 1)
 RichTextLabel/constants/outline_size = 1

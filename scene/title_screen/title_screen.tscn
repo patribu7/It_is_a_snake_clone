@@ -349,8 +349,6 @@ autoplay = "title"
 stream = SubResource("AudioStreamRandomizer_mqc5q")
 
 [node name="BulletinBoard" type="Sprite2D" parent="."]
-position = Vector2(-50, -50)
-scale = Vector2(1.13333, 1.13333)
 texture = ExtResource("2_nvvji")
 centered = false
 

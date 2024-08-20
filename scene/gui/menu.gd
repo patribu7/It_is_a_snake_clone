@@ -52,7 +52,7 @@ func _on_resume_btn_button_up():
 
 func clear_box_panel():
 	if has_node("BoxPanel"):
-		$BoxPanel.queue_free()
+		$BoxPanel.free() #issue appena cambiato da queue_free(). Spero non dia problemi
 		
 
 func _on_quit_button_up():
@@ -67,6 +67,7 @@ func _on_quit_button_up():
 
 
 func open_panel(type:String, in_scenario = false):
+	clear_box_panel() #se ne esiste un altro aperto lo chiudo
 	var box_panel = _box_panel.instantiate()
 	box_panel.is_in_scenario = in_scenario
 	var context_box = box_panel.add_context(type)
