@@ -10,8 +10,8 @@ func _ready():
 	animation_is_finished = true
 
 func go_to_main_menu():
-	print("GO TO MAIN MENU")
 	request_main_menu.emit()
+	print("GO TO MAIN MENU")
 	queue_free()
 
 

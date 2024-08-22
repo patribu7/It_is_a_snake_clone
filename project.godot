@@ -11,9 +11,14 @@ config_version=5
 [application]
 
 config/name="It is a Snake Clone!"
+config/version="0.0.1"
 run/main_scene="res://scene/main/main.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://assets/icon/icon.png"
+
+[audio]
+
+buses/default_bus_layout="res://assets/tres/default_bus_layout.tres"
 
 [autoload]
 
@@ -38,6 +43,10 @@ folder_colors={
 "res://scene/snake/": "green",
 "res://scene/wall/": "gray"
 }
+
+[filesystem]
+
+import/blender/enabled=false
 
 [input]
 
@@ -125,7 +134,7 @@ back={
 }
 Space={
 "deadzone": 0.5,
-"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":0,"physical_keycode":32,"key_label":0,"unicode":32,"echo":false,"script":null)
+"events": [Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":-1,"window_id":0,"alt_pressed":false,"shift_pressed":false,"ctrl_pressed":false,"meta_pressed":false,"pressed":false,"keycode":32,"physical_keycode":32,"key_label":32,"unicode":32,"echo":false,"script":null)
 ]
 }
 action_for_shift={

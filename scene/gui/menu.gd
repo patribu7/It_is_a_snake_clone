@@ -52,7 +52,8 @@ func _on_resume_btn_button_up():
 
 func clear_box_panel():
 	if has_node("BoxPanel"):
-		$BoxPanel.free() #issue appena cambiato da queue_free(). Spero non dia problemi
+		$BoxPanel.queue_free()
+	
 		
 
 func _on_quit_button_up():
@@ -85,8 +86,8 @@ func open_panel(type:String, in_scenario = false):
 
 func _on_visibility_changed():
 	if visible == true and is_instance_valid(new_game_btn):
-		new_game_btn.grab_focus()
 		clear_box_panel()
+		new_game_btn.grab_focus()
 	
 	if state_game == "paused":
 		$MenuPaused.show()

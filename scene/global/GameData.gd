@@ -1,18 +1,18 @@
 extends Node
 
-var SAVE_PATH = "res://_debug/it_is_a_snake_clone.save" #issue change path to user for distr
+var SAVE_PATH = "./it_is_a_snake_clone.save"
 var is_first_access = true
 
 var qty_maps = 13
 var record_on_endless = 0
 var unlocked_levels = 1
 
-var high_scores = {
-	0: {
-		"name": "AAAAAAAAA",
-		"score": 1000
-		}
-	}
+#var high_scores = {
+	#0: {
+		#"name": "AAAAAAAAA",
+		#"score": 1000
+		#}
+	#}
 
 var description = {
 	"header": "text not found ç_ç",
@@ -36,10 +36,7 @@ var current_level: int:
 func set_record():
 	if apple_score > record_on_endless:
 		record_on_endless = apple_score
-		
-		#get_node("/root/Main/GUI").add_child(Window.new())
-		
-		
+	
 		#save_data()
 
 

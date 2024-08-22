@@ -58,7 +58,6 @@ script = ExtResource("1_w5dbx")
 [node name="BulletinBoard" type="Sprite2D" parent="."]
 z_index = -2
 position = Vector2(375, 375)
-scale = Vector2(1, 1)
 texture = ExtResource("4_amiu3")
 
 [node name="Decoration" type="Label" parent="BulletinBoard"]
@@ -242,7 +241,7 @@ grow_horizontal = 2
 grow_vertical = 2
 auto_translate = false
 localize_numeral_system = false
-text = "Eat 100 apples"
+text = "text not find"
 horizontal_alignment = 1
 vertical_alignment = 1
 autowrap_mode = 2

@@ -63,7 +63,8 @@ Game Designer: LupiCattivi
 \"Artist\": LupiCattivi
 
 
-Story: LupiCattivi - yes, there's only me
+Story: LupiCattivi
+yes, there's only me
 
 
 Sounds: LupiCattivi
@@ -71,21 +72,27 @@ Sounds: LupiCattivi
 
 Original theme Music: LupiCattivi
 
-Main theme Soundtrack \"This is a story of this snake\" is reworked Italian nursery rhyme for children
+Main theme Soundtrack
+\"This is a story of this snake\"
+is reworked Italian nursery rhyme for children
 
-End theme Soundtrack \"Why is my dog vomiting?\" solved his question
+End theme Soundtrack
+\"Why is my dog vomiting?\"
+solved its question
 
 
-and this is my voce.
+and this is my voice.
 
 
 
 
-Thanks to the testers:
+Thanks to
+the testers:
 [...]
 
 
-Thanks to English text reviewers:
+Thanks to
+the English text reviewers:
 [...]
 
 
@@ -96,15 +103,12 @@ this demo was made with
 Godot Engine
 
 
-for learning purpose
+for learning purposes
 
 
 because no tutorial can tell me what to do!
 
-
-
-
-One more thing before we leave:"
+"
 scroll_following = true
 autowrap_mode = 2
 shortcut_keys_enabled = false

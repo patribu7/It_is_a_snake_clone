@@ -18,6 +18,7 @@ var state_game = "main_menu":
 
 func _ready():
 	GameData.load_data()
+	
 	#connessioni
 	$Game.defeat.connect(_on_defeat)
 	$Game.stage_clear.connect(_on_stage_clear)

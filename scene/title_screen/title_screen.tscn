@@ -416,6 +416,7 @@ autoplay = "title"
 
 [node name="Sounds" type="AudioStreamPlayer2D" parent="AnimationPlayer"]
 stream = SubResource("AudioStreamRandomizer_mqc5q")
+volume_db = 4.105
 
 [node name="BulletinBoard" type="Sprite2D" parent="."]
 texture = ExtResource("2_nvvji")
@@ -450,6 +451,7 @@ text = " 🔴"
 label_settings = SubResource("LabelSettings_kdyhi")
 
 [node name="Snake" type="Label" parent="Title"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -469,6 +471,7 @@ text = "Snake
 horizontal_alignment = 1
 
 [node name="Clone" type="Label" parent="Title"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -488,6 +491,7 @@ text = "Clone
 horizontal_alignment = 1
 
 [node name="Escl" type="Label" parent="Title"]
+visible = false
 layout_mode = 1
 anchors_preset = 6
 anchor_left = 1.0
@@ -507,6 +511,7 @@ text = "!
 horizontal_alignment = 1
 
 [node name="Itisa" type="Label" parent="Title"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -527,6 +532,7 @@ text = "It is a
 horizontal_alignment = 1
 
 [node name="LupiCattivi" type="Label" parent="Title"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -547,6 +553,7 @@ text = " by LupiCattivi
 horizontal_alignment = 1
 
 [node name="Controls" type="Control" parent="."]
+visible = false
 layout_mode = 3
 anchors_preset = 0
 offset_left = 4.0
@@ -644,6 +651,7 @@ offset_bottom = 188.0
 text = " 🔴"
 
 [node name="PanelDx" type="Panel" parent="."]
+visible = false
 offset_left = 365.0
 offset_top = 324.0
 offset_right = 736.0
@@ -675,6 +683,7 @@ text = " 🔴"
 label_settings = SubResource("LabelSettings_vjm8m")
 
 [node name="Annunce_DEMO" type="Label" parent="PanelDx"]
+visible = false
 layout_mode = 2
 offset_left = 10.0
 offset_top = 64.0
@@ -686,6 +695,7 @@ If you enjoy it just let me know..."
 autowrap_mode = 2
 
 [node name="ThanksMom" type="Label" parent="PanelDx/Annunce_DEMO"]
+visible = false
 layout_mode = 0
 offset_left = 92.0
 offset_top = 58.0
@@ -694,6 +704,7 @@ offset_bottom = 85.0
 text = "thank you mom!"
 
 [node name="This_symbol" type="Label" parent="PanelDx"]
+visible = false
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -711,6 +722,7 @@ text = "If you see this icon on the screen"
 autowrap_mode = 2
 
 [node name="This_symbol2" type="Label" parent="PanelDx/This_symbol"]
+visible = false
 layout_mode = 1
 anchors_preset = 14
 anchor_top = 0.5
@@ -730,6 +742,7 @@ position = Vector2(175, 95)
 scale = Vector2(0.435, 0.435)
 
 [node name="Press_any_key" type="Label" parent="PanelDx"]
+visible = false
 layout_mode = 2
 offset_left = 39.0
 offset_top = 69.0
