@@ -29,7 +29,7 @@ GameData="*res://scene/global/GameData.gd"
 
 window/size/viewport_width=750
 window/size/viewport_height=750
-window/size/resizable=false
+window/stretch/mode="canvas_items"
 
 [file_customization]
 
