@@ -13,21 +13,19 @@ func _ready():
 
 
 func _on_new_endless():
-	clear_box_panel()
 	request.emit("new_endless", 0)
 	
 	
 func _on_continue_story():
-	clear_box_panel()
 	request.emit("continue_story", GameData.unlocked_levels)
 
 
 func _on_lv_selected(select_lv):
-	clear_box_panel()
 	request.emit("set_level", select_lv)
 
 
 func _on_new_game_button_pressed():
+	clear_box_panel()
 	var grid_panel = open_panel("new_game")
 	
 	grid_panel.get_node("EndlessBtn").button_up.connect(_on_new_endless)
@@ -52,9 +50,10 @@ func _on_resume_btn_button_up():
 
 func clear_box_panel():
 	if has_node("BoxPanel"):
-		$BoxPanel.queue_free()
-	
+		$BoxPanel.name = "Panel_queue_to_clear"
+		$Panel_queue_to_clear.queue_free()
 		
+
 
 func _on_quit_button_up():
 	var dialog = ConfirmationDialog.new()
@@ -68,12 +67,11 @@ func _on_quit_button_up():
 
 
 func open_panel(type:String, in_scenario = false):
-	clear_box_panel() #se ne esiste un altro aperto lo chiudo
+	clear_box_panel()
 	var box_panel = _box_panel.instantiate()
 	box_panel.is_in_scenario = in_scenario
 	var context_box = box_panel.add_context(type)
 
-	
 	if type == "level_selection":
 
 		for btn in context_box.get_children():
@@ -85,8 +83,8 @@ func open_panel(type:String, in_scenario = false):
 
 
 func _on_visibility_changed():
+	clear_box_panel()
 	if visible == true and is_instance_valid(new_game_btn):
-		clear_box_panel()
 		new_game_btn.grab_focus()
 	
 	if state_game == "paused":
