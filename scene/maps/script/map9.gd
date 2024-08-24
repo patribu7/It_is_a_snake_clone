@@ -6,23 +6,41 @@ func _ready():
 	ready_game_map()
 	
 	var velocity_list = [
-		Vector2.UP,
-		Vector2.UP,
-		Vector2.UP,
-		Vector2.UP,
-		Vector2.LEFT,
-		Vector2.UP,
-		Vector2.UP,
-		Vector2.LEFT,
-		Vector2.LEFT,
-		Vector2.DOWN,
-		Vector2.DOWN,
-		Vector2.LEFT,
-		Vector2.LEFT,
-		Vector2.UP,
-		Vector2.UP,
-		Vector2.LEFT,
-		Vector2.LEFT
+		Vector2.UP, # 1
+		Vector2.UP, # 2
+		Vector2.UP, # 3
+		Vector2.UP, # 4
+		Vector2.LEFT, # 5
+		Vector2.UP, # 6
+		Vector2.UP, # 7
+		Vector2.LEFT, # 8
+		Vector2.LEFT, # 9
+		Vector2.DOWN, # 10
+		Vector2.DOWN, # 11
+		Vector2.LEFT, # 12
+		Vector2.LEFT, # 13
+		Vector2.UP, # 14
+		Vector2.UP, # 15
+		Vector2.LEFT, # 16
+		Vector2.LEFT, # 17
+		Vector2.LEFT, # 18
+		Vector2.DOWN, # 19
+		Vector2.DOWN, # 20
+		Vector2.DOWN, # 21
+		Vector2.DOWN, # 22
+		Vector2.DOWN, # 23
+		Vector2.DOWN, # 24
+		Vector2.DOWN, # 25
+		Vector2.DOWN, # 26
+		Vector2.DOWN, # 27
+		Vector2.DOWN, # 28
+		Vector2.RIGHT, # 29
+		Vector2.RIGHT, # 30
+		Vector2.RIGHT, # 31
+		Vector2.UP, # 32
+		Vector2.UP, # 33
+		Vector2.RIGHT, # 34
+		Vector2.RIGHT, # 35
 	]
 		
 	set_velocity_for_tail_in_scene(velocity_list)
