@@ -9,7 +9,7 @@ var state_game = "main_menu"
 @onready var new_game_btn = get_node("MainMenu/NewGame")
 
 func _ready():
-	new_game_btn.grab_focus()
+	pass
 
 
 func _on_new_endless():
@@ -84,8 +84,6 @@ func open_panel(type:String, in_scenario = false):
 
 func _on_visibility_changed():
 	clear_box_panel()
-	if visible == true and is_instance_valid(new_game_btn):
-		new_game_btn.grab_focus()
 	
 	if state_game == "paused":
 		$MenuPaused.show()
@@ -115,6 +113,9 @@ func _on_visibility_changed():
 	
 	if state_game == "main_menu":
 		pass
-
+	
+	if visible == true and is_instance_valid(new_game_btn):
+		await Global.wait(0.1)
+		new_game_btn.grab_focus()
 
 
