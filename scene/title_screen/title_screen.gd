@@ -15,7 +15,7 @@ func go_to_main_menu():
 	queue_free()
 
 
-func _input(event): #avrei potuto farlo tutto con l'animazione...
+func _unhandled_input(event): #avrei potuto farlo tutto con l'animazione...
 	if event.is_pressed():
 		
 		if GameData.is_first_access:

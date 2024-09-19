@@ -115,7 +115,6 @@ func _on_visibility_changed():
 		pass
 	
 	if visible == true and is_instance_valid(new_game_btn):
-		await Global.wait(0.1)
 		new_game_btn.grab_focus()
 
 
