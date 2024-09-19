@@ -1,8 +1,9 @@
-[gd_scene load_steps=7 format=3 uid="uid://bhxev8xcd4qb3"]
+[gd_scene load_steps=8 format=3 uid="uid://bhxev8xcd4qb3"]
 
 [ext_resource type="PackedScene" uid="uid://1e5nwgt71uaq" path="res://scene/cell_block/block.tscn" id="1_m2nrv"]
 [ext_resource type="Texture2D" uid="uid://c7d8afvla15jp" path="res://assets/png/sprite/goal.png" id="2_l1g3h"]
 [ext_resource type="Script" path="res://scene/goal/goal.gd" id="2_w5kyu"]
+[ext_resource type="Texture2D" uid="uid://ddaqmim7mrj0n" path="res://assets/png/sprite/highlight.png" id="4_q4acn"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_ca8jg"]
 atlas = ExtResource("2_l1g3h")
@@ -35,6 +36,11 @@ snake_can = "win"
 [node name="Sprite" parent="." index="0"]
 sprite_frames = SubResource("SpriteFrames_b7gma")
 autoplay = "default"
+
+[node name="Highlight" type="Sprite2D" parent="." index="2"]
+show_behind_parent = true
+position = Vector2(21, 27)
+texture = ExtResource("4_q4acn")
 
 [connection signal="area_entered" from="." to="." method="_on_area_overlying"]
 [connection signal="area_exited" from="." to="." method="_on_area_exited"]

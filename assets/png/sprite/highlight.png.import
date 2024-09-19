@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bqyubps1yjgvw"
-path="res://.godot/imported/bark.png-16916cde4368bec10bde1b8877881703.ctex"
+uid="uid://ddaqmim7mrj0n"
+path="res://.godot/imported/highlight.png-b4f7ef06119c6c30021e289efd96cd48.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://scene/goal/bark.png"
-dest_files=["res://.godot/imported/bark.png-16916cde4368bec10bde1b8877881703.ctex"]
+source_file="res://assets/png/sprite/highlight.png"
+dest_files=["res://.godot/imported/highlight.png-b4f7ef06119c6c30021e289efd96cd48.ctex"]
 
 [params]
 

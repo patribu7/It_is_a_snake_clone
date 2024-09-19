@@ -4,5 +4,9 @@
 
 # debug
 _debug/
-export_presets.cfg
 it_is_a_snake_clone.save
+
+
+export_presets.cfg
+
+*.tmp
