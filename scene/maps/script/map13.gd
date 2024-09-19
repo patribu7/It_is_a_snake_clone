@@ -77,7 +77,7 @@ func reveal_obstacle():
 	
 	
 func change_text_turn_back():
-	$Texts/Label5.text = "Tornando sui tuoi passi"
+	$Texts/Label5.text = "Retracing your steps"
 
 
 func play_old_snake():

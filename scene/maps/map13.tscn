@@ -1334,7 +1334,8 @@ offset_left = 50.0
 offset_top = -600.0
 offset_right = 200.0
 offset_bottom = -543.0
-text = "Il percorso fino a qui"
+text = "The path
+up to here"
 horizontal_alignment = 2
 autowrap_mode = 2
 
@@ -1344,16 +1345,15 @@ offset_left = 450.0
 offset_top = -1300.0
 offset_right = 650.0
 offset_bottom = -1231.0
-text = "ti ha portato dove sei"
+text = "has brought you to where you are"
 autowrap_mode = 2
 
 [node name="Label3" type="Label" parent="Texts"]
 layout_mode = 0
-offset_left = 50.0
 offset_top = -1900.0
 offset_right = 200.0
-offset_bottom = -1831.0
-text = "Hai imparato tante cose"
+offset_bottom = -1813.0
+text = "You've learned many things"
 horizontal_alignment = 2
 autowrap_mode = 2
 
@@ -1363,7 +1363,7 @@ offset_left = 550.0
 offset_top = -2600.0
 offset_right = 750.0
 offset_bottom = -2531.0
-text = "Quasi mai hai scelto la strada giusta al primo tentativo"
+text = "Almost never did you choose the right path on the first try"
 autowrap_mode = 2
 
 [node name="Label5" type="Label" parent="Texts"]
@@ -1372,7 +1372,7 @@ offset_left = 50.0
 offset_top = -3300.0
 offset_right = 200.0
 offset_bottom = -3231.0
-text = "Spesso hai riprovato piu` e piu` volte"
+text = "Often, you tried again and again"
 horizontal_alignment = 2
 autowrap_mode = 2
 
@@ -1384,7 +1384,7 @@ offset_top = -3450.0
 offset_right = 550.0
 offset_bottom = -3381.0
 pivot_offset = Vector2(150, 50)
-text = "Imparando dagli errori"
+text = "Learning from your mistakes"
 autowrap_mode = 2
 
 [node name="Label6" type="Label" parent="Texts"]
@@ -1393,7 +1393,7 @@ offset_left = 550.0
 offset_top = -3780.0
 offset_right = 700.0
 offset_bottom = -3711.0
-text = "Superando ostacoli"
+text = "Overcoming obstacles"
 autowrap_mode = 2
 
 [node name="Label7" type="Label" parent="Texts"]
@@ -1402,7 +1402,7 @@ offset_left = 50.0
 offset_top = -3850.0
 offset_right = 200.0
 offset_bottom = -3800.0
-text = "Raggirandoli"
+text = "Finding ways around them"
 horizontal_alignment = 2
 autowrap_mode = 2
 
@@ -1410,18 +1410,18 @@ autowrap_mode = 2
 layout_mode = 0
 offset_left = 450.0
 offset_top = -4521.0
-offset_right = 650.0
+offset_right = 700.0
 offset_bottom = -4404.0
-text = "Qualcosa inevitabilmente e` stato lasciato indietro"
+text = "Something was bound to get left behind"
 autowrap_mode = 2
 
 [node name="Label9" type="Label" parent="Texts"]
 layout_mode = 0
-offset_left = 100.0
+offset_left = 50.0
 offset_top = -5200.0
 offset_right = 300.0
-offset_bottom = -5108.0
-text = "e guardando il tempo speso troverai certamente qualcosa che avresti fatto meglio"
+offset_bottom = -5053.0
+text = "and looking back at the time spent, you will surely find something you could have done better"
 horizontal_alignment = 2
 autowrap_mode = 2
 
@@ -1431,16 +1431,16 @@ offset_left = 450.0
 offset_top = -5850.0
 offset_right = 600.0
 offset_bottom = -5800.0
-text = "Una collisione sbagliata"
+text = "A wrong collision"
 autowrap_mode = 2
 
 [node name="Label11" type="Label" parent="Texts"]
 layout_mode = 0
 offset_left = 100.0
-offset_top = -6350.0
+offset_top = -6400.0
 offset_right = 300.0
-offset_bottom = -6281.0
-text = "o un errore di battiutra "
+offset_bottom = -6331.0
+text = "or a typing msitake"
 horizontal_alignment = 2
 autowrap_mode = 2
 
@@ -1450,27 +1450,27 @@ offset_left = 450.0
 offset_top = -7001.0
 offset_right = 600.0
 offset_bottom = -6932.0
-text = "Ma non pensarci troppo"
+text = "But don't worry about it too much"
 autowrap_mode = 2
 
 [node name="Label13" type="Label" parent="Texts"]
 layout_mode = 0
-offset_left = 100.0
-offset_top = -7550.0
-offset_right = 300.0
-offset_bottom = -7481.0
-text = "E` a questo che ti sono servito"
+offset_left = 96.0
+offset_top = -7551.0
+offset_right = 296.0
+offset_bottom = -7482.0
+text = "That's what I was here for"
 horizontal_alignment = 2
 autowrap_mode = 2
 
 [node name="Label14" type="Label" parent="Texts"]
 layout_mode = 0
-offset_left = 212.0
-offset_top = -8146.0
-offset_right = 450.0
+offset_left = 210.0
+offset_top = -8158.0
+offset_right = 448.0
 offset_bottom = -8054.0
-text = "Certamente hai ancora tanto da imparare...
-Oh! Davvero tanto!"
+text = "You've still got a lot to learn...
+Oh, so much more!"
 horizontal_alignment = 2
 autowrap_mode = 2
 
@@ -1480,7 +1480,7 @@ offset_left = 150.0
 offset_top = -9100.0
 offset_right = 350.0
 offset_bottom = -8985.0
-text = "E l'unico modo che hai per farlo e` tirare ancora i dadi per salire con altre Ladders e scendere con altri Snakes"
+text = "And the only way for you to do so is to keep rolling the dice, climbing more Ladders and sliding down more Snakes."
 autowrap_mode = 2
 
 [node name="Gates" type="Node2D" parent="."]
